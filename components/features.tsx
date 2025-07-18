@@ -517,7 +517,6 @@ const OrbitingIcons = ({
               rotate: {
                 duration: speed,
                 repeat: Infinity,
-                ease: [0, 0, 1, 1],
                 delay: randomDelay + orbitDelay,
               },
               scale: {
@@ -540,7 +539,6 @@ const OrbitingIcons = ({
               transition: {
                 duration: speed,
                 repeat: Infinity,
-                ease: [0, 0, 1, 1],
                 delay: randomDelay + orbitDelay,
               },
             },
