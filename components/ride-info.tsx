@@ -63,7 +63,7 @@ export function RideInfo() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl max-w-sm mx-auto lg:max-w-none">
                 <Image
                   src="/RideCard.png"
-                  alt="Loop ride card showing available rides"
+                  alt="Loop ride card interface displaying available student rides within 15km radius with driver photos, ratings, and trip details"
                   width={600}
                   height={800}
                   className="w-full h-auto"
@@ -81,7 +81,7 @@ export function RideInfo() {
               >
                 <Image
                   src="/RideDetails.png"
-                  alt="Loop ride details view"
+                  alt="Loop ride details screen showing driver profile, trip route, fare breakdown, and safety features for student rideshare"
                   width={400}
                   height={600}
                   className="w-full h-auto"
@@ -89,7 +89,6 @@ export function RideInfo() {
               </motion.div>
             </div>
 
-            {/* Background decoration */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-gradient-to-r from-blue-600/20 to-green-600/20 rounded-full blur-3xl opacity-50" />
           </motion.div>
         </div>

@@ -41,7 +41,7 @@ Built by students, for students.
         <div className="relative rounded-2xl overflow-hidden shadow-2xl">
           <Image
             src="/verification.png"
-            alt="Driver verification and safety features"
+            alt="Loop driver verification process showing Stripe ID verification, selfie authentication, and safety checks for student rideshare platform"
             width={1200}
             height={600}
             className="w-full h-auto"
@@ -480,17 +480,14 @@ const IconLogo = ({ className }: { className?: string }) => {
 const GhanaUniversitiesMap = () => {
   return (
     <div className="relative w-full h-full overflow-hidden rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-      {/* Coming Soon Badge */}
       <div className="absolute top-4 right-4 bg-yellow-500/90 text-black text-xs font-bold px-3 py-1.5 rounded-full shadow-lg backdrop-blur-sm border border-yellow-400">
         Coming Soon
       </div>
       
-      {/* Ghana Flag in corner */}
       <div className="absolute bottom-4 left-4">
         <GhanaFlag />
       </div>
       
-      {/* Centered text overlay */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center text-white">
           <h3 className="text-lg md:text-2xl font-bold mb-2">

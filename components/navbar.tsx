@@ -197,19 +197,23 @@ const MobileNav = ({ navItems, visible }: NavbarProps) => {
           damping: 30,
         }}
         className={cn(
-          "flex relative flex-col lg:hidden w-full justify-between items-center max-w-[calc(100vw-3rem)] mx-auto z-50 backdrop-saturate-[1.8] border border-solid border-white/40 rounded-full overflow-hidden"
+          "flex relative flex-col lg:hidden w-full justify-between items-center max-w-[calc(100vw-3rem)] mx-auto z-50 backdrop-saturate-[1.8] border border-solid border-white/40 rounded-full",
+          open ? "overflow-visible" : "overflow-hidden"
         )}
       >
-        <div className="flex flex-row justify-between items-center w-full">
+        <div className="flex flex-row justify-between items-center w-full relative z-10">
           <Logo />
-          {open ? (
-            <IconX className="text-white/90" onClick={() => setOpen(!open)} />
-          ) : (
-            <IconMenu2
-              className="text-white/90"
-              onClick={() => setOpen(!open)}
-            />
-          )}
+          <button
+            onClick={() => setOpen(!open)}
+            className="p-2 -m-2 touch-manipulation"
+            aria-label={open ? "Close menu" : "Open menu"}
+          >
+            {open ? (
+              <IconX className="text-white/90 w-6 h-6 hover:text-white transition-colors" />
+            ) : (
+              <IconMenu2 className="text-white/90 w-6 h-6 hover:text-white transition-colors" />
+            )}
+          </button>
         </div>
 
         <AnimatePresence>
@@ -232,7 +236,7 @@ const MobileNav = ({ navItems, visible }: NavbarProps) => {
                 stiffness: 400,
                 damping: 30,
               }}
-              className="flex rounded-3xl absolute top-16 bg-black/80 backdrop-blur-xl backdrop-saturate-[1.8] inset-x-0 z-50 flex-col items-start justify-start gap-4 w-full px-6 py-8"
+              className="flex rounded-3xl absolute top-16 bg-black/80 backdrop-blur-xl backdrop-saturate-[1.8] inset-x-0 z-[60] flex-col items-start justify-start gap-4 w-full px-6 py-8"
             >
               {navItems.map(
                 (navItem: { link: string; name: string }, idx: number) => (

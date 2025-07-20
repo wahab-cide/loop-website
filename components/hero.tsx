@@ -37,10 +37,9 @@ export function Hero() {
       ref={parentRef}
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pt-20 md:px-8 md:pt-40 bg-black"
     >
-      {/* <RoadAnimation className="opacity-70" /> */}
       <div className="text-balance relative z-20 mx-auto mb-4 mt-4 max-w-4xl text-center text-4xl font-semibold tracking-tight text-neutral-300 md:text-7xl">
         <Balancer>
-          <motion.h2
+          <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             style={{
@@ -55,7 +54,7 @@ export function Hero() {
             )}
           >
             <DynamicWord /> Rideshare Solution
-          </motion.h2>
+          </motion.h1>
         </Balancer>
       </div>
       <motion.p
@@ -100,7 +99,7 @@ Download App
           />
           <Image
             src="/dashboard.png"
-            alt="header"
+            alt="Loop rideshare app dashboard showing ride booking interface, student driver profiles, and safety features"
             width={1920}
             height={1080}
             className="rounded-[20px]  h-auto object-cover  w-full"

@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://looprides.dev/sitemap.xml
+
+# Block development and testing paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
