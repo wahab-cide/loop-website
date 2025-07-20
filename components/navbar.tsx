@@ -11,6 +11,7 @@ import Link from "next/link";
 import React, { useRef, useState } from "react";
 import { Button } from "./button";
 import { Logo } from "./logo";
+import { useToast } from "./toast";
 
 interface NavbarProps {
   navItems: {
@@ -60,6 +61,7 @@ export const Navbar = () => {
 };
 
 const DesktopNav = ({ navItems, visible }: NavbarProps) => {
+  const { showToast } = useToast();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
@@ -157,8 +159,8 @@ const DesktopNav = ({ navItems, visible }: NavbarProps) => {
               }}
             >
               <Button
-                as={Link}
-                href="/"
+                as="button"
+                onClick={() => showToast("Coming Soon")}
                 variant="primary"
                 className="hidden md:block rounded-full bg-white/20 hover:bg-white/30 text-white border-0"
               >

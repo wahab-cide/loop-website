@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { Button } from "./button";
 import { cn } from "@/lib/utils";
 import { motion, useAnimation, useInView } from "framer-motion";
+import { useToast } from "./toast";
 
 const BackgroundGrid = ({ className }: { className?: string }) => {
   const controls = useAnimation();
@@ -129,6 +130,7 @@ const LineGradient = ({ position }: { position: "left" | "right" }) => {
 };
 
 export default function CTA() {
+  const { showToast } = useToast();
   const controls = useAnimation();
   const ref = React.useRef(null);
   const inView = useInView(ref, { amount: 0.3, once: true });
@@ -174,7 +176,11 @@ Download Loop today and start experiencing safe, affordable, community-driven tr
           transition={{ duration: 0.5, delay: 0.3 }}
           className="relative z-20"
         >
-          <Button className="h-10 md:h-12 lg:h-16 w-32 md:w-40 lg:w-48 rounded-full text-xs sm:text-sm md:text-base font-medium">
+          <Button 
+            as="button"
+            onClick={() => showToast("Coming Soon")}
+            className="h-10 md:h-12 lg:h-16 w-32 md:w-40 lg:w-48 rounded-full text-xs sm:text-sm md:text-base font-medium"
+          >
 Download App
           </Button>
         </motion.div>

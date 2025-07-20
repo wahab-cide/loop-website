@@ -1,6 +1,8 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import { Logo } from "./logo";
+import { useToast } from "./toast";
 import {
   IconBrandInstagram,
   IconBrandLinkedin,
@@ -8,38 +10,39 @@ import {
 } from "@tabler/icons-react";
 
 export function Footer() {
+  const { showToast } = useToast();
   const forRiders = [
-    { title: "How to Book", href: "#" },
-    { title: "Safety Tips", href: "#" },
-    { title: "Fare Splitting", href: "#" },
-    { title: "Campus Coverage", href: "#" },
-    { title: "Support", href: "#" },
+    { title: "How to Book", href: "#", onClick: () => showToast("Coming Soon") },
+    { title: "Safety Tips", href: "#", onClick: () => showToast("Coming Soon") },
+    { title: "Fare Splitting", href: "#", onClick: () => showToast("Coming Soon") },
+    { title: "Campus Coverage", href: "#", onClick: () => showToast("Coming Soon") },
+    { title: "Support", href: "#", onClick: () => showToast("Coming Soon") },
   ];
 
   const forDrivers = [
-    { title: "Start Driving", href: "#" },
-    { title: "Driver Requirements", href: "#" },
-    { title: "Earnings", href: "#" },
-    { title: "Driver Support", href: "#" },
+    { title: "Start Driving", href: "#", onClick: () => showToast("Coming Soon") },
+    { title: "Driver Requirements", href: "#", onClick: () => showToast("Coming Soon") },
+    { title: "Earnings", href: "#", onClick: () => showToast("Coming Soon") },
+    { title: "Driver Support", href: "#", onClick: () => showToast("Coming Soon") },
   ];
 
   const company = [
-    { title: "About Us", href: "#" },
-    { title: "Contact", href: "#" },
-    { title: "Careers", href: "#" },
-    { title: "Press", href: "#" },
+    { title: "About Us", href: "#", onClick: () => showToast("Coming Soon") },
+    { title: "Contact", href: "#", onClick: () => showToast("Coming Soon") },
+    { title: "Careers", href: "#", onClick: () => showToast("Coming Soon") },
+    { title: "Press", href: "#", onClick: () => showToast("Coming Soon") },
   ];
 
   const legal = [
-    { title: "Privacy Policy", href: "#" },
-    { title: "Terms of Service", href: "#" },
-    { title: "Community Guidelines", href: "#" },
+    { title: "Privacy Policy", href: "/privacy" },
+    { title: "Terms of Service", href: "/terms" },
+    { title: "Community Guidelines", href: "/community-guidelines" },
   ];
 
   const socials = [
-    { title: "Twitter", href: "#", icon: IconBrandTwitter },
-    { title: "LinkedIn", href: "#", icon: IconBrandLinkedin },
-    { title: "Instagram", href: "#", icon: IconBrandInstagram },
+    { title: "Twitter", href: "#", icon: IconBrandTwitter, onClick: () => showToast("Coming Soon") },
+    { title: "LinkedIn", href: "#", icon: IconBrandLinkedin, onClick: () => showToast("Coming Soon") },
+    { title: "Instagram", href: "#", icon: IconBrandInstagram, onClick: () => showToast("Coming Soon") },
   ];
 
   return (
@@ -56,7 +59,7 @@ export function Footer() {
             <Logo />
             <div className="flex gap-3 mt-6">
               {socials.map((social, idx) => (
-                <SocialIcon key={`social-${idx}`} href={social.href}>
+                <SocialIcon key={`social-${idx}`} href={social.href} onClick={social.onClick}>
                   <social.icon strokeWidth={1.5} width={15} height={15} />
                 </SocialIcon>
               ))}
@@ -69,12 +72,21 @@ export function Footer() {
               <ul className="space-y-3">
                 {forRiders.map((item, idx) => (
                   <li key={`riders-${idx}`}>
-                    <Link
-                      href={item.href}
-                      className="hover:text-white transition-colors"
-                    >
-                      {item.title}
-                    </Link>
+                    {item.href === "#" ? (
+                      <button
+                        onClick={item.onClick}
+                        className="hover:text-white transition-colors text-left"
+                      >
+                        {item.title}
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="hover:text-white transition-colors"
+                      >
+                        {item.title}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -85,12 +97,21 @@ export function Footer() {
               <ul className="space-y-3">
                 {forDrivers.map((item, idx) => (
                   <li key={`drivers-${idx}`}>
-                    <Link
-                      href={item.href}
-                      className="hover:text-white transition-colors"
-                    >
-                      {item.title}
-                    </Link>
+                    {item.href === "#" ? (
+                      <button
+                        onClick={item.onClick}
+                        className="hover:text-white transition-colors text-left"
+                      >
+                        {item.title}
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="hover:text-white transition-colors"
+                      >
+                        {item.title}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -101,12 +122,21 @@ export function Footer() {
               <ul className="space-y-3">
                 {company.map((item, idx) => (
                   <li key={`company-${idx}`}>
-                    <Link
-                      href={item.href}
-                      className="hover:text-white transition-colors"
-                    >
-                      {item.title}
-                    </Link>
+                    {item.href === "#" ? (
+                      <button
+                        onClick={item.onClick}
+                        className="hover:text-white transition-colors text-left"
+                      >
+                        {item.title}
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="hover:text-white transition-colors"
+                      >
+                        {item.title}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -136,14 +166,30 @@ export function Footer() {
 
 interface SocialIconProps {
   href: string;
+  onClick?: () => void;
   children: React.ReactNode;
 }
 
-export function SocialIcon({ href, children }: SocialIconProps) {
+export function SocialIcon({ href, onClick, children }: SocialIconProps) {
+  const className = "w-10 h-10 bg-transparent rounded-full flex items-center justify-center hover:bg-neutral-700/20 transition-all border border-neutral-700/50 shadow-[2px_-2px_15px_rgba(0,0,0,0.2)] hover:shadow-[4px_-4px_20px_rgba(0,0,0,0.3)] relative before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/10 before:to-transparent before:rounded-full";
+  
+  if (href === "#" && onClick) {
+    return (
+      <button
+        onClick={onClick}
+        className={className}
+      >
+        <div className="w-5 h-5 text-neutral-400 hover:text-white transition-colors flex justify-center items-center">
+          {children}
+        </div>
+      </button>
+    );
+  }
+  
   return (
     <Link
       href={href}
-      className="w-10 h-10 bg-transparent rounded-full flex items-center justify-center hover:bg-neutral-700/20 transition-all border border-neutral-700/50 shadow-[2px_-2px_15px_rgba(0,0,0,0.2)] hover:shadow-[4px_-4px_20px_rgba(0,0,0,0.3)] relative before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/10 before:to-transparent before:rounded-full"
+      className={className}
     >
       <div className="w-5 h-5 text-neutral-400 hover:text-white transition-colors flex justify-center items-center">
         {children}

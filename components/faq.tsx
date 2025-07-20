@@ -1,8 +1,8 @@
 "use client";
-import React from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { cn } from "@/lib/utils";
 import { IconArrowRight } from "@/icons/arrow-right";
+import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
+import React from "react";
 
 const FAQs = [
   {
@@ -19,11 +19,6 @@ const FAQs = [
     question: "Can I split the cost of a ride with friends?",
     answer:
       "Yes! Loop has built-in fare splitting features that make it easy to share ride costs with friends. Simply add riders to your trip and the cost will be automatically divided.",
-  },
-  {
-    question: "What areas does Loop serve?",
-    answer:
-      "Loop is currently available in over 50 college towns and cities across the country. We're expanding to new campuses regularly based on student demand.",
   },
   {
     question: "How do I become a Loop driver?",
@@ -47,7 +42,7 @@ export function FrequentlyAskedQuestions() {
         </h2>
       </div>
       <p className="max-w-lg text-sm  text-center mx-auto mt-4 text-neutral-400 px-4 md:px-0">
-Everything you need to know about using Loop for safe, affordable student transportation.
+Read more in our Terms of Service and Community Guidelines.
       </p>
       <div className="mt-10 md:mt-20 max-w-3xl mx-auto divide-y divide-neutral-800">
         {FAQs.map((faq, index) => (

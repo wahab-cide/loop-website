@@ -10,12 +10,12 @@ import {
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import Balancer from "react-wrap-balancer";
-import Link from "next/link";
 import { Button } from "./button";
 import { GlowingEffect } from "./ui/glowing-effect";
-import { RoadAnimation } from "./road-animation";
+import { useToast } from "./toast";
 
 export function Hero() {
+  const { showToast } = useToast();
   const containerRef = useRef<HTMLDivElement>(
     null
   ) as React.RefObject<HTMLDivElement>;
@@ -37,7 +37,7 @@ export function Hero() {
       ref={parentRef}
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pt-20 md:px-8 md:pt-40 bg-black"
     >
-      <RoadAnimation className="opacity-70" />
+      {/* <RoadAnimation className="opacity-70" /> */}
       <div className="text-balance relative z-20 mx-auto mb-4 mt-4 max-w-4xl text-center text-4xl font-semibold tracking-tight text-neutral-300 md:text-7xl">
         <Balancer>
           <motion.h2
@@ -73,8 +73,8 @@ Connect with drivers and riders in your community for safe, affordable, and conv
         className="mb-8 mt-6 sm:mb-10 sm:mt-8 flex w-full flex-col items-center justify-center gap-4 px-4 sm:px-8 sm:flex-row md:mb-20"
       >
         <Button
-          as={Link}
-          href="/login"
+          as="button"
+          onClick={() => showToast("Coming Soon")}
           variant="primary"
           className="w-full sm:w-40 h-12 rounded-full flex items-center justify-center"
         >
@@ -99,7 +99,7 @@ Download App
             blur={10}
           />
           <Image
-            src="/dashboard.webp"
+            src="/dashboard.png"
             alt="header"
             width={1920}
             height={1080}

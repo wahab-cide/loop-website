@@ -4,6 +4,7 @@ import { IconCheck, IconX } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { Button } from "./button";
 import { IconGift } from "@/icons/gift";
+import { useToast } from "./toast";
 
 import { useEffect, useState } from "react";
 
@@ -48,50 +49,50 @@ export type Plan = {
   onClick: () => void;
 };
 
-const plans: Array<Plan> = [
-  {
-    id: planType.basic,
-    name: "Rider",
-    shortDescription: "For Students",
-    badge: "",
-    price: 0,
-    period: "to join",
-    features: [
-      { text: "Book rides instantly", included: true },
-      { text: "Verified student drivers", included: true },
-      { text: "In-app messaging", included: true },
-      { text: "Split fare with friends", included: true },
-      { text: "24/7 support", included: true },
-    ],
-    buttonText: "Download App",
-    subText: "Free to join, pay only for rides",
-    onClick: () => {
+function createPlans(showToast: (message: string) => void): Array<Plan> {
+  return [
+    {
+      id: planType.basic,
+      name: "Rider",
+      shortDescription: "For Students",
+      badge: "",
+      price: 0,
+      period: "to join",
+      features: [
+        { text: "Book rides instantly", included: true },
+        { text: "Verified student drivers", included: true },
+        { text: "In-app messaging", included: true },
+        { text: "Split fare with friends", included: true },
+        { text: "24/7 support", included: true },
+      ],
+      buttonText: "Download App",
+      subText: "Free to join, pay only for rides",
+      onClick: () => showToast("Coming Soon"),
     },
-  },
-  {
-    id: planType.lifetime,
-    name: "Driver ✦",
-    shortDescription: "Earn Extra Money",
-    price: 0,
-    period: "to start",
-    features: [
-      { text: "Flexible schedule", included: true },
-      { text: "Verified rider community", included: true },
-      { text: "Weekly payouts", included: true },
-      { text: "Route optimization", included: true },
-      { text: "Driver support", included: true },
-    ],
-    buttonText: "Start Driving",
-    subText: (
-      <div className="flex gap-1 justify-center items-center">
-        <IconGift />
-        Earn up to $20/hour in your spare time
-      </div>
-    ),
-    onClick: () => {
+    {
+      id: planType.lifetime,
+      name: "Driver ✦",
+      shortDescription: "Earn Extra Money",
+      price: 0,
+      period: "to start",
+      features: [
+        { text: "Flexible schedule", included: true },
+        { text: "Verified rider community", included: true },
+        { text: "Weekly payouts", included: true },
+        { text: "Route optimization", included: true },
+        { text: "Driver support", included: true },
+      ],
+      buttonText: "Start Driving",
+      subText: (
+        <div className="flex gap-1 justify-center items-center">
+          <IconGift />
+          Earn up to $20/hour in your spare time
+        </div>
+      ),
+      onClick: () => showToast("Coming Soon"),
     },
-  },
-];
+  ];
+}
 
 const MobileCard = ({ plan }: { plan: Plan }) => {
   return (
@@ -226,6 +227,8 @@ const DesktopCard = ({ plan }: { plan: Plan }) => {
 };
 
 export function PricingList() {
+  const { showToast } = useToast();
+  const plans = createPlans(showToast);
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   if (isMobile) {
