@@ -246,12 +246,6 @@ export default function PrivacyPolicy() {
             Website: <a href="https://looprides.dev" className="text-blue-400 hover:text-blue-300">looprides.dev</a>
           </p>
         </div>
-        <div className="bg-neutral-900 rounded-lg p-6 mt-4">
-          <p className="text-white font-medium mb-2">For California residents:</p>
-          <p className="text-neutral-300">
-            Email: <a href="mailto:developer.loop.acc@icloud.com" className="text-blue-400 hover:text-blue-300">developer.loop.acc@icloud.com</a>
-          </p>
-        </div>
       </Section>
     </LegalLayout>
   );

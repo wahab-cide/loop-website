@@ -260,19 +260,9 @@ export function Pricing() {
   return (
     <div
       id="pricing"
-      className="relative isolate w-full overflow-hidden px-4 py-16 md:py-40 pt-10 md:pt-60 lg:px-4"
+      className="relative w-full px-4 py-16 md:py-40 lg:px-4"
     >
-      {!isMobile && (
-        <div className="pt-32 md:pt-48 mt-[600px]">
-          <BackgroundShape />
-        </div>
-      )}
-      <div
-        className={cn(
-          "z-20",
-          isMobile ? "flex flex-col mt-0 relative" : "absolute inset-0 mt-80"
-        )}
-      >
+      <div className="relative">
         <div
           className={cn(
             "relative z-50 mx-auto mb-4",
@@ -300,63 +290,7 @@ No hidden fees, no surge pricing. Just affordable, reliable transportation that 
           <PricingList />
         </div>
       </div>
-      {!isMobile && (
-        <div
-          className="absolute inset-0 rounded-[20px]"
-          style={{
-            background:
-              "linear-gradient(179.87deg, rgba(0, 0, 0, 0) 0.11%, rgba(0, 0, 0, 0.8) 69.48%, #000000 92.79%)",
-          }}
-        />
-      )}
     </div>
   );
 }
 
-function BackgroundShape() {
-  const isMobile = useMediaQuery("(max-width: 768px)");
-  const size = isMobile ? 600 : 1400;
-  const innerSize = isMobile ? 400 : 1000;
-
-  return (
-    <div className="absolute inset-0 overflow-hidden">
-      <div
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[rgba(255,255,255,0.1)]"
-        style={{
-          width: size,
-          height: size,
-          clipPath: "circle(50% at 50% 50%)",
-          background: `
-            radial-gradient(
-              circle at center,
-              rgba(40, 40, 40, 0.8) 0%,
-              rgba(20, 20, 20, 0.6) 30%,
-              rgba(0, 0, 0, 0.4) 70%
-            )
-          `,
-        }}
-      >
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px)
-            `,
-            backgroundSize: isMobile ? "20px 40px" : "60px 120px",
-          }}
-        />
-      </div>
-      <div
-        className="absolute bg-black z-2 left-1/2 top-1/2 
-          -translate-x-1/2 -translate-y-1/2 rounded-full 
-          border border-[rgba(255,255,255,0.1)]
-          shadow-[0_0_200px_80px_rgba(255,255,255,0.1)]"
-        style={{
-          width: innerSize,
-          height: innerSize,
-        }}
-      />
-    </div>
-  );
-}
