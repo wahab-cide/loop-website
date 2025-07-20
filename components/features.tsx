@@ -14,7 +14,7 @@ export function Features() {
   return (
     <div
       id="product"
-      className="w-full max-w-7xl mx-auto py-4 px-4 md:px-8 md:my-20 md:py-20"
+      className="w-full max-w-7xl mx-auto py-4 px-4 md:px-8 md:my-20 md:py-20 overflow-hidden"
     >
       <div className="text-balance relative z-20 mx-auto mb-4 max-w-4xl text-center text-lg font-semibold tracking-tight text-neutral-300 md:text-3xl">
         <h2
@@ -52,12 +52,12 @@ Built by students, for students.
       
       <div className="mt-12 grid cols-1 lg:grid-cols-5 gap-4 auto-rows-[25rem] max-w-3xl mx-auto lg:max-w-none">
         <Card className="flex flex-col relative justify-between lg:col-span-2">
-          <CardContent className="h-full flex flex-col justify-center items-center text-center py-12">
-            <CardTitle>
+          <CardContent className="h-full flex flex-col justify-center items-center text-center py-8 px-8">
+            <CardTitle className="text-4xl md:text-5xl lg:text-6xl mb-6 font-black">
               Student
               <br /> Community
             </CardTitle>
-            <CardDescription className="mt-4 max-w-sm mx-auto">
+            <CardDescription className="mt-6 max-w-md mx-auto text-base md:text-lg leading-relaxed font-bold">
               Connect with verified students from your campus and nearby colleges.
             </CardDescription>
           </CardContent>

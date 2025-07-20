@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export function RideInfo() {
   return (
-    <section className="w-full bg-black py-16 md:py-24 lg:py-32">
+    <section className="w-full bg-black py-16 md:py-24 lg:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
           {/* Left content */}
@@ -33,7 +33,7 @@ export function RideInfo() {
             <div className="space-y-6">
               <FeatureItem
                 title="Personalized ride feed"
-                description="See all available rides within a 15km radius on your customized home feed, tailored to your frequently traveled routes"
+                description="See all available rides within a 15km radius on your customized home feed"
               />
               <FeatureItem
                 title="Affordable shared rides"
@@ -90,7 +90,7 @@ export function RideInfo() {
             </div>
 
             {/* Background decoration */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-600/20 to-green-600/20 rounded-full blur-3xl opacity-50" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-gradient-to-r from-blue-600/20 to-green-600/20 rounded-full blur-3xl opacity-50" />
           </motion.div>
         </div>
       </div>

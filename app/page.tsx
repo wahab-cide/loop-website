@@ -4,6 +4,7 @@ import { Features } from "@/components/features";
 import { Hero } from "@/components/hero";
 import { Pricing } from "@/components/pricing";
 import { RideInfo } from "@/components/ride-info";
+import { Sustainability } from "@/components/sustainability";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <RideInfo />
       <Features />
+      <Sustainability />
       <Pricing />
       <FrequentlyAskedQuestions />
       <CTA />

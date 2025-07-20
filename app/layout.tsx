@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("antialiased bg-black", inter.className)}>
+      <body className={cn("antialiased bg-black overflow-x-hidden", inter.className)}>
         <ToastProvider>
           <Navbar />
           {children}

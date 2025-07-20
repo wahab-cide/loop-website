@@ -197,7 +197,7 @@ const MobileNav = ({ navItems, visible }: NavbarProps) => {
           damping: 30,
         }}
         className={cn(
-          "flex relative flex-col lg:hidden w-full justify-between items-center max-w-[calc(100vw-2rem)] mx-auto z-50 backdrop-saturate-[1.8] border border-solid border-white/40 rounded-full"
+          "flex relative flex-col lg:hidden w-full justify-between items-center max-w-[calc(100vw-3rem)] mx-auto z-50 backdrop-saturate-[1.8] border border-solid border-white/40 rounded-full overflow-hidden"
         )}
       >
         <div className="flex flex-row justify-between items-center w-full">
