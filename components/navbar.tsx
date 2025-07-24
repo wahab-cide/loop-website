@@ -29,7 +29,11 @@ export const Navbar = () => {
     },
     {
       name: "Community",
-      link: "/#product",
+      link: "/#how-it-works",
+    },
+    {
+      name: "Safety",
+      link: "/#safety",
     },
     {
       name: "Download",

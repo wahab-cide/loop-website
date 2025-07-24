@@ -54,13 +54,13 @@ function createPlans(showToast: (message: string) => void): Array<Plan> {
     {
       id: planType.basic,
       name: "Rider",
-      shortDescription: "For Students",
+      shortDescription: "For Everyone",
       badge: "",
       price: 0,
       period: "to join",
       features: [
         { text: "Book rides instantly", included: true },
-        { text: "Verified student drivers", included: true },
+        { text: "Verified trusted drivers", included: true },
         { text: "In-app messaging", included: true },
         { text: "Split fare with friends", included: true },
         { text: "24/7 support", included: true },
@@ -77,7 +77,7 @@ function createPlans(showToast: (message: string) => void): Array<Plan> {
       period: "to start",
       features: [
         { text: "Flexible schedule", included: true },
-        { text: "Verified rider community", included: true },
+        { text: "Verified community riders", included: true },
         { text: "Weekly payouts", included: true },
         { text: "Route optimization", included: true },
         { text: "Driver support", included: true },
@@ -284,7 +284,7 @@ export function Pricing() {
             isMobile ? "w-full" : "max-w-lg text-center mx-auto"
           )}
         >
-No hidden fees, no surge pricing. Just affordable, reliable transportation that works for students.
+No hidden fees, no surge pricing. Just affordable, reliable transportation that works for everyone.
         </p>
         <div className="mx-auto mt-12 md:mt-20">
           <PricingList />

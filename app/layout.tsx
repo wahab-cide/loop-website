@@ -10,19 +10,19 @@ import { StructuredData } from "./structured-data";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Loop - Student Rideshare & Carpool App | Safe, Affordable Transportation",
+  title: "Loop - Community Rideshare & Carpool App | Safe, Affordable Transportation",
   description:
-    "Join students using Loop for safe, affordable rideshare. Connect with verified drivers in your community. Built by students, for students.",
+    "Join the Loop community for safe, affordable rideshare. Connect with verified drivers in your area. Trusted transportation for everyone.",
   keywords: [
-    "student rideshare",
-    "campus transportation",
-    "college carpool",
-    "university ride sharing",
-    "student driver app",
+    "community rideshare",
+    "verified drivers",
+    "carpool app",
+    "ride sharing",
+    "trusted driver app",
     "safe rideshare",
     "affordable transportation",
-    "campus rides",
-    "student community"
+    "community rides",
+    "verified community"
   ],
   authors: [{ name: "Loop Platform, Inc." }],
   creator: "Loop Platform, Inc.",
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://looprides.dev",
-    title: "Loop - Student Rideshare & Carpool App | Safe, Affordable Transportation",
+    title: "Loop - Community Rideshare & Carpool App | Safe, Affordable Transportation",
     description:
-      "Join students using Loop for safe, affordable rideshare. Connect with verified drivers in your community. Built by students, for students.",
+      "Join the Loop community for safe, affordable rideshare. Connect with verified drivers in your area. Trusted transportation for everyone.",
     siteName: "Loop",
     images: [
       {
@@ -57,9 +57,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Loop - Student Rideshare & Carpool App | Safe, Affordable Transportation",
+    title: "Loop - Community Rideshare & Carpool App | Safe, Affordable Transportation",
     description:
-      "Join students using Loop for safe, affordable rideshare. Connect with verified drivers in your community.",
+      "Join the Loop community for safe, affordable rideshare. Connect with verified drivers in your area.",
     images: ["https://looprides.dev/dashboard.png"],
     creator: "@looprides",
   },

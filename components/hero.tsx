@@ -99,7 +99,7 @@ Download App
           />
           <Image
             src="/dashboard.png"
-            alt="Loop rideshare app dashboard showing ride booking interface, student driver profiles, and safety features"
+            alt="Loop rideshare app dashboard showing ride booking interface, verified driver profiles, and safety features"
             width={1920}
             height={1080}
             className="rounded-[20px]  h-auto object-cover  w-full"
@@ -108,7 +108,7 @@ Download App
             className="absolute inset-0 rounded-[20px]"
             style={{
               background:
-                "linear-gradient(179.87deg, rgba(0, 0, 0, 0) 0.11%, rgba(0, 0, 0, 0.8) 69.48%, #000000 92.79%)",
+                "linear-gradient(179.87deg, rgba(0, 0, 0, 0) 0.11%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.6) 95%)",
             }}
           />
         </div>

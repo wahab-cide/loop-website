@@ -8,7 +8,7 @@ export function StructuredData() {
     "alternateName": "Loop",
     "url": "https://looprides.dev",
     "logo": "https://looprides.dev/logo.png",
-    "description": "Student rideshare platform connecting verified drivers and riders in campus communities for safe, affordable transportation.",
+    "description": "Community rideshare platform connecting verified drivers and riders for safe, affordable transportation.",
     "foundingDate": "2024",
     "industry": "Transportation",
     "sameAs": [
@@ -25,10 +25,10 @@ export function StructuredData() {
   const webApplicationSchema = {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
-    "name": "Loop - Student Rideshare",
+    "name": "Loop - Community Rideshare",
     "applicationCategory": "Transportation",
     "operatingSystem": ["iOS", "Android"],
-    "description": "Safe, affordable rideshare app built by students, for students. Connect with verified drivers in your campus community.",
+    "description": "Safe, affordable rideshare app connecting verified drivers and riders in local communities.",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -50,7 +50,7 @@ export function StructuredData() {
         "name": "How does Loop ensure rider and driver safety?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "All users must verify their student status and identity. We conduct background checks for drivers, provide in-app emergency features, and have 24/7 support monitoring all rides."
+          "text": "All drivers must complete Stripe ID verification and identity authentication. We conduct thorough background checks, provide in-app emergency features, and have 24/7 support monitoring all rides."
         }
       },
       {
@@ -58,7 +58,7 @@ export function StructuredData() {
         "name": "How much does Loop cost compared to other rideshare apps?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Loop is designed to be more affordable than traditional rideshare services. We don't use surge pricing and focus on connecting students within the same community for cost-effective transportation."
+          "text": "Loop is designed to be more affordable than traditional rideshare services. We don't use surge pricing and focus on connecting community members for cost-effective transportation with intelligent fare splitting."
         }
       },
       {
@@ -66,7 +66,7 @@ export function StructuredData() {
         "name": "Can I split the cost of a ride with friends?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! Loop has built-in fare splitting features that make it easy to share ride costs with friends. Simply add riders to your trip and the cost will be automatically divided."
+          "text": "Yes! Loop has built-in fare splitting features that make it easy to share ride costs. When multiple passengers book the same ride, costs are automatically divided and everyone saves money."
         }
       },
       {
@@ -74,7 +74,7 @@ export function StructuredData() {
         "name": "How do I become a Loop driver?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Download the app, verify your student status, submit your driver's license and insurance, pass a background check, and you're ready to start earning money helping fellow students get around safely."
+          "text": "Download the app, complete Stripe ID verification, submit your driver's license and insurance, pass our comprehensive background check, and you're ready to start earning money helping your community get around safely."
         }
       }
     ]

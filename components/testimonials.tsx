@@ -16,11 +16,11 @@ export function Testimonials() {
                 "bg-clip-text text-transparent leading-tight"
               )}
             >
-              Students Love <br />
+              Community Loves <br />
               Loop
             </h2>
             <p className="text-sm text-center lg:text-left mx-auto lg:mx-0 text-neutral-400 mt-6 max-w-sm">
-Real stories from students and community members who love using Loop for their daily transportation needs.
+Real stories from community members who love using Loop for their daily transportation needs.
             </p>
           </div>
         </div>
@@ -28,18 +28,18 @@ Real stories from students and community members who love using Loop for their d
         <div className="w-full grid gap-6 grid-cols-1 lg:grid-cols-2 md:w-[60%] mx-auto">
           <TestimonialCard
             name="Ian Dominic"
-            role="Student"
+            role="Community Member"
             quote="This is an amazing App"
           />
           <TestimonialCard
             name="Hussien Tannira"
-            role="Student"
+            role="Verified Driver"
             quote="Great job on building this application"
             className="lg:mt-[40px]"
           />
           <TestimonialCard
             name="Shahwar Akbar"
-            role="Student"
+            role="Rider"
             quote="Loop is a Lifesaver now"
             className="lg:mt-[-40px]"
           />
@@ -51,19 +51,19 @@ Real stories from students and community members who love using Loop for their d
           />
           <TestimonialCard
             name="Edris Yawar"
-            role="Student"
+            role="Verified Driver"
             quote="Great App"
             className="lg:mt-[-20px]"
           />
           <TestimonialCard
             name="Pierre Cativiela"
-            role="Student"
+            role="Community Member"
             quote="I love the UI, it's beautiful"
             className="lg:mt-[30px]"
           />
           <TestimonialCard
             name="Norman Affirim"
-            role="Student"
+            role="Rider"
             quote="This is the best rideshare App"
             className="lg:mt-[-30px]"
           />

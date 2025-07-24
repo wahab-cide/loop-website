@@ -8,22 +8,22 @@ const FAQs = [
   {
     question: "How does Loop ensure rider and driver safety?",
     answer:
-      "All users must verify their student status and identity. We conduct background checks for drivers, provide in-app emergency features, and have 24/7 support monitoring all rides.",
+      "All drivers must complete Stripe ID verification and identity authentication. We conduct thorough background checks, provide in-app emergency features, and have 24/7 support monitoring all rides.",
   },
   {
     question: "How much does Loop cost compared to other rideshare apps?",
     answer:
-      "Loop is designed to be more affordable than traditional rideshare services. We don't use surge pricing and focus on connecting students within the same community for cost-effective transportation.",
+      "Loop is designed to be more affordable than traditional rideshare services. We don't use surge pricing and focus on connecting community members for cost-effective transportation with intelligent fare splitting.",
   },
   {
     question: "Can I split the cost of a ride with friends?",
     answer:
-      "Yes! Loop has built-in fare splitting features that make it easy to share ride costs with friends. Simply add riders to your trip and the cost will be automatically divided.",
+      "Yes! Loop has built-in fare splitting features that make it easy to share ride costs. When multiple passengers book the same ride, costs are automatically divided and everyone saves money.",
   },
   {
     question: "How do I become a Loop driver?",
     answer:
-      "Download the app, verify your student status, submit your driver's license and insurance, pass a background check, and you're ready to start earning money helping fellow students get around safely.",
+      "Download the app, complete Stripe ID verification, submit your driver's license and insurance, pass our comprehensive background check, and you're ready to start earning money helping your community get around safely.",
   },
 ];
 export function FrequentlyAskedQuestions() {

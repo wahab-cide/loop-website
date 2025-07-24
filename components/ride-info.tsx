@@ -37,11 +37,11 @@ export function RideInfo() {
               />
               <FeatureItem
                 title="Affordable shared rides"
-                description="View and book rides at student-friendly prices. Split costs with fellow riders heading in the same direction"
+                description="View and book rides at budget-friendly prices. Split costs with fellow riders heading in the same direction"
               />
               <FeatureItem
                 title="Carpool with neighbors"
-                description="Connect with verified students who live around you. Build a trusted network for regular commutes"
+                description="Connect with verified community members who live around you. Build a trusted network for regular commutes"
               />
               <FeatureItem
                 title="Real-time updates"
@@ -63,7 +63,7 @@ export function RideInfo() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl max-w-sm mx-auto lg:max-w-none">
                 <Image
                   src="/RideCard.png"
-                  alt="Loop ride card interface displaying available student rides within 15km radius with driver photos, ratings, and trip details"
+                  alt="Loop ride card interface displaying available rides within 15km radius with driver photos, ratings, and trip details"
                   width={600}
                   height={800}
                   className="w-full h-auto"
@@ -81,7 +81,7 @@ export function RideInfo() {
               >
                 <Image
                   src="/RideDetails.png"
-                  alt="Loop ride details screen showing driver profile, trip route, fare breakdown, and safety features for student rideshare"
+                  alt="Loop ride details screen showing driver profile, trip route, fare breakdown, and safety features for community rideshare"
                   width={400}
                   height={600}
                   className="w-full h-auto"

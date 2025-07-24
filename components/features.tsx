@@ -27,7 +27,7 @@ Why Choose Loop
         </h2>
       </div>
       <p className="max-w-lg text-sm text-center mx-auto mt-4 text-neutral-400">
-Built by students, for students.
+Safe, reliable rideshare for everyone.
       </p>
       
       {/* Verification Image */}
@@ -41,7 +41,7 @@ Built by students, for students.
         <div className="relative rounded-2xl overflow-hidden shadow-2xl">
           <Image
             src="/verification.png"
-            alt="Loop driver verification process showing Stripe ID verification, selfie authentication, and safety checks for student rideshare platform"
+            alt="Loop driver verification process showing Stripe ID verification, selfie authentication, and safety checks for community rideshare platform"
             width={1200}
             height={600}
             className="w-full h-auto"
@@ -54,11 +54,11 @@ Built by students, for students.
         <Card className="flex flex-col relative justify-between lg:col-span-2">
           <CardContent className="h-full flex flex-col justify-center items-center text-center py-8 px-8">
             <CardTitle className="text-4xl md:text-5xl lg:text-6xl mb-6 font-black">
-              Student
+              Trusted
               <br /> Community
             </CardTitle>
             <CardDescription className="mt-6 max-w-md mx-auto text-base md:text-lg leading-relaxed font-bold">
-              Connect with verified students from your campus and nearby colleges.
+              Connect with verified drivers and riders in your community.
             </CardDescription>
           </CardContent>
         </Card>
@@ -86,7 +86,7 @@ Built by students, for students.
               </div>
               <div className="flex items-center gap-3">
                 <IconCheck className="w-5 h-5 text-green-400" />
-                <span className="text-neutral-300">Drivers living within 15km radius</span>
+                <span className="text-neutral-300">Local community drivers</span>
               </div>
             </div>
           </CardContent>
@@ -102,7 +102,7 @@ Built by students, for students.
 Expanding <br /> to Africa
             </CardTitle>
             <CardDescription>
-Bringing Loop to University of Ghana, KNUST, and other leading Ghanaian universities. Connecting African students with safe, affordable transportation.
+Bringing Loop to University of Ghana, KNUST, and other leading Ghanaian institutions. Connecting communities with safe, affordable transportation.
             </CardDescription>
           </CardContent>
           <div className="absolute right-4 bottom-4 opacity-60 md:opacity-100">
@@ -113,10 +113,10 @@ Bringing Loop to University of Ghana, KNUST, and other leading Ghanaian universi
         <Card className="flex flex-col justify-between lg:col-span-2">
           <CardContent className="h-40">
             <CardTitle>
-Student <br /> Approved
+Community <br /> Approved
             </CardTitle>
             <CardDescription>
-Safe rides, friendly drivers, and budget-friendly prices.
+Safe rides, trusted drivers, and budget-friendly prices.
             </CardDescription>
           </CardContent>
           <CardSkeletonBody>

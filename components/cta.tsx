@@ -85,7 +85,7 @@ export default function CTA() {
             Ready to Join the Loop?
           </h2>
           <p className="max-w-lg text-xs sm:text-sm md:text-base text-neutral-400 text-center mx-auto my-4 md:my-6 lg:my-8 px-4">
-Download Loop today and start experiencing safe, affordable, community-driven transportation that&apos;s built for students like you.
+Download Loop today and start experiencing safe, affordable, community-driven transportation that&apos;s built for everyone.
           </p>
         </div>
         <BackgroundGrid className="mt-8 md:mt-16 lg:mt-36 z-0" />
