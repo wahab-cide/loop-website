@@ -154,7 +154,7 @@ export function EnhancedSafety() {
               <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight">
                 Safety Features That
                 <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                  {" "}Actually Work
+                  {" "} Work
                 </span>
               </h3>
               <p className="text-lg text-neutral-400 leading-relaxed">

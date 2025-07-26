@@ -5,7 +5,7 @@ import { FrequentlyAskedQuestions } from "@/components/faq";
 import { Hero } from "@/components/hero";
 import { HowItWorks } from "@/components/how-it-works";
 import { RideInfo } from "@/components/ride-info";
-import { SmartRefunds } from "@/components/smart-refunds";
+import { SmartPricing } from "@/components/smart-pricing";
 import { Sustainability } from "@/components/sustainability";
 
 export default function Home() {
@@ -13,6 +13,7 @@ export default function Home() {
     <div>
       <Hero />
       <RideInfo />
+      <SmartPricing />
       <div id="how-it-works">
         <HowItWorks />
       </div>
@@ -20,7 +21,6 @@ export default function Home() {
         <EnhancedSafety />
       </div>
       <DriverEarnings />
-      <SmartRefunds />
       <Sustainability />
       <FrequentlyAskedQuestions />
       <CTA />
