@@ -11,27 +11,6 @@ import {
 
 export function Footer() {
   const { showToast } = useToast();
-  const forRiders = [
-    { title: "How to Book", href: "#", onClick: () => showToast("Coming Soon") },
-    { title: "Safety Tips", href: "#", onClick: () => showToast("Coming Soon") },
-    { title: "Fare Splitting", href: "#", onClick: () => showToast("Coming Soon") },
-    { title: "Campus Coverage", href: "#", onClick: () => showToast("Coming Soon") },
-    { title: "Support", href: "#", onClick: () => showToast("Coming Soon") },
-  ];
-
-  const forDrivers = [
-    { title: "Start Driving", href: "#", onClick: () => showToast("Coming Soon") },
-    { title: "Driver Requirements", href: "#", onClick: () => showToast("Coming Soon") },
-    { title: "Earnings", href: "#", onClick: () => showToast("Coming Soon") },
-    { title: "Driver Support", href: "#", onClick: () => showToast("Coming Soon") },
-  ];
-
-  const company = [
-    { title: "About Us", href: "#", onClick: () => showToast("Coming Soon") },
-    { title: "Contact", href: "#", onClick: () => showToast("Coming Soon") },
-    { title: "Careers", href: "#", onClick: () => showToast("Coming Soon") },
-    { title: "Press", href: "#", onClick: () => showToast("Coming Soon") },
-  ];
 
   const legal = [
     { title: "Privacy Policy", href: "/privacy" },
@@ -53,8 +32,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl my-28 mx-auto text-sm text-neutral-400 flex flex-col justify-between md:px-8">
-        <div className="flex flex-col md:flex-row justify-between">
+      <div className="max-w-7xl my-28 mx-auto text-sm text-neutral-400 flex flex-col md:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-start w-full">
           <div className="mb-10 md:mb-0">
             <Logo />
             <div className="flex gap-3 mt-6">
@@ -66,82 +45,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 lg:gap-20">
-            <div className="flex flex-col space-y-4">
-              <p className="text-white font-semibold">For Riders</p>
-              <ul className="space-y-3">
-                {forRiders.map((item, idx) => (
-                  <li key={`riders-${idx}`}>
-                    {item.href === "#" ? (
-                      <button
-                        onClick={item.onClick}
-                        className="hover:text-white transition-colors text-left"
-                      >
-                        {item.title}
-                      </button>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className="hover:text-white transition-colors"
-                      >
-                        {item.title}
-                      </Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="flex flex-col space-y-4">
-              <p className="text-white font-semibold">For Drivers</p>
-              <ul className="space-y-3">
-                {forDrivers.map((item, idx) => (
-                  <li key={`drivers-${idx}`}>
-                    {item.href === "#" ? (
-                      <button
-                        onClick={item.onClick}
-                        className="hover:text-white transition-colors text-left"
-                      >
-                        {item.title}
-                      </button>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className="hover:text-white transition-colors"
-                      >
-                        {item.title}
-                      </Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="flex flex-col space-y-4">
-              <p className="text-white font-semibold">Company</p>
-              <ul className="space-y-3">
-                {company.map((item, idx) => (
-                  <li key={`company-${idx}`}>
-                    {item.href === "#" ? (
-                      <button
-                        onClick={item.onClick}
-                        className="hover:text-white transition-colors text-left"
-                      >
-                        {item.title}
-                      </button>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className="hover:text-white transition-colors"
-                      >
-                        {item.title}
-                      </Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 lg:gap-16">
             <div className="flex flex-col space-y-4">
               <p className="text-white font-semibold">Legal</p>
               <ul className="space-y-3">
@@ -155,6 +59,37 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
+              </ul>
+            </div>
+            <div className="flex flex-col space-y-4">
+              <p className="text-white font-semibold">Founders</p>
+              <ul className="space-y-3">
+                <li>
+                  <div className="flex flex-col space-y-1">
+                    <Link
+                      href="https://portfolio-bice-nine-41.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-white transition-colors font-medium"
+                    >
+                      Wahab Cide
+                    </Link>
+                    <span className="text-xs text-neutral-500">Co-founder & Tech Lead</span>
+                  </div>
+                </li>
+                <li>
+                  <div className="flex flex-col space-y-1">
+                    <Link
+                      href="https://www.linkedin.com/in/theodore-m-67508a248/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-white transition-colors font-medium"
+                    >
+                      Theodore Mollano
+                    </Link>
+                    <span className="text-xs text-neutral-500">Co-founder & Communications Lead</span>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
