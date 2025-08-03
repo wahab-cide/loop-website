@@ -1,8 +1,7 @@
 "use client";
-import React from "react";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function RideInfo() {
   return (
@@ -36,16 +35,8 @@ export function RideInfo() {
                 description="See all available rides within a 15km radius on your customized home feed"
               />
               <FeatureItem
-                title="Affordable shared rides"
-                description="View and book rides at budget-friendly prices. Split costs with fellow riders heading in the same direction"
-              />
-              <FeatureItem
                 title="Carpool with neighbors"
-                description="Connect with verified community members who live around you. Build a trusted network for regular commutes"
-              />
-              <FeatureItem
-                title="Real-time updates"
-                description="Track your ride in real-time, get instant notifications, and communicate directly with drivers through the app"
+                description="View and book rides at budget-friendly prices. Split costs with fellow riders heading in the same direction"
               />
             </div>
           </motion.div>
@@ -58,35 +49,18 @@ export function RideInfo() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative z-10 lg:pr-20">
-              {/* Main ride card image */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl max-w-sm mx-auto lg:max-w-none">
+            <div className="relative z-10">
+              {/* Main passenger photo */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl max-w-lg mx-auto lg:max-w-none">
                 <Image
-                  src="/RideCard.png"
-                  alt="Loop ride card interface displaying available rides within 15km radius with driver photos, ratings, and trip details"
+                  src="/website photos/happyDriver.jpeg"
+                  alt="Happy Loop Platform driver ready to connect with passengers"
                   width={600}
-                  height={800}
-                  className="w-full h-auto"
+                  height={400}
+                  className="w-full h-auto object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </div>
-
-              {/* Floating ride details card - hidden on mobile */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="hidden lg:block absolute -bottom-10 -right-10 w-72 md:w-80 rounded-xl overflow-hidden shadow-xl"
-              >
-                <Image
-                  src="/RideDetails.png"
-                  alt="Loop ride details screen showing driver profile, trip route, fare breakdown, and safety features for community rideshare"
-                  width={400}
-                  height={600}
-                  className="w-full h-auto"
-                />
-              </motion.div>
             </div>
 
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-gradient-to-r from-blue-600/20 to-green-600/20 rounded-full blur-3xl opacity-50" />

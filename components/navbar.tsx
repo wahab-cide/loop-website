@@ -28,12 +28,12 @@ export const Navbar = () => {
       link: "/#home",
     },
     {
-      name: "Community",
-      link: "/#how-it-works",
+      name: "Driver",
+      link: "/driver",
     },
     {
-      name: "Safety",
-      link: "/#safety",
+      name: "Rider",
+      link: "/rider",
     },
     {
       name: "Download",

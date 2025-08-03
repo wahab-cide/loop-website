@@ -10,9 +10,9 @@ import { StructuredData } from "./structured-data";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Loop - Community Rideshare & Carpool App | Safe, Affordable Transportation",
+  title: "Loop Platform - Community Rideshare & Carpool App | Safe, Affordable Transportation",
   description:
-    "Join the Loop community for safe, affordable rideshare. Connect with verified drivers in your area. Trusted transportation for everyone.",
+    "Join the Loop Platform community for safe, affordable rideshare. Connect with verified drivers in your area. Trusted transportation for everyone.",
   keywords: [
     "community rideshare",
     "verified drivers",
@@ -42,24 +42,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://looprides.dev",
-    title: "Loop - Community Rideshare & Carpool App | Safe, Affordable Transportation",
+    title: "Loop Platform - Community Rideshare & Carpool App | Safe, Affordable Transportation",
     description:
-      "Join the Loop community for safe, affordable rideshare. Connect with verified drivers in your area. Trusted transportation for everyone.",
-    siteName: "Loop",
+      "Join the Loop Platform community for safe, affordable rideshare. Connect with verified drivers in your area. Trusted transportation for everyone.",
+    siteName: "Loop Platform",
     images: [
       {
         url: "https://looprides.dev/dashboard.png",
         width: 1920,
         height: 1080,
-        alt: "Loop Rideshare App Dashboard",
+        alt: "Loop Platform Rideshare App Dashboard",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Loop - Community Rideshare & Carpool App | Safe, Affordable Transportation",
+    title: "Loop Platform - Community Rideshare & Carpool App | Safe, Affordable Transportation",
     description:
-      "Join the Loop community for safe, affordable rideshare. Connect with verified drivers in your area.",
+      "Join the Loop Platform community for safe, affordable rideshare. Connect with verified drivers in your area.",
     images: ["https://looprides.dev/dashboard.png"],
     creator: "@looprides",
   },

@@ -11,8 +11,8 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import Balancer from "react-wrap-balancer";
 import { Button } from "./button";
-import { GlowingEffect } from "./ui/glowing-effect";
 import { useToast } from "./toast";
+import { GlowingEffect } from "./ui/glowing-effect";
 
 export function Hero() {
   const { showToast } = useToast();
@@ -98,8 +98,8 @@ Download App
             blur={10}
           />
           <Image
-            src="/dashboard.png"
-            alt="Loop rideshare app dashboard showing ride booking interface, verified driver profiles, and safety features"
+            src="/website photos/moreRiderPhoto.jpeg"
+            alt="Happy Loop Platform passengers enjoying their rideshare experience"
             width={1920}
             height={1080}
             className="rounded-[20px]  h-auto object-cover  w-full"

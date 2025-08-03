@@ -21,7 +21,7 @@ export const Logo = () => {
     >
       <LogoIcon />
 
-      <span className="font-medium text-white">Loop</span>
+      <span className="font-medium text-white">Loop Platform</span>
     </Link>
   );
 };

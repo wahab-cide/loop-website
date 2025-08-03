@@ -45,7 +45,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 lg:gap-16">
+          <div className="flex justify-end">
             <div className="flex flex-col space-y-4">
               <p className="text-white font-semibold">Legal</p>
               <ul className="space-y-3">
@@ -59,37 +59,6 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
-              </ul>
-            </div>
-            <div className="flex flex-col space-y-4">
-              <p className="text-white font-semibold">Founders</p>
-              <ul className="space-y-3">
-                <li>
-                  <div className="flex flex-col space-y-1">
-                    <Link
-                      href="https://portfolio-bice-nine-41.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-white transition-colors font-medium"
-                    >
-                      Wahab Cide
-                    </Link>
-                    <span className="text-xs text-neutral-500">Co-founder & Tech Lead</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex flex-col space-y-1">
-                    <Link
-                      href="https://www.linkedin.com/in/theodore-m-67508a248/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-white transition-colors font-medium"
-                    >
-                      Theodore Mollano
-                    </Link>
-                    <span className="text-xs text-neutral-500">Co-founder & Communications Lead</span>
-                  </div>
-                </li>
               </ul>
             </div>
           </div>
