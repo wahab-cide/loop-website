@@ -1,6 +1,8 @@
 "use client";
 import { Button } from "@/components/button";
 import { useToast } from "@/components/toast";
+import { TestimonialCarousel } from "@/components/testimonial-carousel";
+import { SavingsCarousel } from "@/components/savings-carousel";
 import { IconCalendarEvent, IconPigMoney, IconShieldCheck, IconUsers } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import Image from "next/image";
@@ -32,29 +34,6 @@ export default function RiderPage() {
     }
   ];
 
-  const tripScenarios = [
-    {
-      title: "Weekend Grocery Run",
-      image: "/website photos/happy_passenger2.jpg",
-      cost: "$8-12",
-      traditional: "$25-35",
-      description: "Split a ride to Target with 3 other students"
-    },
-    {
-      title: "Trip Home for Break",
-      image: "/website photos/happyPassengerMain1.jpeg",
-      cost: "$30-40",
-      traditional: "$120-150",
-      description: "Share a comfortable ride home with fellow students"
-    },
-    {
-      title: "Airport Transfer",
-      image: "/website photos/happyPassengerMain2.jpeg",
-      cost: "$15-20",
-      traditional: "$60-80",
-      description: "Coordinate with others on the same flight"
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -112,24 +91,8 @@ export default function RiderPage() {
         </div>
       </section>
 
-      {/* Quote Section */}
-      <section className="py-20 px-6 bg-black">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <blockquote className="text-2xl md:text-3xl font-light italic mb-6 text-white">
-              "I would pay $40 to get home for Christmas while making new friends 
-              and having a great ride instead of taking a boring Peter Pan"
-            </blockquote>
-            <p className="text-gray-400">— Angie, College Sophomore</p>
-          </motion.div>
-        </div>
-      </section>
+      {/* Testimonial Carousel Section */}
+      <TestimonialCarousel type="rider" />
 
       {/* Benefits Grid */}
       <section className="py-20 px-6">
@@ -258,70 +221,9 @@ export default function RiderPage() {
       </section>
 
       {/* Savings Calculator */}
-      <section id="savings" className="py-20 px-6 bg-green-950/20">
-        <div className="max-w-6xl mx-auto">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
-          >
-            Real Savings, Real Rides
-          </motion.h2>
-          
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {tripScenarios.map((scenario, index) => (
-              <motion.div
-                key={scenario.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-black rounded-xl overflow-hidden border border-green-900/30"
-              >
-                <div className="h-48 relative">
-                  <Image
-                    src={scenario.image}
-                    alt={scenario.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{scenario.title}</h3>
-                  <p className="text-gray-400 text-sm mb-4">{scenario.description}</p>
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <div className="text-sm text-gray-500">Loop Platform Price</div>
-                      <div className="text-2xl font-bold text-green-500">{scenario.cost}</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-sm text-gray-500">Others</div>
-                      <div className="text-lg text-gray-400 line-through">{scenario.traditional}</div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h3 className="text-2xl font-semibold mb-4">
-              Average Monthly Savings: <span className="text-green-500">$200-$400</span>
-            </h3>
-            <p className="text-gray-400">
-              Based on 3-5 rides per month compared to traditional rideshare services
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <div id="savings">
+        <SavingsCarousel />
+      </div>
 
       {/* How It Works */}
       <section className="py-20 px-6 bg-black">

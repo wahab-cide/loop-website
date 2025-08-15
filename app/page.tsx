@@ -1,4 +1,5 @@
 import CTA from "@/components/cta";
+import { AppShowcase } from "@/components/app-showcase";
 import { DriverEarnings } from "@/components/driver-earnings";
 import { EnhancedSafety } from "@/components/enhanced-safety";
 import { FrequentlyAskedQuestions } from "@/components/faq";
@@ -13,6 +14,7 @@ export default function Home() {
     <div>
       <Hero />
       <RideInfo />
+      <AppShowcase />
       <SmartPricing />
       <div id="how-it-works">
         <HowItWorks />

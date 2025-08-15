@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/button";
 import { useToast } from "@/components/toast";
+import { TestimonialCarousel } from "@/components/testimonial-carousel";
 import { IconCalendar, IconCash, IconShield, IconUsers } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import Image from "next/image";
@@ -69,7 +70,8 @@ export default function DriverPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
           >
-            Turn your empty seats into meaningful connections and extra income. 
+            You are going there anyway. Why not turn your empty seats into extra cash and meaningful connections along the way?
+
           </motion.p>
           
           <motion.div 
@@ -94,23 +96,8 @@ export default function DriverPage() {
         </div>
       </section>
 
-      {/* Quote Section */}
-      <section className="py-20 px-6 bg-black">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <blockquote className="text-2xl md:text-3xl font-light italic mb-6 text-white">
-              "If 3 riders chip in $25 each, my trip home is free—and we blast music."
-            </blockquote>
-            <p className="text-gray-400">— Chris, College Senior</p>
-          </motion.div>
-        </div>
-      </section>
+      {/* Testimonial Carousel Section */}
+      <TestimonialCarousel />
 
       {/* Benefits Grid */}
       <section className="py-20 px-6">

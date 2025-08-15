@@ -57,10 +57,17 @@ export const Navbar = () => {
   });
 
   return (
-    <motion.div ref={ref} className="w-full fixed top-2 inset-x-0 z-50">
-      <DesktopNav visible={visible} navItems={navItems} />
-      <MobileNav visible={visible} navItems={navItems} />
-    </motion.div>
+    <>
+      {/* Desktop - Fixed */}
+      <motion.div ref={ref} className="w-full fixed top-2 inset-x-0 z-50 hidden lg:block">
+        <DesktopNav visible={visible} navItems={navItems} />
+      </motion.div>
+      
+      {/* Mobile - Not fixed, floating */}
+      <div className="lg:hidden">
+        <MobileNav navItems={navItems} />
+      </div>
+    </>
   );
 };
 
@@ -178,86 +185,60 @@ Download App
   );
 };
 
-const MobileNav = ({ navItems, visible }: NavbarProps) => {
+const MobileNav = ({ navItems }: { navItems: NavbarProps['navItems'] }) => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <motion.div
-        animate={{
-          backdropFilter: "blur(16px)",
-          background: visible ? "rgba(0, 0, 0, 0.7)" : "rgba(0, 0, 0, 0.4)",
-          width: visible ? "80%" : "90%",
-          y: visible ? 0 : 8,
-          borderRadius: open ? "24px" : "full",
-          padding: "8px 16px",
-        }}
-        initial={{
-          width: "80%",
-          background: "rgba(0, 0, 0, 0.4)",
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 400,
-          damping: 30,
-        }}
-        className={cn(
-          "flex relative flex-col lg:hidden w-full justify-between items-center max-w-[calc(100vw-3rem)] mx-auto z-50 backdrop-saturate-[1.8] border border-solid border-white/40 rounded-full",
-          open ? "overflow-visible" : "overflow-hidden"
-        )}
-      >
-        <div className="flex flex-row justify-between items-center w-full relative z-10">
+      {/* Floating minimal mobile nav - not sticky */}
+      <div className="lg:hidden absolute top-4 left-4 right-4 z-50">
+        <div className="flex justify-between items-center">
+          {/* Logo - floating, no extra container */}
           <Logo />
+          
+          {/* Menu button - floating circle */}
           <button
             onClick={() => setOpen(!open)}
-            className="p-2 -m-2 touch-manipulation"
+            className="bg-black/70 backdrop-blur-md rounded-full p-3 border border-white/20 text-white/90 hover:text-white transition-colors touch-manipulation"
             aria-label={open ? "Close menu" : "Open menu"}
           >
             {open ? (
-              <IconX className="text-white/90 w-6 h-6 hover:text-white transition-colors" />
+              <IconX className="w-5 h-5" />
             ) : (
-              <IconMenu2 className="text-white/90 w-6 h-6 hover:text-white transition-colors" />
+              <IconMenu2 className="w-5 h-5" />
             )}
           </button>
         </div>
 
+      
+        {/* Menu dropdown */}
         <AnimatePresence>
           {open && (
             <motion.div
-              initial={{
-                opacity: 0,
-                y: -20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              exit={{
-                opacity: 0,
-                y: -20,
-              }}
+              initial={{ opacity: 0, scale: 0.95, y: -10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -10 }}
               transition={{
                 type: "spring",
                 stiffness: 400,
                 damping: 30,
+                duration: 0.2
               }}
-              className="flex rounded-3xl absolute top-16 bg-black/80 backdrop-blur-xl backdrop-saturate-[1.8] inset-x-0 z-[60] flex-col items-start justify-start gap-4 w-full px-6 py-8"
+              className="absolute top-16 left-0 right-0 bg-black/80 backdrop-blur-xl rounded-2xl border border-white/20 px-6 py-6 flex flex-col gap-4"
             >
-              {navItems.map(
-                (navItem: { link: string; name: string }, idx: number) => (
-                  <Link
-                    key={`link=${idx}`}
-                    href={navItem.link}
-                    onClick={() => setOpen(false)}
-                    className="relative text-white/90 hover:text-white transition-colors"
-                  >
-                    <motion.span className="block">{navItem.name}</motion.span>
-                  </Link>
-                )
-              )}
+              {navItems.map((navItem, idx) => (
+                <Link
+                  key={`mobile-link-${idx}`}
+                  href={navItem.link}
+                  onClick={() => setOpen(false)}
+                  className="text-white/90 hover:text-white text-lg font-medium transition-colors py-2 px-2 hover:bg-white/10 rounded-lg"
+                >
+                  {navItem.name}
+                </Link>
+              ))}
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.div>
+      </div>
     </>
   );
 };
