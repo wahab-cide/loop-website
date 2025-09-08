@@ -82,10 +82,10 @@ export default function CTA() {
               "px-4 md:px-8"
             )}
           >
-            Ready to Join the Loop?
+            Ready to Join poolUp?
           </h2>
           <p className="max-w-lg text-xs sm:text-sm md:text-base text-neutral-400 text-center mx-auto my-4 md:my-6 lg:my-8 px-4">
-Download Loop today and start experiencing safe, affordable, community-driven transportation that&apos;s built for everyone.
+Download poolUp today and start experiencing safe, affordable, community-driven transportation that&apos;s built for everyone.
           </p>
         </div>
         <BackgroundGrid className="mt-8 md:mt-16 lg:mt-36 z-0" />

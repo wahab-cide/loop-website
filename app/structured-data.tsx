@@ -5,7 +5,7 @@ export function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Loop Platform, Inc.",
-    "alternateName": "Loop",
+    "alternateName": "poolUp",
     "url": "https://looprides.dev",
     "logo": "https://looprides.dev/logo.png",
     "description": "Community rideshare platform connecting verified drivers and riders for safe, affordable transportation.",
@@ -25,7 +25,7 @@ export function StructuredData() {
   const webApplicationSchema = {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
-    "name": "Loop - Community Rideshare",
+    "name": "poolUp - Community Rideshare",
     "applicationCategory": "Transportation",
     "operatingSystem": ["iOS", "Android"],
     "description": "Safe, affordable rideshare app connecting verified drivers and riders in local communities.",
@@ -47,7 +47,7 @@ export function StructuredData() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How does Loop ensure rider and driver safety?",
+        "name": "How does poolUp ensure rider and driver safety?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "All drivers must complete Stripe ID verification and identity authentication. We conduct thorough background checks, provide in-app emergency features, and have 24/7 support monitoring all rides."
@@ -55,10 +55,10 @@ export function StructuredData() {
       },
       {
         "@type": "Question",
-        "name": "How much does Loop cost compared to other rideshare apps?",
+        "name": "How much does poolUp cost compared to other rideshare apps?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Loop is designed to be more affordable than traditional rideshare services. We don't use surge pricing and focus on connecting community members for cost-effective transportation with intelligent fare splitting."
+          "text": "poolUp is designed to be more affordable than traditional rideshare services. We don't use surge pricing and focus on connecting community members for cost-effective transportation with intelligent fare splitting."
         }
       },
       {
@@ -66,12 +66,12 @@ export function StructuredData() {
         "name": "Can I split the cost of a ride with friends?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! Loop has built-in fare splitting features that make it easy to share ride costs. When multiple passengers book the same ride, costs are automatically divided and everyone saves money."
+          "text": "Yes! poolUp has built-in fare splitting features that make it easy to share ride costs. When multiple passengers book the same ride, costs are automatically divided and everyone saves money."
         }
       },
       {
         "@type": "Question",
-        "name": "How do I become a Loop driver?",
+        "name": "How do I become a poolUp driver?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Download the app, complete Stripe ID verification, submit your driver's license and insurance, pass our comprehensive background check, and you're ready to start earning money helping your community get around safely."

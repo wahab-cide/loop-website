@@ -1,35 +1,51 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { useRef } from "react";
 
 export function RideInfo() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start 0.8", "end 0.2"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 0.5, 1], [60, 0, -20]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1, 1.02]);
+
   return (
-    <section className="w-full bg-black py-16 md:py-24 lg:py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
-          {/* Left content */}
+    <section 
+      ref={sectionRef}
+      className="w-full bg-primary py-16 md:py-24 lg:py-32 overflow-hidden"
+    >
+      <motion.div 
+        className="max-w-full mx-auto px-6 md:px-12 lg:px-16"
+        style={{ y, opacity, scale }}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 xl:gap-32 items-center">
+          
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.25, 0.25, 0.75] }}
+            viewport={{ once: true, margin: "-100px" }}
             className="space-y-8"
           >
             <div className="space-y-4">
               <h2 className={cn(
                 "text-4xl md:text-5xl lg:text-6xl font-bold",
-                "bg-gradient-to-r from-white to-neutral-400",
-                "bg-clip-text text-transparent"
+                "text-white"
               )}>
                 Discover rides near you
               </h2>
-              <p className="text-lg md:text-xl text-neutral-400 leading-relaxed">
+              <p className="text-lg md:text-xl text-white/80 leading-relaxed">
                 Connect with your community and share rides to common destinations
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
               <FeatureItem
                 title="Personalized ride feed"
                 description="See all available rides within a 15km radius on your customized home feed"
@@ -41,16 +57,16 @@ export function RideInfo() {
             </div>
           </motion.div>
 
-          {/* Right images */}
+          
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             viewport={{ once: true }}
             className="relative"
           >
             <div className="relative z-10">
-              {/* Main passenger photo */}
+              
               <div className="relative rounded-2xl overflow-hidden shadow-2xl max-w-lg mx-auto lg:max-w-none">
                 <Image
                   src="/website photos/happyDriver.jpeg"
@@ -63,10 +79,10 @@ export function RideInfo() {
               </div>
             </div>
 
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-gradient-to-r from-blue-600/20 to-green-600/20 rounded-full blur-3xl opacity-50" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-3xl opacity-50" />
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
@@ -79,22 +95,22 @@ interface FeatureItemProps {
 function FeatureItem({ title, description }: FeatureItemProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-      viewport={{ once: true }}
-      className="group"
+      transition={{ 
+        duration: 0.7,
+        ease: [0.25, 0.25, 0.25, 0.75],
+        delay: Math.random() * 0.2
+      }}
+      viewport={{ once: true, margin: "-50px" }}
     >
-      <div className="flex items-start space-x-4">
-        <div className="flex-shrink-0 w-2 h-2 mt-2 bg-blue-500 rounded-full group-hover:bg-green-500 transition-colors duration-300" />
-        <div className="space-y-2">
-          <h3 className="text-lg font-semibold text-white group-hover:text-blue-400 transition-colors duration-300">
-            {title}
-          </h3>
-          <p className="text-neutral-400 leading-relaxed">
-            {description}
-          </p>
-        </div>
+      <div className="space-y-3">
+        <h3 className="text-xl md:text-2xl font-bold text-white">
+          {title}
+        </h3>
+        <p className="text-white/70 text-base md:text-lg leading-relaxed">
+          {description}
+        </p>
       </div>
     </motion.div>
   );

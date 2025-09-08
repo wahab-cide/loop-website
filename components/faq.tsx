@@ -6,22 +6,22 @@ import React from "react";
 
 const FAQs = [
   {
-    question: "How does Loop ensure rider and driver safety?",
+    question: "How does poolUp ensure rider and driver safety?",
     answer:
       "All drivers must complete Stripe ID verification and identity authentication. We conduct thorough background checks, provide in-app emergency features, and have 24/7 support monitoring all rides.",
   },
   {
-    question: "How much does Loop cost compared to other rideshare apps?",
+    question: "How much does poolUp cost compared to other rideshare apps?",
     answer:
-      "Loop is designed to be more affordable than traditional rideshare services. We don't use surge pricing and focus on connecting community members for cost-effective transportation with intelligent fare splitting.",
+      "poolUp is designed to be more affordable than traditional rideshare services. We don't use surge pricing and focus on connecting community members for cost-effective transportation with intelligent fare splitting.",
   },
   {
     question: "Can I split the cost of a ride with friends?",
     answer:
-      "Yes! Loop has built-in fare splitting features that make it easy to share ride costs. When multiple passengers book the same ride, costs are automatically divided and everyone saves money.",
+      "Yes! poolUp has built-in fare splitting features that make it easy to share ride costs. When multiple passengers book the same ride, costs are automatically divided and everyone saves money.",
   },
   {
-    question: "How do I become a Loop driver?",
+    question: "How do I become a poolUp driver?",
     answer:
       "Download the app, complete Stripe ID verification, submit your driver's license and insurance, pass our comprehensive background check, and you're ready to start earning money helping your community get around safely.",
   },

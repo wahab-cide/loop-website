@@ -10,7 +10,7 @@ import {
 } from "@/components/legal-layout";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Loop - Student Rideshare App",
+  title: "Terms of Service | poolUp - Student Rideshare App",
   description: "Read Loop Platform, Inc.'s Terms of Service to understand your rights and obligations when using our rideshare platform.",
 };
 
@@ -20,7 +20,7 @@ export default function TermsOfService() {
       <Section title="1. OVERVIEW" id="overview">
         <Subsection title="About the Company">
           <Paragraph>
-            Loop Platform, Inc., a Delaware corporation, and its affiliates ("Loop," or the "Company") operate the website located at looprides.dev, the "Loop" mobile application available from the Apple App Store, Android Play Store, and other related websites, mobile applications, products and services including the Loop Services (as defined below) (collectively, the "Platform").
+            Loop Platform, Inc., a Delaware corporation, and its affiliates ("poolUp," or the "Company") operate the website located at looprides.dev, the "poolUp" mobile application available from the Apple App Store, Android Play Store, and other related websites, mobile applications, products and services including the poolUp Services (as defined below) (collectively, the "Platform").
           </Paragraph>
           <Paragraph>
             Please read this Agreement carefully before using our Platform. By accessing, viewing or using the Platform, including by registering for an account or by using the Driver Services (as defined below), you agree to be bound by this Agreement, our Privacy Policy (as defined below), and to all other terms, conditions, policies and notices that appear on the Platform, including the additional Driver terms and conditions (applicable to Drivers) contained below (collectively, this "Agreement").
@@ -38,7 +38,7 @@ export default function TermsOfService() {
         
         <div className="space-y-4 mt-6">
           <div>
-            <Strong>"Content"</Strong> means all information, text, graphics, functionality, works of authorship, logos, trademarks and other content available on or through the Platform and the Loop Services, excluding Submitted Content.
+            <Strong>"Content"</Strong> means all information, text, graphics, functionality, works of authorship, logos, trademarks and other content available on or through the Platform and the poolUp Services, excluding Submitted Content.
           </div>
           
           <div>
@@ -54,7 +54,7 @@ export default function TermsOfService() {
           </div>
           
           <div>
-            <Strong>"Loop Services"</Strong> means the Platform and the related proprietary system, mobile applications, websites, products, information, tools, software, interfaces, functionality, and services owned, operated or provided by the Company through the Platform.
+            <Strong>"poolUp Services"</Strong> means the Platform and the related proprietary system, mobile applications, websites, products, information, tools, software, interfaces, functionality, and services owned, operated or provided by the Company through the Platform.
           </div>
           
           <div>
@@ -78,7 +78,7 @@ export default function TermsOfService() {
       <Section title="3. THE SERVICES" id="services">
         <Subsection title="About the Services">
           <Paragraph>
-            Loop provides, by way of the Platform, a marketplace for offering, posting, listing, requesting, searching for, discovering, inquiring about, marketing, scheduling, and arranging for Rides by and among Drivers and Riders.
+            poolUp provides, by way of the Platform, a marketplace for offering, posting, listing, requesting, searching for, discovering, inquiring about, marketing, scheduling, and arranging for Rides by and among Drivers and Riders.
           </Paragraph>
           <Paragraph>
             The Platform is a set of online and mobile tools that match Riders with Drivers to facilitate the delivery and servicing of Rides by Drivers.

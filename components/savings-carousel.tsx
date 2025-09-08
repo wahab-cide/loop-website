@@ -40,7 +40,7 @@ export function SavingsCarousel() {
   return (
     <section className="py-20 px-6 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -52,11 +52,11 @@ export function SavingsCarousel() {
             Real Savings, Real Rides
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
-            Loop makes everyday rides affordable. Here's what students like you are saving.
+            poolUp makes everyday rides affordable. Here's what students like you are saving.
           </p>
         </motion.div>
 
-        {/* Mobile Layout - Single large card */}
+        
         <div className="block lg:hidden mb-12">
           <div className="relative h-[500px] rounded-3xl overflow-hidden mx-4">
             <motion.div
@@ -66,7 +66,7 @@ export function SavingsCarousel() {
               transition={{ duration: 0.5 }}
               className="relative w-full h-full"
             >
-              {/* Background Image */}
+              
               <Image
                 src={tripScenarios[activeIndex].image}
                 alt={tripScenarios[activeIndex].title}
@@ -76,10 +76,10 @@ export function SavingsCarousel() {
                 priority
               />
               
-              {/* Dark overlay */}
+              
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               
-              {/* Content overlay - just title and subtitle */}
+              
               <div className="absolute inset-0 flex flex-col justify-end p-8">
                 <div className="text-white">
                   <h3 className="text-4xl md:text-5xl font-bold mb-3">
@@ -92,7 +92,7 @@ export function SavingsCarousel() {
               </div>
             </motion.div>
 
-            {/* Navigation arrows */}
+            
             <button
               onClick={() => setActiveIndex((prev) => prev === 0 ? tripScenarios.length - 1 : prev - 1)}
               className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-white/90 flex items-center justify-center hover:bg-black/70 transition-colors"
@@ -109,13 +109,13 @@ export function SavingsCarousel() {
             </button>
           </div>
 
-          {/* Content below card */}
+          
           <div className="px-4 mt-6 text-center">
-            {/* Pricing info */}
+            
             <div className="flex justify-center items-center gap-4 text-sm mb-6">
               <div>
                 <span className="text-gray-300">From </span>
-                <span className="text-2xl font-bold text-green-400">{tripScenarios[activeIndex].cost}</span>
+                <span className="text-2xl font-bold text-purple-400">{tripScenarios[activeIndex].cost}</span>
               </div>
               <div>
                 <span className="text-gray-400 line-through">{tripScenarios[activeIndex].traditional}</span>
@@ -124,7 +124,7 @@ export function SavingsCarousel() {
             </div>
           </div>
 
-          {/* Navigation dots */}
+          
           <div className="flex justify-center space-x-3">
             {tripScenarios.map((_, index) => (
               <button
@@ -133,7 +133,7 @@ export function SavingsCarousel() {
                 className={cn(
                   "h-2 rounded-full transition-all duration-300",
                   activeIndex === index 
-                    ? "bg-green-500 w-8" 
+                    ? "bg-purple-500 w-8" 
                     : "bg-gray-600 w-2 hover:bg-gray-500"
                 )}
               />
@@ -141,7 +141,7 @@ export function SavingsCarousel() {
           </div>
         </div>
 
-        {/* Desktop Layout - Three large cards side by side */}
+        
         <div className="hidden lg:block">
           <div className="grid grid-cols-3 gap-6">
             {tripScenarios.map((scenario, index) => (
@@ -155,11 +155,11 @@ export function SavingsCarousel() {
                 className={cn(
                   "relative h-[600px] rounded-3xl overflow-hidden cursor-pointer transition-all duration-300 group",
                   activeIndex === index 
-                    ? "ring-2 ring-green-500 scale-105 shadow-2xl shadow-green-500/20" 
+                    ? "ring-2 ring-purple-500 scale-105 shadow-2xl shadow-purple-500/20" 
                     : "hover:scale-102 hover:shadow-xl"
                 )}
               >
-                {/* Background Image */}
+                
                 <Image
                   src={scenario.image}
                   alt={scenario.title}
@@ -168,14 +168,14 @@ export function SavingsCarousel() {
                   quality={95}
                 />
                 
-                {/* Dark overlay */}
+                
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 
-                {/* Content overlay */}
+                
                 <div className="absolute inset-0 flex flex-col justify-between p-8">
                   <div></div>
                   
-                  {/* Bottom content */}
+                  
                   <div className="text-white">
                     <h3 className="text-3xl font-bold mb-3">
                       {scenario.title}
@@ -184,11 +184,11 @@ export function SavingsCarousel() {
                       {scenario.subtitle}
                     </p>
 
-                    {/* Pricing info */}
+                    
                     <div className="flex items-center gap-3 text-sm">
                       <div>
                         <span className="text-gray-300">From </span>
-                        <span className="text-xl font-bold text-green-400">{scenario.cost}</span>
+                        <span className="text-xl font-bold text-purple-400">{scenario.cost}</span>
                       </div>
                       <div>
                         <span className="text-gray-400 line-through">{scenario.traditional}</span>
@@ -201,7 +201,7 @@ export function SavingsCarousel() {
           </div>
         </div>
 
-        {/* Summary Statistics */}
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -210,7 +210,7 @@ export function SavingsCarousel() {
           className="text-center mt-16"
         >
           <h3 className="text-2xl font-semibold mb-4">
-            Average Monthly Savings: <span className="text-green-500">$200-$400</span>
+            Average Monthly Savings: <span className="text-purple-500">$200-$400</span>
           </h3>
           <p className="text-gray-400">
             Based on 3-5 rides per month compared to traditional rideshare services

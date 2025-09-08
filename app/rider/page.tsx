@@ -36,75 +36,80 @@ export default function RiderPage() {
 
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/website photos/students.jpeg"
-            alt="Happy Loop Platform Riders"
-            fill
-            className="object-cover opacity-40"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black" />
-        </div>
-        
-        <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-          <motion.h1 
+    <div className="min-h-screen bg-white">
+      
+      <section className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden px-4 pt-20 pb-12 md:px-8 md:pt-24 md:pb-16 bg-white">
+        <div className="text-balance relative z-20 mx-auto mb-4 mt-4 max-w-4xl text-center text-4xl font-semibold tracking-tight text-gray-900 md:text-7xl">
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-bold mb-6 text-white"
+            className="inline-block text-gray-900 drop-shadow-lg"
           >
             Ride. Save. Connect.
           </motion.h1>
-          
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
-          >
-            Join felllow students saving money and making friends on every ride. 
-          </motion.p>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Button
-              onClick={() => showToast("Coming Soon")}
-              variant="primary"
-              className="bg-green-600 hover:bg-green-700"
-            >
-              Start Riding Today
-            </Button>
-            <Link href="#savings">
-              <Button variant="secondary">
-                See How Much You'll Save
-              </Button>
-            </Link>
-          </motion.div>
         </div>
+        
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative z-20 mx-auto mt-4 max-w-xl px-4 text-center text-base/6 text-gray-600 sm:text-base"
+        >
+          Join fellow students saving money and making friends on every campus ride.
+        </motion.p>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="flex flex-col sm:flex-row gap-4 mt-8 justify-center items-center"
+        >
+          <Button
+            as="button"
+            onClick={() => showToast("Coming Soon")}
+            variant="gradient"
+            className="w-full sm:w-auto px-8 py-3 rounded-xl"
+          >
+            Start Riding Today
+          </Button>
+          <Link href="#savings">
+            <Button
+              as="button"
+              variant="secondary"
+              className="w-full sm:w-auto px-8 py-3 rounded-xl border-2 border-gray-300 bg-transparent hover:bg-gray-50"
+            >
+              See How Much You'll Save
+            </Button>
+          </Link>
+        </motion.div>
       </section>
 
-      {/* Testimonial Carousel Section */}
+      
+      <section className="w-full relative h-[600px] md:h-[700px] lg:h-[800px]">
+        <Image
+          src="/website photos/students.jpeg"
+          alt="Happy poolUp Riders"
+          fill
+          className="object-cover"
+          priority
+        />
+      </section>
+
+      
       <TestimonialCarousel type="rider" />
 
-      {/* Benefits Grid */}
-      <section className="py-20 px-6">
+      
+      <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
+            className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900"
           >
-            Why Ride with Loop Platform?
+            Why Ride with poolUp?
           </motion.h2>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -115,25 +120,25 @@ export default function RiderPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-black/50 rounded-2xl p-8 border border-gray-800 hover:border-gray-700 transition-all"
+                className="bg-white rounded-2xl p-8 border border-gray-200 shadow-md"
               >
-                <h3 className="text-2xl font-semibold mb-3 text-white">{benefit.title}</h3>
-                <p className="text-gray-300">{benefit.description}</p>
+                <h3 className="text-2xl font-semibold mb-3 text-gray-900">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Visual Story Section */}
-      <section className="py-20 px-6 bg-black">
+      
+      <section className="py-20 px-6 bg-primary">
         <div className="max-w-6xl mx-auto">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
+            className="text-4xl md:text-5xl font-bold text-center mb-16 text-white"
           >
             Your Campus Life, Connected
           </motion.h2>
@@ -146,25 +151,25 @@ export default function RiderPage() {
               viewport={{ once: true }}
               className="order-2 md:order-1"
             >
-              <h3 className="text-3xl md:text-4xl font-bold mb-6">
+              <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white">
                 Never Miss Out Again
               </h3>
-              <p className="text-gray-300 mb-6 text-lg">
+              <p className="text-white/80 mb-6 text-lg">
                 Whether it's a late-night pharmacy run, weekend adventures, or getting 
-                home for the holidays, Loop Platform connects you with drivers heading your way.
+                home for the holidays, poolUp connects you with drivers heading your way.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <span className="text-green-500 text-xl font-bold">•</span>
-                  <span>Find rides 24/7, even when campus shuttles stop</span>
+                  <span className="text-white text-xl font-bold">•</span>
+                  <span className="text-white/90">Find rides 24/7, even when campus shuttles stop</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-green-500 text-xl font-bold">•</span>
-                  <span>See mutual friends and shared interests with drivers</span>
+                  <span className="text-white text-xl font-bold">•</span>
+                  <span className="text-white/90">See mutual friends and shared interests with drivers</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-green-500 text-xl font-bold">•</span>
-                  <span>Track your ride and share trip details with friends</span>
+                  <span className="text-white text-xl font-bold">•</span>
+                  <span className="text-white/90">Track your ride and share trip details with friends</span>
                 </li>
               </ul>
             </motion.div>
@@ -178,7 +183,7 @@ export default function RiderPage() {
             >
               <Image
                 src="/website photos/happy_passenger3.jpeg"
-                alt="Students enjoying a Loop Platform ride"
+                alt="Students enjoying a poolUp ride"
                 fill
                 className="object-cover"
               />
@@ -207,12 +212,12 @@ export default function RiderPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl md:text-4xl font-bold mb-6">
+              <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white">
                 Built for Students, By Students
               </h3>
-              <p className="text-gray-300 mb-6 text-lg">
+              <p className="text-white/80 mb-6 text-lg">
                 We understand the unique challenges of campus life. Limited budgets, 
-                odd hours, and the need for reliable transportation. Loop Platform is designed 
+                odd hours, and the need for reliable transportation. poolUp is designed 
                 specifically for your college experience.
               </p>
             </motion.div>
@@ -220,20 +225,20 @@ export default function RiderPage() {
         </div>
       </section>
 
-      {/* Savings Calculator */}
+      
       <div id="savings">
         <SavingsCarousel />
       </div>
 
-      {/* How It Works */}
-      <section className="py-20 px-6 bg-black">
+      
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
+            className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900"
           >
             Getting Started is Easy
           </motion.h2>
@@ -264,19 +269,19 @@ export default function RiderPage() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-16 h-16 rounded-full bg-green-600 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-white">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-gray-400">{item.description}</p>
+                <h3 className="text-xl font-semibold mb-2 text-gray-900">{item.title}</h3>
+                <p className="text-gray-600">{item.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-black">
+      
+      <section className="py-20 px-6 bg-gray-50">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -284,18 +289,18 @@ export default function RiderPage() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Join the Loop Platform?
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+            Ready to Join poolUp?
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-gray-600 mb-8">
             Start saving money and making connections on every ride.
           </p>
           <Button
             onClick={() => showToast("Coming Soon")}
-            variant="primary"
-            className="bg-green-600 hover:bg-green-700"
+            variant="gradient"
+            className="px-8 py-3 rounded-xl"
           >
-            Download Loop Platform & Start Riding
+            Download poolUp & Start Riding
           </Button>
         </motion.div>
       </section>

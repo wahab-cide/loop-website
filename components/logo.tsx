@@ -5,7 +5,7 @@ import Link from "next/link";
 const LogoIcon = () => (
   <div
     className={cn(
-      "w-8 h-8 bg-blue-600 rounded-full",
+      "w-8 h-8 bg-primary rounded-full",
       "inline-flex items-center justify-center"
     )}
   >
@@ -13,7 +13,7 @@ const LogoIcon = () => (
   </div>
 );
 
-export const Logo = () => {
+export const Logo = ({ visible = false }: { visible?: boolean }) => {
   return (
     <Link
       href="/"
@@ -21,7 +21,10 @@ export const Logo = () => {
     >
       <LogoIcon />
 
-      <span className="font-medium text-white">Loop Platform</span>
+      <span className={cn(
+        "font-bold font-jua text-lg transition-colors",
+        visible ? "text-white" : "text-primary"
+      )}>poolUp</span>
     </Link>
   );
 };

@@ -10,20 +10,20 @@ import {
 } from "@/components/legal-layout";
 
 export const metadata: Metadata = {
-  title: "Community Guidelines | Loop - Student Rideshare App",
-  description: "Learn about Loop's community standards and guidelines for creating a safe, respectful rideshare environment for all users.",
+  title: "Community Guidelines | poolUp - Student Rideshare App",
+  description: "Learn about poolUp's community standards and guidelines for creating a safe, respectful rideshare environment for all users.",
 };
 
 export default function CommunityGuidelines() {
   return (
     <LegalLayout title="Community Guidelines" lastUpdated="July 2025">
       <Section title="1. OVERVIEW" id="overview">
-        <Subsection title="About Loop Community">
+        <Subsection title="About poolUp Community">
           <Paragraph>
             Loop Platform, Inc. ("Loop," "we," "us," or "our") is committed to building a safe, respectful, and vibrant community of Riders, Drivers, and other users who uphold our high standards of professionalism, tolerance, etiquette, diversity, and inclusiveness.
           </Paragraph>
           <Paragraph>
-            These Community Guidelines outline the standards of behavior we expect from all users of our Platform. By using Loop, you agree to follow these guidelines and contribute to creating a positive environment for everyone.
+            These Community Guidelines outline the standards of behavior we expect from all users of our Platform. By using poolUp, you agree to follow these guidelines and contribute to creating a positive environment for everyone.
           </Paragraph>
         </Subsection>
       </Section>
@@ -243,7 +243,7 @@ export default function CommunityGuidelines() {
           <h3 className="text-white font-bold text-lg mb-4">In case of emergency:</h3>
           <BulletList>
             <BulletItem><Strong>Call 911 immediately for life-threatening situations</Strong></BulletItem>
-            <BulletItem>Contact Loop support for platform-related issues</BulletItem>
+            <BulletItem>Contact poolUp support for platform-related issues</BulletItem>
           </BulletList>
         </div>
       </Section>
@@ -269,7 +269,7 @@ export default function CommunityGuidelines() {
             Website: <a href="https://looprides.dev" className="text-blue-400 hover:text-blue-300">looprides.dev</a>
           </p>
           <p className="text-neutral-300">
-            Support: Available through the Loop app
+            Support: Available through the poolUp app
           </p>
         </div>
         <div className="bg-neutral-900 border border-neutral-800 rounded-lg p-4 mt-4">

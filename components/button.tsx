@@ -20,17 +20,17 @@ export const Button = ({
   | React.ComponentPropsWithoutRef<"button">
 )) => {
   const baseStyles = cn(
-    "px-6 py-3 rounded-lg text-sm font-medium relative",
-    "cursor-pointer hover:opacity-90 transition duration-200",
-    "inline-flex items-center justify-center",
+    "px-8 py-4 rounded-xl text-base font-bold relative font-jua tracking-wide",
+    "cursor-pointer transition-all duration-300 transform hover:scale-105",
+    "inline-flex items-center justify-center shadow-lg hover:shadow-xl",
     "text-white"
   );
 
   const variantStyles = {
-    primary: "bg-blue-600 hover:bg-blue-700 text-white",
-    secondary: "bg-transparent border border-white/20 hover:bg-white/10 text-white",
-    dark: "bg-gray-800 hover:bg-gray-900 text-white",
-    gradient: "bg-green-600 hover:bg-green-700 text-white",
+    primary: "bg-primary hover:bg-primary-dark text-white shadow-primary/30",
+    secondary: "bg-transparent border-2 border-primary/30 hover:bg-primary/5 hover:border-primary/50 text-primary backdrop-blur-sm",
+    dark: "bg-gray-900 hover:bg-black text-white",
+    gradient: "bg-gradient-to-r from-primary to-primary-light hover:from-primary-dark hover:to-primary text-white shadow-primary/40",
   };
 
   return (

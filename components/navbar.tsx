@@ -28,16 +28,16 @@ export const Navbar = () => {
       link: "/#home",
     },
     {
+      name: "How it Works",
+      link: "/#how-it-works",
+    },
+    {
       name: "Driver",
       link: "/driver",
     },
     {
       name: "Rider",
       link: "/rider",
-    },
-    {
-      name: "Download",
-      link: "/#download",
     },
   ];
 
@@ -58,12 +58,12 @@ export const Navbar = () => {
 
   return (
     <>
-      {/* Desktop - Fixed */}
+      
       <motion.div ref={ref} className="w-full fixed top-2 inset-x-0 z-50 hidden lg:block">
         <DesktopNav visible={visible} navItems={navItems} />
       </motion.div>
       
-      {/* Mobile - Not fixed, floating */}
+      
       <div className="lg:hidden">
         <MobileNav navItems={navItems} />
       </div>
@@ -80,15 +80,17 @@ const DesktopNav = ({ navItems, visible }: NavbarProps) => {
       onMouseLeave={() => setHoveredIndex(null)}
       animate={{
         backdropFilter: "blur(16px)",
-        background: visible ? "rgba(0, 0, 0, 0.7)" : "rgba(0, 0, 0, 0.4)",
-        width: visible ? "38%" : "80%",
-        height: visible ? "48px" : "64px",
+        background: visible ? "rgba(124, 58, 237, 0.95)" : "rgba(255, 255, 255, 0.9)",
+        width: visible ? "50%" : "90%",
+        height: visible ? "56px" : "72px",
         y: visible ? 8 : 0,
+        borderColor: visible ? "rgba(124, 58, 237, 0.3)" : "rgba(229, 231, 235, 0.5)",
       }}
       initial={{
-        width: "80%",
-        height: "64px",
-        background: "rgba(0, 0, 0, 0.4)",
+        width: "90%",
+        height: "72px",
+        background: "rgba(255, 255, 255, 0.9)",
+        borderColor: "rgba(229, 231, 235, 0.5)",
       }}
       transition={{
         type: "spring",
@@ -96,12 +98,12 @@ const DesktopNav = ({ navItems, visible }: NavbarProps) => {
         damping: 30,
       }}
       className={cn(
-        "hidden lg:flex flex-row self-center items-center justify-between py-2 mx-auto px-6 rounded-full relative z-[60] backdrop-saturate-[1.8]"
+        "hidden lg:flex flex-row self-center items-center justify-between py-3 mx-auto px-8 rounded-2xl relative z-[60] backdrop-saturate-[1.8] border shadow-lg"
       )}
     >
-      <Logo />
+      <Logo visible={visible} />
       <motion.div
-        className="lg:flex flex-row flex-1 items-center justify-center space-x-1 text-sm"
+        className="lg:flex flex-row flex-1 items-center justify-center space-x-2 text-base"
         animate={{
           scale: visible ? 0.9 : 1,
           justifyContent: visible ? "flex-end" : "center",
@@ -114,7 +116,12 @@ const DesktopNav = ({ navItems, visible }: NavbarProps) => {
             className="relative"
           >
             <Link
-              className="text-white/90 relative px-3 py-1.5 transition-colors"
+              className={cn(
+                "relative px-4 py-2 transition-colors font-medium text-base",
+                visible 
+                  ? "text-white hover:text-white/80" 
+                  : "text-gray-700 hover:text-primary"
+              )}
               href={navItem.link}
             >
               <span className="relative z-10">{navItem.name}</span>
@@ -147,6 +154,7 @@ const DesktopNav = ({ navItems, visible }: NavbarProps) => {
           </motion.div>
         ))}
       </motion.div>
+      
       <div className="flex items-center gap-2">
         <AnimatePresence mode="popLayout" initial={false}>
           {!visible && (
@@ -172,10 +180,10 @@ const DesktopNav = ({ navItems, visible }: NavbarProps) => {
               <Button
                 as="button"
                 onClick={() => showToast("Coming Soon")}
-                variant="primary"
-                className="hidden md:block rounded-full bg-white/20 hover:bg-white/30 text-white border-0"
+                variant="gradient"
+                className="hidden md:block rounded-xl"
               >
-Download App
+                Download App
               </Button>
             </motion.div>
           )}
@@ -187,18 +195,24 @@ Download App
 
 const MobileNav = ({ navItems }: { navItems: NavbarProps['navItems'] }) => {
   const [open, setOpen] = useState(false);
+  const { showToast } = useToast();
   return (
     <>
-      {/* Floating minimal mobile nav - not sticky */}
+      
       <div className="lg:hidden absolute top-4 left-4 right-4 z-50">
         <div className="flex justify-between items-center">
-          {/* Logo - floating, no extra container */}
+          
           <Logo />
           
-          {/* Menu button - floating circle */}
+          
           <button
             onClick={() => setOpen(!open)}
-            className="bg-black/70 backdrop-blur-md rounded-full p-3 border border-white/20 text-white/90 hover:text-white transition-colors touch-manipulation"
+            className={cn(
+              "backdrop-blur-md rounded-full p-3 transition-all touch-manipulation shadow-lg",
+              open 
+                ? "bg-primary text-white border border-primary" 
+                : "bg-white/90 border border-gray-200 text-gray-700 hover:text-primary"
+            )}
             aria-label={open ? "Close menu" : "Open menu"}
           >
             {open ? (
@@ -210,7 +224,7 @@ const MobileNav = ({ navItems }: { navItems: NavbarProps['navItems'] }) => {
         </div>
 
       
-        {/* Menu dropdown */}
+        
         <AnimatePresence>
           {open && (
             <motion.div
@@ -223,18 +237,31 @@ const MobileNav = ({ navItems }: { navItems: NavbarProps['navItems'] }) => {
                 damping: 30,
                 duration: 0.2
               }}
-              className="absolute top-16 left-0 right-0 bg-black/80 backdrop-blur-xl rounded-2xl border border-white/20 px-6 py-6 flex flex-col gap-4"
+              className="absolute top-16 left-0 right-0 bg-white backdrop-blur-xl rounded-2xl border border-gray-200 shadow-2xl px-6 py-6 flex flex-col gap-2"
             >
               {navItems.map((navItem, idx) => (
                 <Link
                   key={`mobile-link-${idx}`}
                   href={navItem.link}
                   onClick={() => setOpen(false)}
-                  className="text-white/90 hover:text-white text-lg font-medium transition-colors py-2 px-2 hover:bg-white/10 rounded-lg"
+                  className="text-gray-700 hover:text-primary hover:bg-primary/5 text-lg font-medium transition-all py-3 px-4 rounded-xl"
                 >
                   {navItem.name}
                 </Link>
               ))}
+              <div className="mt-4 pt-4 border-t border-gray-200">
+                <Button
+                  as="button"
+                  onClick={() => {
+                    setOpen(false);
+                    showToast("Coming Soon");
+                  }}
+                  variant="gradient"
+                  className="w-full rounded-xl"
+                >
+                  Download App
+                </Button>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>

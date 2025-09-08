@@ -10,12 +10,12 @@ const driverTestimonials = [
     title: "Dartmouth Engineering Senior",
   },
   {
-    quote: "I'm a senior with off-campus rent, parking fees, and a dog. Loop will cover my gas without adding a single mile I wasn't already driving.",
+    quote: "I'm a senior with off-campus rent, parking fees, and a dog. poolUp will cover my gas without adding a single mile I wasn't already driving.",
     name: "Alex",
     title: "Senior Economics Major",
   },
   {
-    quote: "I've driven the same route to NYC for years. With Loop, it'll turn into a mini social. I'll probably meet other students—and maybe another comic or two.",
+    quote: "I've driven the same route to NYC for years. With poolUp, it'll turn into a mini social. I'll probably meet other students—and maybe another comic or two.",
     name: "Jules",
     title: "Junior",
   },
@@ -68,7 +68,7 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 5000); // Change testimonial every 5 seconds
+    }, 5000); 
 
     return () => clearInterval(interval);
   }, [isAutoPlaying, testimonials.length]);
@@ -76,7 +76,7 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
   const handleDotClick = (index: number) => {
     setCurrentIndex(index);
     setIsAutoPlaying(false);
-    // Resume auto-play after 10 seconds
+    
     setTimeout(() => setIsAutoPlaying(true), 10000);
   };
 
@@ -96,11 +96,11 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
 
   return (
     <section className="py-20 px-6 bg-black relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-b from-green-950/10 via-transparent to-green-950/10" />
+      
+      <div className="absolute inset-0 bg-gradient-to-b from-purple-950/10 via-transparent to-purple-950/10" />
       
       <div className="max-w-5xl mx-auto relative">
-        {/* Header */}
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -116,7 +116,7 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
           </p>
         </motion.div>
 
-        {/* Testimonial Container */}
+        
         <div className="relative min-h-[320px] md:min-h-[280px]">
           <AnimatePresence mode="wait">
             <motion.div
@@ -127,21 +127,21 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
               transition={{ duration: 0.5 }}
               className="text-center px-4 md:px-12"
             >
-              {/* Quote Icon */}
+              
               <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 rounded-full bg-green-950/30 flex items-center justify-center">
-                  <IconQuote className="w-8 h-8 text-green-500" />
+                <div className="w-16 h-16 rounded-full bg-purple-950/30 flex items-center justify-center">
+                  <IconQuote className="w-8 h-8 text-purple-500" />
                 </div>
               </div>
 
-              {/* Quote */}
+              
               <blockquote className="text-xl md:text-2xl lg:text-3xl font-light italic mb-8 text-white leading-relaxed">
                 "{testimonials[currentIndex].quote}"
               </blockquote>
 
-              {/* Author */}
+              
               <div className="space-y-1">
-                <p className="text-green-400 font-semibold text-lg">
+                <p className="text-purple-400 font-semibold text-lg">
                   — {testimonials[currentIndex].name}
                 </p>
                 <p className="text-gray-500 text-sm">
@@ -152,11 +152,11 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
           </AnimatePresence>
         </div>
 
-        {/* Navigation and Progress Container */}
+        
         <div className="mt-12">
-          {/* Navigation */}
+          
           <div className="flex items-center justify-center gap-8 mb-3">
-            {/* Previous Button */}
+            
             <button
               onClick={handlePrev}
               className="p-2 rounded-full bg-gray-900 hover:bg-gray-800 transition-colors group"
@@ -177,7 +177,7 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
               </svg>
             </button>
 
-            {/* Dots */}
+            
             <div className="flex gap-2">
               {testimonials.map((_, index) => (
                 <button
@@ -185,7 +185,7 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
                   onClick={() => handleDotClick(index)}
                   className={`transition-all duration-300 ${
                     index === currentIndex
-                      ? "w-8 h-2 bg-green-500"
+                      ? "w-8 h-2 bg-purple-500"
                       : "w-2 h-2 bg-gray-700 hover:bg-gray-600"
                   } rounded-full`}
                   aria-label={`Go to testimonial ${index + 1}`}
@@ -193,7 +193,7 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
               ))}
             </div>
 
-            {/* Next Button */}
+            
             <button
               onClick={handleNext}
               className="p-2 rounded-full bg-gray-900 hover:bg-gray-800 transition-colors group"
@@ -215,10 +215,10 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
             </button>
           </div>
 
-          {/* Auto-play indicator */}
+          
           {isAutoPlaying && (
             <motion.div
-              className="h-[2px] bg-green-500/30"
+              className="h-[2px] bg-purple-500/30"
               initial={{ width: "0%" }}
               animate={{ width: "100%" }}
               transition={{ duration: 5, ease: "linear" }}

@@ -38,9 +38,9 @@ export function DriverEarnings() {
   const [selectedPlan, setSelectedPlan] = useState(1);
 
   return (
-    <section className="w-full bg-black py-16 md:py-24 lg:py-32 overflow-hidden">
+    <section className="w-full bg-white py-16 md:py-24 lg:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        {/* Header */}
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,16 +49,16 @@ export function DriverEarnings() {
           className="text-center mb-16 md:mb-20"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-white">Earn More as a</span>{' '}
-            <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">Driver</span>
+            <span className="text-gray-900">Earn More as a</span>{' '}
+            <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Driver</span>
           </h2>
-          <p className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Turn your daily commute into extra income. Join verified drivers earning up to $400+ per week.
           </p>
         </motion.div>
 
         <div className="space-y-20">
-          {/* Earnings Calculator - Full Width */}
+          
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -67,11 +67,11 @@ export function DriverEarnings() {
             className="max-w-4xl mx-auto"
           >
             <div className="space-y-6">
-              <h3 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-8">
                 Calculate Your Potential Earnings
               </h3>
               
-              {/* Plan Selector */}
+              
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {earningsData.map((plan, index) => (
                   <motion.button
@@ -82,66 +82,66 @@ export function DriverEarnings() {
                     className={cn(
                       "p-4 rounded-xl border transition-all duration-300 text-center",
                       selectedPlan === index
-                        ? "border-emerald-500/50 bg-emerald-500/10"
-                        : "border-gray-800 bg-black hover:border-gray-700"
+                        ? "border-purple-500/50 bg-purple-500/10"
+                        : "border-gray-300 bg-gray-50 hover:border-gray-400"
                     )}
                   >
-                    <div className="text-2xl font-bold text-white">{plan.rides}</div>
-                    <div className="text-xs text-neutral-400">rides/week</div>
+                    <div className="text-2xl font-bold text-gray-900">{plan.rides}</div>
+                    <div className="text-xs text-gray-600">rides/week</div>
                   </motion.button>
                 ))}
               </div>
 
-              {/* Earnings Display */}
+              
               <motion.div
                 key={selectedPlan}
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                className="bg-gradient-to-br from-emerald-500/5 to-transparent rounded-2xl p-8 border border-emerald-500/20 backdrop-blur-sm"
+                className="bg-gradient-to-br from-purple-500/5 to-transparent rounded-2xl p-8 border border-purple-500/20 backdrop-blur-sm"
               >
                 <div className="grid grid-cols-2 gap-6">
                   <div>
-                    <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
+                    <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
                       ${earningsData[selectedPlan].earnings}
                     </div>
-                    <div className="text-neutral-400">per week</div>
+                    <div className="text-gray-600">per week</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-white">
+                    <div className="text-2xl font-bold text-gray-900">
                       {earningsData[selectedPlan].passengers}
                     </div>
-                    <div className="text-neutral-400">happy passengers</div>
+                    <div className="text-gray-600">happy passengers</div>
                   </div>
                 </div>
                 
-                <div className="mt-4 pt-4 border-t border-emerald-500/20">
+                <div className="mt-4 pt-4 border-t border-purple-500/20">
                   <div className="flex justify-between text-sm">
-                    <span className="text-neutral-400">Base earnings</span>
-                    <span className="text-white">${Math.round(earningsData[selectedPlan].earnings * 0.8)}</span>
+                    <span className="text-gray-600">Base earnings</span>
+                    <span className="text-gray-900">${Math.round(earningsData[selectedPlan].earnings * 0.8)}</span>
                   </div>
                   <div className="flex justify-between text-sm mt-1">
-                    <span className="text-emerald-400 font-semibold">Fare splitting bonus</span>
-                    <span className="text-emerald-400 font-semibold">+${Math.round(earningsData[selectedPlan].earnings * 0.2)}</span>
+                    <span className="text-purple-400 font-semibold">Fare splitting bonus</span>
+                    <span className="text-purple-400 font-semibold">+${Math.round(earningsData[selectedPlan].earnings * 0.2)}</span>
                   </div>
                 </div>
               </motion.div>
 
-              <div className="text-xs text-neutral-500 text-center">
+              <div className="text-xs text-gray-500 text-center">
                 *Earnings vary by location, demand, and ride frequency.
               </div>
             </div>
           </motion.div>
 
-          {/* Benefits - Grid Layout */}
+          
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-12 text-center">
-              Why Drive with Loop?
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-12 text-center">
+              Why Drive with poolUp?
             </h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -154,14 +154,14 @@ export function DriverEarnings() {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <div className="h-full p-6 rounded-xl bg-black border border-gray-800 hover:border-emerald-500/30 transition-all duration-300">
-                    <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-emerald-500/10 to-emerald-600/10 flex items-center justify-center mb-4 group-hover:from-emerald-500/20 group-hover:to-emerald-600/20 transition-all duration-300">
-                      <benefit.icon className="w-8 h-8 text-emerald-400" />
+                  <div className="h-full p-6 rounded-xl bg-gray-50 border border-gray-200 hover:border-purple-500/30 transition-all duration-300">
+                    <div className="mb-4">
+                      <benefit.icon className="w-8 h-8 text-purple-500" />
                     </div>
-                    <h4 className="text-lg font-semibold text-white mb-2">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-2">
                       {benefit.title}
                     </h4>
-                    <p className="text-neutral-400 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       {benefit.description}
                     </p>
                   </div>
@@ -171,7 +171,7 @@ export function DriverEarnings() {
           </motion.div>
         </div>
 
-        {/* CTA Section */}
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -179,15 +179,15 @@ export function DriverEarnings() {
           viewport={{ once: true }}
           className="text-center mt-16 md:mt-20"
         >
-          <div className="inline-flex flex-col items-center gap-4 px-8 py-6 rounded-2xl bg-gradient-to-r from-emerald-500/10 to-emerald-600/10 border border-emerald-500/20 backdrop-blur-sm">
-            <div className="text-xl font-semibold text-emerald-400">
+          <div className="inline-flex flex-col items-center gap-4 px-8 py-6 rounded-2xl bg-gradient-to-r from-purple-500/10 to-purple-600/10 border border-purple-500/20 backdrop-blur-sm">
+            <div className="text-xl font-semibold text-purple-400">
               Ready to start earning?
             </div>
-            <div className="text-neutral-400 text-center max-w-md">
+            <div className="text-gray-600 text-center max-w-md">
               Complete verification in under 5 minutes and start accepting ride requests
             </div>
-            <div className="px-6 py-2 rounded-full bg-emerald-500/20 border border-emerald-500/30">
-              <span className="text-emerald-400 font-medium">Download coming soon</span>
+            <div className="px-6 py-2 rounded-full bg-purple-500/20 border border-purple-500/30">
+              <span className="text-purple-400 font-medium">Download coming soon</span>
             </div>
           </div>
         </motion.div>

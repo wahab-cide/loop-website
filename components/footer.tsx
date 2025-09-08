@@ -36,7 +36,10 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start w-full">
           <div className="mb-10 md:mb-0">
             <Logo />
-            <div className="flex gap-3 mt-6">
+            <p className="text-neutral-500 text-sm mt-3 mb-6">
+              by Loop Platform, Inc.
+            </p>
+            <div className="flex gap-3">
               {socials.map((social, idx) => (
                 <SocialIcon key={`social-${idx}`} href={social.href} onClick={social.onClick}>
                   <social.icon strokeWidth={1.5} width={15} height={15} />
@@ -62,6 +65,12 @@ export function Footer() {
               </ul>
             </div>
           </div>
+        </div>
+        
+        <div className="border-t border-neutral-700 mt-16 pt-8 text-center">
+          <p className="text-neutral-500 text-sm">
+            © {new Date().getFullYear()} Loop Platform, Inc. All rights reserved.
+          </p>
         </div>
       </div>
     </div>

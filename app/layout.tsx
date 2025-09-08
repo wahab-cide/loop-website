@@ -10,9 +10,9 @@ import { StructuredData } from "./structured-data";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Loop Platform - Community Rideshare & Carpool App | Safe, Affordable Transportation",
+  title: "poolUp - Community Rideshare & Carpool App | by Loop Platform, Inc.",
   description:
-    "Join the Loop Platform community for safe, affordable rideshare. Connect with verified drivers in your area. Trusted transportation for everyone.",
+    "Join the poolUp community for safe, affordable rideshare. Connect with verified drivers in your area. Trusted transportation powered by Loop Platform, Inc.",
   keywords: [
     "community rideshare",
     "verified drivers",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "Loop Platform",
     images: [
       {
-        url: "https://looprides.dev/dashboard.png",
+        url: "https://looprides.dev/og-image.jpg",
         width: 1920,
         height: 1080,
         alt: "Loop Platform Rideshare App Dashboard",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "Loop Platform - Community Rideshare & Carpool App | Safe, Affordable Transportation",
     description:
       "Join the Loop Platform community for safe, affordable rideshare. Connect with verified drivers in your area.",
-    images: ["https://looprides.dev/dashboard.png"],
+    images: ["https://looprides.dev/og-image.jpg"],
     creator: "@looprides",
   },
   metadataBase: new URL("https://looprides.dev"),

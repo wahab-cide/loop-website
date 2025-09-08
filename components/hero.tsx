@@ -1,24 +1,19 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
+import { cn } from "@/lib/utils";
 import {
+  AnimatePresence,
   motion,
   useMotionTemplate,
   useScroll,
   useTransform,
-  AnimatePresence,
 } from "framer-motion";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
+import React, { useEffect, useRef, useState } from "react";
 import Balancer from "react-wrap-balancer";
 import { Button } from "./button";
 import { useToast } from "./toast";
-import { GlowingEffect } from "./ui/glowing-effect";
 
 export function Hero() {
   const { showToast } = useToast();
-  const containerRef = useRef<HTMLDivElement>(
-    null
-  ) as React.RefObject<HTMLDivElement>;
   const parentRef = useRef<HTMLDivElement>(
     null
   ) as React.RefObject<HTMLDivElement>;
@@ -35,9 +30,9 @@ export function Hero() {
   return (
     <div
       ref={parentRef}
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pt-20 md:px-8 md:pt-40 bg-black"
+      className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden px-4 pt-20 pb-12 md:px-8 md:pt-24 md:pb-16 bg-white"
     >
-      <div className="text-balance relative z-20 mx-auto mb-4 mt-4 max-w-4xl text-center text-4xl font-semibold tracking-tight text-neutral-300 md:text-7xl">
+      <div className="text-balance relative z-20 mx-auto mb-4 mt-4 max-w-4xl text-center text-4xl font-semibold tracking-tight text-gray-900 md:text-7xl">
         <Balancer>
           <motion.h1
             initial={{ opacity: 0 }}
@@ -49,11 +44,12 @@ export function Hero() {
             }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className={cn(
-              "inline-block bg-[radial-gradient(61.17%_178.53%_at_38.83%_-13.54%,#3B3B3B_0%,#888787_12.61%,#FFFFFF_50%,#888787_80%,#3B3B3B_100%)]",
-              "bg-clip-text text-transparent"
+              "inline-block text-gray-900 drop-shadow-lg"
             )}
           >
-            <DynamicWord /> Rideshare Solution
+            <DynamicWord />
+            <br />
+            <span className="sm:whitespace-nowrap">Campus Rideshare Solution</span>
           </motion.h1>
         </Balancer>
       </div>
@@ -61,57 +57,33 @@ export function Hero() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.2, delay: 0.5 }}
-        className="relative z-20 mx-auto mt-4 max-w-xl px-4 text-center text-base/6 text-gray-500  sm:text-base"
+        className="relative z-20 mx-auto mt-4 max-w-xl px-4 text-center text-base/6 text-gray-600  sm:text-base"
       >
-Connect with drivers in your community for safe, affordable, and convenient rideshare.
+Connect with students and staff on campus for safe, affordable rides to events, and off-campus destinations.
       </motion.p>
+      
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.2, delay: 0.7 }}
-        className="mb-8 mt-6 sm:mb-10 sm:mt-8 flex w-full flex-col items-center justify-center gap-4 px-4 sm:px-8 sm:flex-row md:mb-20"
+        className="flex flex-col sm:flex-row gap-4 mt-8 justify-center items-center"
       >
         <Button
           as="button"
           onClick={() => showToast("Coming Soon")}
-          variant="primary"
-          className="w-full sm:w-40 h-12 rounded-full flex items-center justify-center"
+          variant="gradient"
+          className="w-full sm:w-auto px-8 py-3 rounded-xl"
         >
-Download App
+          Get Started
         </Button>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.9, ease: "easeOut" }}
-        ref={containerRef}
-        className="relative mx-auto w-full max-w-7xl p-2 backdrop-blur-lg md:p-4"
-      >
-        <div className="rounded-[50px] relative">
-          <GlowingEffect
-            spread={60}
-            glow={true}
-            disabled={false}
-            proximity={64}
-            inactiveZone={0.01}
-            borderWidth={5}
-            blur={10}
-          />
-          <Image
-            src="/website photos/moreRiderPhoto.jpeg"
-            alt="Happy Loop Platform passengers enjoying their rideshare experience"
-            width={1920}
-            height={1080}
-            className="rounded-[20px]  h-auto object-cover  w-full"
-          />
-          <div
-            className="absolute inset-0 rounded-[20px]"
-            style={{
-              background:
-                "linear-gradient(179.87deg, rgba(0, 0, 0, 0) 0.11%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.6) 95%)",
-            }}
-          />
-        </div>
+        <Button
+          as="button"
+          onClick={() => showToast("Coming Soon")}
+          variant="secondary"
+          className="w-full sm:w-auto px-8 py-3 rounded-xl border-2 border-gray-300 bg-transparent hover:bg-gray-50"
+        >
+          Learn How It Works
+        </Button>
       </motion.div>
     </div>
   );

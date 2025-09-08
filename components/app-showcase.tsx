@@ -17,7 +17,7 @@ const appScreens = [
     title: "Book Instantly",
     description: "Quick and easy booking process with upfront pricing",
     image: "/loop-app-screens/book-ride.PNG", 
-    color: "from-green-500 to-emerald-500"
+    color: "from-purple-500 to-purple-500"
   },
   {
     id: "track",
@@ -41,7 +41,7 @@ export function AppShowcase() {
   return (
     <section className="w-full bg-black py-16 md:py-24 lg:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        {/* Header */}
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,19 +51,19 @@ export function AppShowcase() {
         >
           <h2 className={cn(
             "text-4xl md:text-5xl lg:text-6xl font-bold mb-6",
-            "bg-gradient-to-r from-white via-green-100 to-emerald-200",
+            "bg-gradient-to-r from-white via-purple-100 to-purple-200",
             "bg-clip-text text-transparent"
           )}>
-            See Loop in Action
+            See poolUp in Action
           </h2>
           <p className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto leading-relaxed">
             Experience the app that's transforming how students and communities share rides
           </p>
         </motion.div>
 
-        {/* Mobile Layout - Phone first, then buttons */}
+        
         <div className="block lg:hidden">
-          {/* Phone Mockup */}
+          
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -71,24 +71,24 @@ export function AppShowcase() {
             viewport={{ once: true }}
             className="relative flex justify-center mb-12"
           >
-            {/* Background glow */}
+            
             <div className={cn(
               "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full blur-3xl opacity-30 transition-colors duration-500",
               `bg-gradient-to-r ${appScreens[activeScreen].color}`
             )} />
             
-            {/* iPhone Frame */}
+            
             <div className="relative z-10">
-              {/* Outer frame with metallic effect */}
+              
               <div className="relative bg-gradient-to-b from-gray-800 via-gray-900 to-black p-[3px] rounded-[45px] shadow-2xl">
-                {/* Inner bezel */}
+                
                 <div className="bg-black rounded-[42px] p-2 relative">
-                  {/* Screen area */}
+                  
                   <div className="relative bg-black rounded-[34px] overflow-hidden">
-                    {/* Dynamic Island */}
+                    
                     <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-7 bg-black rounded-full z-20" />
                     
-                    {/* Screen Content */}
+                    
                     <div className="relative w-[280px] h-[600px] rounded-[34px] overflow-hidden">
                       <Image
                         key={activeScreen}
@@ -103,7 +103,7 @@ export function AppShowcase() {
                     </div>
                   </div>
                   
-                  {/* Side buttons */}
+                  
                   <div className="absolute -left-[3px] top-32 w-[3px] h-12 bg-gradient-to-b from-gray-700 to-gray-900 rounded-l-lg" />
                   <div className="absolute -left-[3px] top-52 w-[3px] h-20 bg-gradient-to-b from-gray-700 to-gray-900 rounded-l-lg" />
                   <div className="absolute -left-[3px] top-80 w-[3px] h-20 bg-gradient-to-b from-gray-700 to-gray-900 rounded-l-lg" />
@@ -113,7 +113,7 @@ export function AppShowcase() {
             </div>
           </motion.div>
 
-          {/* Mobile Button Flow */}
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -130,7 +130,7 @@ export function AppShowcase() {
                 viewport={{ once: true }}
                 className="relative"
               >
-                {/* Connecting line to next item */}
+                
                 {index < appScreens.length - 1 && (
                   <div className="absolute left-6 top-16 w-0.5 h-6 bg-gradient-to-b from-neutral-600 to-neutral-800" />
                 )}
@@ -140,34 +140,34 @@ export function AppShowcase() {
                   onClick={() => setActiveScreen(index)}
                 >
                   <div className="flex items-start space-x-4">
-                    {/* Number Circle */}
+                    
                     <div className={cn(
                       "relative flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300",
                       "shadow-lg backdrop-blur-sm border",
                       activeScreen === index
-                        ? "bg-gradient-to-br from-green-400 to-emerald-500 text-black border-green-300"
+                        ? "bg-gradient-to-br from-purple-400 to-purple-500 text-black border-purple-300"
                         : "bg-neutral-900 text-neutral-400 border-neutral-700 group-hover:border-neutral-600 group-hover:text-white"
                     )}>
                       <span className="relative z-10">{index + 1}</span>
                       
-                      {/* Active ring */}
+                      
                       {activeScreen === index && (
                         <motion.div
                           initial={{ scale: 1, opacity: 0 }}
                           animate={{ scale: 1.2, opacity: [0, 0.6, 0] }}
                           transition={{ duration: 2, repeat: Infinity }}
-                          className="absolute inset-0 rounded-full border-2 border-green-400"
+                          className="absolute inset-0 rounded-full border-2 border-purple-400"
                         />
                       )}
                     </div>
                     
-                    {/* Content - directly on page background */}
+                    
                     <div className="flex-1 pt-1">
                       <h3 className={cn(
                         "text-lg font-semibold transition-colors duration-300 mb-1",
                         activeScreen === index 
-                          ? "text-green-400" 
-                          : "text-white group-hover:text-green-300"
+                          ? "text-purple-400" 
+                          : "text-white group-hover:text-purple-300"
                       )}>
                         {screen.title}
                       </h3>
@@ -187,9 +187,9 @@ export function AppShowcase() {
           </motion.div>
         </div>
 
-        {/* Desktop Layout - Side by side */}
+        
         <div className="hidden lg:grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left - Screen Navigation */}
+          
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -206,7 +206,7 @@ export function AppShowcase() {
                 viewport={{ once: true }}
                 className="relative"
               >
-                {/* Connecting line to next item */}
+                
                 {index < appScreens.length - 1 && (
                   <div className="absolute left-7 top-20 w-0.5 h-8 bg-gradient-to-b from-neutral-600 to-neutral-800" />
                 )}
@@ -216,7 +216,7 @@ export function AppShowcase() {
                   onClick={() => setActiveScreen(index)}
                 >
                   <div className="flex items-start space-x-6">
-                    {/* Number Circle */}
+                    
                     <div className={cn(
                       "relative flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-300",
                       "shadow-xl backdrop-blur-sm border",
@@ -226,24 +226,24 @@ export function AppShowcase() {
                     )}>
                       <span className="relative z-10">{index + 1}</span>
                       
-                      {/* Active ring */}
+                      
                       {activeScreen === index && (
                         <motion.div
                           initial={{ scale: 1, opacity: 0 }}
                           animate={{ scale: 1.3, opacity: [0, 0.8, 0] }}
                           transition={{ duration: 2, repeat: Infinity }}
-                          className="absolute inset-0 rounded-full border-2 border-green-400"
+                          className="absolute inset-0 rounded-full border-2 border-purple-400"
                         />
                       )}
                     </div>
                     
-                    {/* Content - directly on page background */}
+                    
                     <div className="flex-1 pt-2">
                       <h3 className={cn(
                         "text-2xl font-bold transition-colors duration-300 mb-3",
                         activeScreen === index 
-                          ? "text-green-400" 
-                          : "text-white group-hover:text-green-300"
+                          ? "text-purple-400" 
+                          : "text-white group-hover:text-purple-300"
                       )}>
                         {screen.title}
                       </h3>
@@ -262,7 +262,7 @@ export function AppShowcase() {
             ))}
           </motion.div>
 
-          {/* Right - Phone Mockup with Screen */}
+          
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -270,24 +270,24 @@ export function AppShowcase() {
             viewport={{ once: true }}
             className="relative flex justify-center"
           >
-            {/* Background glow */}
+            
             <div className={cn(
               "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full blur-3xl opacity-30 transition-colors duration-500",
               `bg-gradient-to-r ${appScreens[activeScreen].color}`
             )} />
             
-            {/* iPhone Frame */}
+            
             <div className="relative z-10">
-              {/* Outer frame with metallic effect */}
+              
               <div className="relative bg-gradient-to-b from-gray-800 via-gray-900 to-black p-[3px] rounded-[45px] shadow-2xl">
-                {/* Inner bezel */}
+                
                 <div className="bg-black rounded-[42px] p-2 relative">
-                  {/* Screen area */}
+                  
                   <div className="relative bg-black rounded-[34px] overflow-hidden">
-                    {/* Dynamic Island */}
+                    
                     <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-7 bg-black rounded-full z-20" />
                     
-                    {/* Screen Content */}
+                    
                     <div className="relative w-[300px] h-[650px] rounded-[34px] overflow-hidden">
                       <Image
                         key={activeScreen}
@@ -302,7 +302,7 @@ export function AppShowcase() {
                     </div>
                   </div>
                   
-                  {/* Side buttons */}
+                  
                   <div className="absolute -left-[3px] top-32 w-[3px] h-12 bg-gradient-to-b from-gray-700 to-gray-900 rounded-l-lg" />
                   <div className="absolute -left-[3px] top-52 w-[3px] h-20 bg-gradient-to-b from-gray-700 to-gray-900 rounded-l-lg" />
                   <div className="absolute -left-[3px] top-80 w-[3px] h-20 bg-gradient-to-b from-gray-700 to-gray-900 rounded-l-lg" />

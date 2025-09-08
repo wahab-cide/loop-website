@@ -17,7 +17,7 @@ export function LegalLayout({
   return (
     <div className={cn("min-h-screen bg-black text-white", className)}>
       <div className="max-w-4xl mx-auto px-6 py-20">
-        {/* Header */}
+        
         <div className="mb-12 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
             {title}
@@ -29,14 +29,14 @@ export function LegalLayout({
           )}
         </div>
 
-        {/* Content */}
+        
         <div className="prose prose-invert prose-lg max-w-none">
           <div className="text-neutral-300 leading-relaxed space-y-8">
             {children}
           </div>
         </div>
 
-        {/* Footer Contact */}
+        
         <div className="mt-16 pt-8 border-t border-neutral-800 text-center">
           <p className="text-neutral-400 text-sm">
             Have questions about this document? Contact us at{" "}

@@ -10,7 +10,7 @@ import {
 } from "@/components/legal-layout";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Loop - Student Rideshare App",
+  title: "Privacy Policy | poolUp - Student Rideshare App",
   description: "Learn how Loop Platform, Inc. collects, uses, and protects your personal information when you use our rideshare platform.",
 };
 
@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
       <Section title="1. OVERVIEW" id="overview">
         <Subsection title="About the Company">
           <Paragraph>
-            Loop Platform, Inc., a Delaware corporation, and its affiliates ("Loop," "we," "us," or "our") operate the website located at looprides.dev, the "Loop" mobile application available from the Apple App Store, Android Play Store, and other related websites, mobile applications, products and services (collectively, the "Platform").
+            Loop Platform, Inc., a Delaware corporation, and its affiliates ("poolUp," "we," "us," or "our") operate the website located at looprides.dev, the "poolUp" mobile application available from the Apple App Store, Android Play Store, and other related websites, mobile applications, products and services (collectively, the "Platform").
           </Paragraph>
           <Paragraph>
             This Privacy Policy explains how we collect, use, store, retain, and disclose your information when you use our Platform and services. By accessing, viewing, or using the Platform, you agree to be bound by this Privacy Policy. This Privacy Policy is incorporated into and made a part of our Terms of Service by reference.
