@@ -13,15 +13,15 @@ export default {
   			background: 'var(--background)',
   			foreground: 'var(--foreground)',
   			primary: {
-  				DEFAULT: '#7C3AED',
-  				dark: '#6D28D9',
-  				light: '#8B5CF6'
+  				DEFAULT: '#F97316',
+  				dark: '#EA580C',
+  				light: '#FB923C'
   			},
   			poolup: {
-  				purple: '#7C3AED',
-  				'purple-dark': '#6D28D9',
-  				'purple-light': '#8B5CF6',
-  				'purple-lighter': '#A78BFA'
+  				orange: '#F97316',
+  				'orange-dark': '#EA580C',
+  				'orange-light': '#FB923C',
+  				'orange-lighter': '#FDBA74'
   			}
   		},
   		fontFamily: {

@@ -66,7 +66,7 @@ export default function CTA() {
   }, [controls, inView]);
 
   return (
-    <div className="bg-black w-full max-w-7xl mx-auto min-h-[80vh] md:min-h-[100dvh] flex items-center justify-center px-4 sm:px-6 lg:px-8 relative">
+    <div className="w-full max-w-7xl mx-auto min-h-[80vh] md:min-h-[100dvh] flex items-center justify-center px-4 sm:px-6 lg:px-8 relative" style={{ backgroundColor: '#0f0e0b' }}>
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 20 }}

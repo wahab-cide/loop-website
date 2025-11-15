@@ -9,12 +9,7 @@ export function Testimonials() {
       <div className="flex flex-col lg:flex-row gap-8">
         <div className="w-full lg:w-[40%]">
           <div className="sticky top-20">
-            <h2
-              className={cn(
-                "text-3xl text-center lg:text-left md:text-6xl bg-[radial-gradient(61.17%_178.53%_at_38.83%_-13.54%,#3B82F6_0%,#888787_12.61%,#FFFFFF_50%,#888787_80%,#8B5CF6_100%)] ",
-                "bg-clip-text text-transparent leading-tight"
-              )}
-            >
+            <h2 className="text-3xl text-center lg:text-left md:text-6xl text-white font-bold leading-tight">
               Community Loves <br />
               poolUp
             </h2>
@@ -101,9 +96,9 @@ const TestimonialCard = ({
       whileHover={{ y: -5, scale: 1.02 }}
       className={cn(
         "flex flex-col h-80 p-6 rounded-[17px]",
-        "border border-blue-500/20 hover:border-purple-500/30",
-        "bg-gradient-to-br from-purple-900/10 via-gray-900/90 to-purple-900/10",
-        "backdrop-blur-sm hover:from-purple-800/20 hover:to-purple-800/20",
+        "border border-gray-800 hover:border-gray-700",
+        "bg-gray-950",
+        "shadow-sm hover:shadow-md",
         "relative isolate transition-all duration-300",
         className
       )}
@@ -117,13 +112,13 @@ const TestimonialCard = ({
         </div>
         <div>
           <h3 className="text-lg font-semibold text-white">{name}</h3>
-          <p className="text-sm text-blue-300">{role}</p>
+          <p className="text-sm text-gray-400">{role}</p>
         </div>
       </div>
-      <p className="text-base text-neutral-300 leading-relaxed flex-grow">
+      <p className="text-base text-gray-300 leading-relaxed flex-grow">
         &quot;{quote}&quot;
       </p>
-      <div className="mt-4 h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-30"></div>
+      <div className="mt-4 h-1 w-full bg-gray-200 rounded-full"></div>
     </motion.div>
   );
 };

@@ -9,7 +9,7 @@ const LogoIcon = () => (
       "inline-flex items-center justify-center"
     )}
   >
-    <div className="w-3 h-3 bg-white rounded-full"></div>
+    <div className="w-3 h-3 bg-gray-950 rounded-full"></div>
   </div>
 );
 
@@ -17,13 +17,13 @@ export const Logo = ({ visible = false }: { visible?: boolean }) => {
   return (
     <Link
       href="/"
-      className="font-normal flex gap-2 items-center text-sm text-black px-2 py-1 shrink-0 relative z-20"
+      className="font-normal flex gap-2 items-center text-sm px-2 py-1 shrink-0 relative z-20"
     >
       <LogoIcon />
 
       <span className={cn(
         "font-bold font-jua text-lg transition-colors",
-        visible ? "text-white" : "text-primary"
+        visible ? "text-white" : "text-white"
       )}>poolUp</span>
     </Link>
   );

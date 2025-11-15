@@ -50,7 +50,7 @@ export function StructuredData() {
         "name": "How does poolUp ensure rider and driver safety?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "All drivers must complete Stripe ID verification and identity authentication. We conduct thorough background checks, provide in-app emergency features, and have 24/7 support monitoring all rides."
+          "text": "All users verify with their official .edu email address, ensuring a campus-only community of verified students and staff. We provide in-app emergency features, real-time trip tracking, and 24/7 support monitoring all rides."
         }
       },
       {
@@ -74,7 +74,7 @@ export function StructuredData() {
         "name": "How do I become a poolUp driver?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Download the app, complete Stripe ID verification, submit your driver's license and insurance, pass our comprehensive background check, and you're ready to start earning money helping your community get around safely."
+          "text": "Download the app, verify with your .edu email address, submit your driver's license and insurance, complete our verification process, and you're ready to start earning money helping your campus community get around safely."
         }
       }
     ]

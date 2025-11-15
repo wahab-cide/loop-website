@@ -2,11 +2,10 @@
 import { Button } from "@/components/button";
 import { useToast } from "@/components/toast";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
-import { SavingsCarousel } from "@/components/savings-carousel";
+import { RideInfo } from "@/components/ride-info";
 import { IconCalendarEvent, IconPigMoney, IconShieldCheck, IconUsers } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function RiderPage() {
   const { showToast } = useToast();
@@ -36,15 +35,15 @@ export default function RiderPage() {
 
 
   return (
-    <div className="min-h-screen bg-white">
-      
-      <section className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden px-4 pt-20 pb-12 md:px-8 md:pt-24 md:pb-16 bg-white">
-        <div className="text-balance relative z-20 mx-auto mb-4 mt-4 max-w-4xl text-center text-4xl font-semibold tracking-tight text-gray-900 md:text-7xl">
+    <div className="min-h-screen" style={{ backgroundColor: '#1d1b15' }}>
+
+      <section className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden px-4 pt-20 pb-12 md:px-8 md:pt-24 md:pb-16" style={{ backgroundColor: '#1d1b15' }}>
+        <div className="text-balance relative z-20 mx-auto mb-4 mt-4 max-w-4xl text-center text-4xl font-semibold tracking-tight text-white md:text-7xl">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="inline-block text-gray-900 drop-shadow-lg"
+            className="inline-block text-white drop-shadow-lg"
           >
             Ride. Save. Connect.
           </motion.h1>
@@ -54,35 +53,10 @@ export default function RiderPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative z-20 mx-auto mt-4 max-w-xl px-4 text-center text-base/6 text-gray-600 sm:text-base"
+          className="relative z-20 mx-auto mt-4 max-w-xl px-4 text-center text-base/6 text-gray-400 sm:text-base"
         >
           Join fellow students saving money and making friends on every campus ride.
         </motion.p>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 mt-8 justify-center items-center"
-        >
-          <Button
-            as="button"
-            onClick={() => showToast("Coming Soon")}
-            variant="gradient"
-            className="w-full sm:w-auto px-8 py-3 rounded-xl"
-          >
-            Start Riding Today
-          </Button>
-          <Link href="#savings">
-            <Button
-              as="button"
-              variant="secondary"
-              className="w-full sm:w-auto px-8 py-3 rounded-xl border-2 border-gray-300 bg-transparent hover:bg-gray-50"
-            >
-              See How Much You'll Save
-            </Button>
-          </Link>
-        </motion.div>
       </section>
 
       
@@ -99,15 +73,16 @@ export default function RiderPage() {
       
       <TestimonialCarousel type="rider" />
 
-      
-      <section className="py-20 px-6 bg-gray-50">
+
+
+      <section className="py-20 px-6" style={{ backgroundColor: '#252319' }}>
         <div className="max-w-6xl mx-auto">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900"
+            className="text-4xl md:text-5xl font-bold text-center mb-16 text-white"
           >
             Why Ride with poolUp?
           </motion.h2>
@@ -120,20 +95,23 @@ export default function RiderPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 border border-gray-200 shadow-md"
+                className="rounded-2xl p-8 border border-gray-800 shadow-md"
+                style={{ backgroundColor: '#181611' }}
               >
-                <h3 className="text-2xl font-semibold mb-3 text-gray-900">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
+                <h3 className="text-2xl font-semibold mb-3 text-white">{benefit.title}</h3>
+                <p className="text-gray-400">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      
-      <section className="py-20 px-6 bg-primary">
+
+
+
+      <section className="py-20 px-6" style={{ backgroundColor: '#1d1b15' }}>
         <div className="max-w-6xl mx-auto">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -154,22 +132,22 @@ export default function RiderPage() {
               <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white">
                 Never Miss Out Again
               </h3>
-              <p className="text-white/80 mb-6 text-lg">
+              <p className="text-gray-400 mb-6 text-lg">
                 Whether it's a late-night pharmacy run, weekend adventures, or getting 
                 home for the holidays, poolUp connects you with drivers heading your way.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <span className="text-white text-xl font-bold">•</span>
-                  <span className="text-white/90">Find rides 24/7, even when campus shuttles stop</span>
+                  <span className="text-gray-300">Find rides 24/7, even when campus shuttles stop</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-white text-xl font-bold">•</span>
-                  <span className="text-white/90">See mutual friends and shared interests with drivers</span>
+                  <span className="text-gray-300">See mutual friends and shared interests with drivers</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-white text-xl font-bold">•</span>
-                  <span className="text-white/90">Track your ride and share trip details with friends</span>
+                  <span className="text-gray-300">Track your ride and share trip details with friends</span>
                 </li>
               </ul>
             </motion.div>
@@ -215,7 +193,7 @@ export default function RiderPage() {
               <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white">
                 Built for Students, By Students
               </h3>
-              <p className="text-white/80 mb-6 text-lg">
+              <p className="text-gray-400 mb-6 text-lg">
                 We understand the unique challenges of campus life. Limited budgets, 
                 odd hours, and the need for reliable transportation. poolUp is designed 
                 specifically for your college experience.
@@ -225,20 +203,18 @@ export default function RiderPage() {
         </div>
       </section>
 
-      
-      <div id="savings">
-        <SavingsCarousel />
-      </div>
 
-      
-      <section className="py-20 px-6 bg-white">
+      <RideInfo />
+
+
+      <section className="py-20 px-6" style={{ backgroundColor: '#252319' }}>
         <div className="max-w-6xl mx-auto">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900"
+            className="text-4xl md:text-5xl font-bold text-center mb-16 text-white"
           >
             Getting Started is Easy
           </motion.h2>
@@ -272,27 +248,26 @@ export default function RiderPage() {
                 <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-white">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-900">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+                <h3 className="text-xl font-semibold mb-2 text-white">{item.title}</h3>
+                <p className="text-gray-400">{item.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      
-      <section className="py-20 px-6 bg-gray-50">
-        <motion.div 
+      <section className="py-20 px-6" style={{ backgroundColor: '#181611' }}>
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Ready to Join poolUp?
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-gray-400 mb-8">
             Start saving money and making connections on every ride.
           </p>
           <Button

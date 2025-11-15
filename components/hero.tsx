@@ -9,11 +9,8 @@ import {
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import Balancer from "react-wrap-balancer";
-import { Button } from "./button";
-import { useToast } from "./toast";
 
 export function Hero() {
-  const { showToast } = useToast();
   const parentRef = useRef<HTMLDivElement>(
     null
   ) as React.RefObject<HTMLDivElement>;
@@ -30,9 +27,10 @@ export function Hero() {
   return (
     <div
       ref={parentRef}
-      className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden px-4 pt-20 pb-12 md:px-8 md:pt-24 md:pb-16 bg-white"
+      className="relative flex min-h-[70vh] flex-col items-center justify-center overflow-hidden px-4 pt-24 pb-8 md:px-8 md:pt-32 md:pb-12"
+      style={{ backgroundColor: '#1d1b15' }}
     >
-      <div className="text-balance relative z-20 mx-auto mb-4 mt-4 max-w-4xl text-center text-4xl font-semibold tracking-tight text-gray-900 md:text-7xl">
+      <div className="text-balance relative z-20 mx-auto mb-6 mt-4 max-w-5xl text-center text-4xl font-bold tracking-tight text-white md:text-6xl">
         <Balancer>
           <motion.h1
             initial={{ opacity: 0 }}
@@ -44,7 +42,7 @@ export function Hero() {
             }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className={cn(
-              "inline-block text-gray-900 drop-shadow-lg"
+              "inline-block text-white drop-shadow-lg"
             )}
           >
             <DynamicWord />
@@ -57,34 +55,10 @@ export function Hero() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.2, delay: 0.5 }}
-        className="relative z-20 mx-auto mt-4 max-w-xl px-4 text-center text-base/6 text-gray-600  sm:text-base"
+        className="relative z-20 mx-auto mt-6 max-w-2xl px-4 text-center text-lg leading-8 text-gray-400 sm:text-xl"
       >
-Connect with students and staff on campus for safe, affordable rides to events, and off-campus destinations.
+Connect with students for affordable rides to events, and off-campus destinations.
       </motion.p>
-      
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.2, delay: 0.7 }}
-        className="flex flex-col sm:flex-row gap-4 mt-8 justify-center items-center"
-      >
-        <Button
-          as="button"
-          onClick={() => showToast("Coming Soon")}
-          variant="gradient"
-          className="w-full sm:w-auto px-8 py-3 rounded-xl"
-        >
-          Get Started
-        </Button>
-        <Button
-          as="button"
-          onClick={() => showToast("Coming Soon")}
-          variant="secondary"
-          className="w-full sm:w-auto px-8 py-3 rounded-xl border-2 border-gray-300 bg-transparent hover:bg-gray-50"
-        >
-          Learn How It Works
-        </Button>
-      </motion.div>
     </div>
   );
 }
@@ -108,7 +82,7 @@ const DynamicWord = () => {
       case "Affordable":
         return "bg-[radial-gradient(61.17%_178.53%_at_38.83%_-13.54%,#10B981_0%,#34D399_50%,#10B981_100%)]";
       case "Convenient":
-        return "bg-[radial-gradient(61.17%_178.53%_at_38.83%_-13.54%,#8B5CF6_0%,#A78BFA_50%,#8B5CF6_100%)]";
+        return "bg-[radial-gradient(61.17%_178.53%_at_38.83%_-13.54%,#FB923C_0%,#FDBA74_50%,#FB923C_100%)]";
       case "Safe":
         return "bg-[radial-gradient(61.17%_178.53%_at_38.83%_-13.54%,#F59E0B_0%,#FBBF24_50%,#F59E0B_100%)]";
       default:
@@ -117,7 +91,7 @@ const DynamicWord = () => {
   };
 
   return (
-    <span className="relative inline-block min-w-[280px] md:min-w-[450px] h-[1em] overflow-hidden">
+    <span className="relative inline-block w-full text-center h-[1em]">
       <AnimatePresence mode="wait">
         <motion.span
           key={currentWordIndex}
@@ -126,7 +100,7 @@ const DynamicWord = () => {
           exit={{ opacity: 0, y: -30 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
           className={cn(
-            "absolute top-0 left-0 w-full bg-clip-text text-transparent font-semibold text-center",
+            "absolute left-0 right-0 bg-clip-text text-transparent font-semibold",
             getWordColor(words[currentWordIndex])
           )}
         >

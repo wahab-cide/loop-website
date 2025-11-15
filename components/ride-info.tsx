@@ -16,9 +16,10 @@ export function RideInfo() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1, 1.02]);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      className="w-full bg-primary py-16 md:py-24 lg:py-32 overflow-hidden"
+      className="w-full py-16 md:py-24 lg:py-32 overflow-hidden"
+      style={{ backgroundColor: '#252319' }}
     >
       <motion.div 
         className="max-w-full mx-auto px-6 md:px-12 lg:px-16"
@@ -40,7 +41,7 @@ export function RideInfo() {
               )}>
                 Discover rides near you
               </h2>
-              <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
                 Connect with your community and share rides to common destinations
               </p>
             </div>
@@ -79,7 +80,7 @@ export function RideInfo() {
               </div>
             </div>
 
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-3xl opacity-50" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-gradient-to-r from-blue-600/20 to-orange-600/20 rounded-full blur-3xl opacity-50" />
           </motion.div>
         </div>
       </motion.div>
@@ -108,7 +109,7 @@ function FeatureItem({ title, description }: FeatureItemProps) {
         <h3 className="text-xl md:text-2xl font-bold text-white">
           {title}
         </h3>
-        <p className="text-white/70 text-base md:text-lg leading-relaxed">
+        <p className="text-gray-400 text-base md:text-lg leading-relaxed">
           {description}
         </p>
       </div>

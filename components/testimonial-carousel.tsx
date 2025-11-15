@@ -95,9 +95,9 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
   };
 
   return (
-    <section className="py-20 px-6 bg-black relative overflow-hidden">
+    <section className="py-20 px-6 relative overflow-hidden" style={{ backgroundColor: '#0f0e0b' }}>
       
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-950/10 via-transparent to-purple-950/10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-orange-950/10 via-transparent to-orange-950/10" />
       
       <div className="max-w-5xl mx-auto relative">
         
@@ -129,8 +129,8 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
             >
               
               <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 rounded-full bg-purple-950/30 flex items-center justify-center">
-                  <IconQuote className="w-8 h-8 text-purple-500" />
+                <div className="w-16 h-16 rounded-full bg-orange-950/30 flex items-center justify-center">
+                  <IconQuote className="w-8 h-8 text-orange-500" />
                 </div>
               </div>
 
@@ -141,7 +141,7 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
 
               
               <div className="space-y-1">
-                <p className="text-purple-400 font-semibold text-lg">
+                <p className="text-orange-400 font-semibold text-lg">
                   — {testimonials[currentIndex].name}
                 </p>
                 <p className="text-gray-500 text-sm">
@@ -159,7 +159,8 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
             
             <button
               onClick={handlePrev}
-              className="p-2 rounded-full bg-gray-900 hover:bg-gray-800 transition-colors group"
+              className="p-2 rounded-full hover:bg-gray-800 transition-colors group"
+              style={{ backgroundColor: '#181611' }}
               aria-label="Previous testimonial"
             >
               <svg
@@ -185,7 +186,7 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
                   onClick={() => handleDotClick(index)}
                   className={`transition-all duration-300 ${
                     index === currentIndex
-                      ? "w-8 h-2 bg-purple-500"
+                      ? "w-8 h-2 bg-orange-500"
                       : "w-2 h-2 bg-gray-700 hover:bg-gray-600"
                   } rounded-full`}
                   aria-label={`Go to testimonial ${index + 1}`}
@@ -196,7 +197,8 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
             
             <button
               onClick={handleNext}
-              className="p-2 rounded-full bg-gray-900 hover:bg-gray-800 transition-colors group"
+              className="p-2 rounded-full hover:bg-gray-800 transition-colors group"
+              style={{ backgroundColor: '#181611' }}
               aria-label="Next testimonial"
             >
               <svg
@@ -218,7 +220,7 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
           
           {isAutoPlaying && (
             <motion.div
-              className="h-[2px] bg-purple-500/30"
+              className="h-[2px] bg-orange-500/30"
               initial={{ width: "0%" }}
               animate={{ width: "100%" }}
               transition={{ duration: 5, ease: "linear" }}

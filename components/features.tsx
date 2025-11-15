@@ -17,12 +17,7 @@ export function Features() {
       className="w-full max-w-7xl mx-auto py-4 px-4 md:px-8 md:my-20 md:py-20 overflow-hidden"
     >
       <div className="text-balance relative z-20 mx-auto mb-4 max-w-4xl text-center text-lg font-semibold tracking-tight text-neutral-300 md:text-3xl">
-        <h2
-          className={cn(
-            "inline-block text-3xl md:text-6xl bg-[radial-gradient(61.17%_178.53%_at_38.83%_-13.54%,#3B82F6_0%,#888787_12.61%,#FFFFFF_50%,#888787_80%,#8B5CF6_100%)]",
-            "bg-clip-text text-transparent"
-          )}
-        >
+        <h2 className="inline-block text-3xl md:text-6xl text-white font-bold">
 Why Choose poolUp
         </h2>
       </div>
@@ -41,7 +36,7 @@ Safe, reliable rideshare for everyone.
         <div className="relative rounded-2xl overflow-hidden shadow-2xl">
           <Image
             src="/verification.png"
-            alt="poolUp driver verification process showing Stripe ID verification, selfie authentication, and safety checks for community rideshare platform"
+            alt="poolUp driver verification process showing .edu email verification and safety checks for campus rideshare platform"
             width={1200}
             height={600}
             className="w-full h-auto"
@@ -66,26 +61,26 @@ Safe, reliable rideshare for everyone.
           <CardContent className="h-full flex flex-col justify-between p-8 pb-10">
             <div>
               <div className="mb-6">
-                <IconShieldCheck className="w-16 h-16 text-purple-400" />
+                <IconShieldCheck className="w-16 h-16 text-orange-400" />
               </div>
               <CardTitle>
                 Safety <br /> First
               </CardTitle>
               <CardDescription className="mt-4">
-                Every driver completes Stripe ID verification and selfie authentication to ensure they are who they say they are. Your safety is our top priority.
+                Every driver verifies with their .edu email address, ensuring only verified students and staff from your campus community. Your safety is our top priority.
               </CardDescription>
             </div>
             <div className="mt-6 space-y-3">
               <div className="flex items-center gap-3">
-                <IconCheck className="w-5 h-5 text-purple-400" />
-                <span className="text-neutral-300">Stripe ID verified drivers</span>
+                <IconCheck className="w-5 h-5 text-orange-400" />
+                <span className="text-neutral-300">.edu verified campus drivers</span>
               </div>
               <div className="flex items-center gap-3">
-                <IconCheck className="w-5 h-5 text-purple-400" />
+                <IconCheck className="w-5 h-5 text-orange-400" />
                 <span className="text-neutral-300">Real-time trip tracking</span>
               </div>
               <div className="flex items-center gap-3">
-                <IconCheck className="w-5 h-5 text-purple-400" />
+                <IconCheck className="w-5 h-5 text-orange-400" />
                 <span className="text-neutral-300">Local community drivers</span>
               </div>
             </div>
@@ -93,7 +88,7 @@ Safe, reliable rideshare for everyone.
         </Card>
         <Card className="flex flex-col relative justify-between lg:col-span-3">
           <CardSkeletonBody>
-            <div className="relative flex h-[300px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-blue-950/20 to-purple-950/20">
+            <div className="relative flex h-[300px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-blue-950/20 to-orange-950/20">
               <GhanaUniversitiesMap />
             </div>
           </CardSkeletonBody>
@@ -170,7 +165,7 @@ const CardTitle = ({
   return (
     <h3
       className={cn(
-        "inline-block text-xl md:text-4xl bg-[radial-gradient(61.17%_178.53%_at_38.83%_-13.54%,#3B82F6_0%,#888787_12.61%,#FFFFFF_50%,#888787_80%,#8B5CF6_100%)]  bg-clip-text text-transparent",
+        "inline-block text-xl md:text-4xl bg-[radial-gradient(61.17%_178.53%_at_38.83%_-13.54%,#3B82F6_0%,#888787_12.61%,#FFFFFF_50%,#888787_80%,#FB923C_100%)]  bg-clip-text text-transparent",
         className
       )}
     >
@@ -208,7 +203,7 @@ const Card = ({
     <motion.div
       whileHover="animate"
       className={cn(
-        "group relative isolate flex flex-col rounded-2xl bg-gradient-to-br from-neutral-900 via-blue-950/10 to-purple-950/10 shadow-[0_1px_1px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.05),0_2px_3px_rgba(0,0,0,0.04)] border border-blue-500/10 hover:border-purple-500/20 overflow-hidden transition-all duration-300",
+        "group relative isolate flex flex-col rounded-2xl bg-gradient-to-br from-neutral-900 via-blue-950/10 to-orange-950/10 shadow-[0_1px_1px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.05),0_2px_3px_rgba(0,0,0,0.04)] border border-blue-500/10 hover:border-orange-500/20 overflow-hidden transition-all duration-300",
         className
       )}
     >
@@ -310,7 +305,7 @@ export const Highlight = ({
   return (
     <span
       className={cn(
-        "font-bold bg-gradient-to-r from-purple-100 to-purple-100 bg-blue-700/[0.2] text-blue-500 px-1 py-0.5 rounded",
+        "font-bold bg-gradient-to-r from-orange-100 to-orange-100 bg-blue-700/[0.2] text-blue-500 px-1 py-0.5 rounded",
         className
       )}
     >
@@ -513,7 +508,7 @@ const GhanaFlag = () => {
           </svg>
         </div>
       </div>
-      <div className="h-1/3 bg-purple-600"></div>
+      <div className="h-1/3 bg-orange-600"></div>
     </div>
   );
 };

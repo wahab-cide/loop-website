@@ -17,14 +17,14 @@ const appScreens = [
     title: "Book Instantly",
     description: "Quick and easy booking process with upfront pricing",
     image: "/loop-app-screens/book-ride.PNG", 
-    color: "from-purple-500 to-purple-500"
+    color: "from-orange-500 to-orange-500"
   },
   {
     id: "track",
     title: "Track Your Ride",
     description: "Real-time tracking and communication with your driver",
     image: "/loop-app-screens/track_ride.PNG",
-    color: "from-purple-500 to-pink-500"
+    color: "from-orange-500 to-pink-500"
   },
   {
     id: "manage",
@@ -39,7 +39,7 @@ export function AppShowcase() {
   const [activeScreen, setActiveScreen] = useState(0);
 
   return (
-    <section className="w-full bg-black py-16 md:py-24 lg:py-32 overflow-hidden">
+    <section className="w-full py-16 md:py-24 lg:py-32 overflow-hidden" style={{ backgroundColor: '#0f0e0b' }}>
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         <motion.div
@@ -51,8 +51,7 @@ export function AppShowcase() {
         >
           <h2 className={cn(
             "text-4xl md:text-5xl lg:text-6xl font-bold mb-6",
-            "bg-gradient-to-r from-white via-purple-100 to-purple-200",
-            "bg-clip-text text-transparent"
+            "text-white"
           )}>
             See poolUp in Action
           </h2>
@@ -145,7 +144,7 @@ export function AppShowcase() {
                       "relative flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300",
                       "shadow-lg backdrop-blur-sm border",
                       activeScreen === index
-                        ? "bg-gradient-to-br from-purple-400 to-purple-500 text-black border-purple-300"
+                        ? "bg-gradient-to-br from-orange-400 to-orange-500 text-black border-orange-300"
                         : "bg-neutral-900 text-neutral-400 border-neutral-700 group-hover:border-neutral-600 group-hover:text-white"
                     )}>
                       <span className="relative z-10">{index + 1}</span>
@@ -156,7 +155,7 @@ export function AppShowcase() {
                           initial={{ scale: 1, opacity: 0 }}
                           animate={{ scale: 1.2, opacity: [0, 0.6, 0] }}
                           transition={{ duration: 2, repeat: Infinity }}
-                          className="absolute inset-0 rounded-full border-2 border-purple-400"
+                          className="absolute inset-0 rounded-full border-2 border-orange-400"
                         />
                       )}
                     </div>
@@ -166,8 +165,8 @@ export function AppShowcase() {
                       <h3 className={cn(
                         "text-lg font-semibold transition-colors duration-300 mb-1",
                         activeScreen === index 
-                          ? "text-purple-400" 
-                          : "text-white group-hover:text-purple-300"
+                          ? "text-orange-400" 
+                          : "text-white group-hover:text-orange-300"
                       )}>
                         {screen.title}
                       </h3>
@@ -232,7 +231,7 @@ export function AppShowcase() {
                           initial={{ scale: 1, opacity: 0 }}
                           animate={{ scale: 1.3, opacity: [0, 0.8, 0] }}
                           transition={{ duration: 2, repeat: Infinity }}
-                          className="absolute inset-0 rounded-full border-2 border-purple-400"
+                          className="absolute inset-0 rounded-full border-2 border-orange-400"
                         />
                       )}
                     </div>
@@ -242,8 +241,8 @@ export function AppShowcase() {
                       <h3 className={cn(
                         "text-2xl font-bold transition-colors duration-300 mb-3",
                         activeScreen === index 
-                          ? "text-purple-400" 
-                          : "text-white group-hover:text-purple-300"
+                          ? "text-orange-400" 
+                          : "text-white group-hover:text-orange-300"
                       )}>
                         {screen.title}
                       </h3>

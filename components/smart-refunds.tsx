@@ -11,7 +11,7 @@ const refundTiers = [
     fee: 0,
     title: "Free Cancellation",
     description: "Full refund, no questions asked",
-    color: "from-purple-500 to-purple-500",
+    color: "from-orange-500 to-orange-500",
     icon: IconCheck
   },
   {
@@ -59,7 +59,7 @@ export function SmartRefunds() {
         >
           <h2 className={cn(
             "text-4xl md:text-5xl lg:text-6xl font-bold mb-6",
-            "bg-gradient-to-r from-purple-400 via-purple-300 to-purple-500",
+            "bg-gradient-to-r from-orange-400 via-orange-300 to-orange-500",
             "bg-clip-text text-transparent"
           )}>
             Smart Refund Policy
@@ -98,7 +98,7 @@ export function SmartRefunds() {
                       className={cn(
                         "px-4 py-2 rounded-lg border-2 transition-all duration-300 font-semibold",
                         selectedAmount === amount
-                          ? "border-purple-500 bg-purple-500/10 text-purple-400"
+                          ? "border-orange-500 bg-orange-500/10 text-orange-400"
                           : "border-gray-700 bg-gray-800/50 text-neutral-400 hover:border-gray-600"
                       )}
                     >
@@ -142,7 +142,7 @@ export function SmartRefunds() {
                         <div className="text-right">
                           <div className={cn(
                             "font-bold",
-                            tier.refundPercentage > 0 ? "text-purple-400" : "text-red-400"
+                            tier.refundPercentage > 0 ? "text-orange-400" : "text-red-400"
                           )}>
                             ${refundAmount.toFixed(0)}
                           </div>
@@ -183,7 +183,7 @@ export function SmartRefunds() {
                     viewport={{ once: true }}
                     className="group"
                   >
-                    <div className="flex items-start gap-4 p-6 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-purple-500/30 transition-all duration-300">
+                    <div className="flex items-start gap-4 p-6 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-orange-500/30 transition-all duration-300">
                       <div className={cn(
                         "w-12 h-12 rounded-lg bg-gradient-to-br flex items-center justify-center flex-shrink-0",
                         tier.color,
@@ -198,7 +198,7 @@ export function SmartRefunds() {
                           </h4>
                           <span className={cn(
                             "text-sm font-bold px-2 py-1 rounded",
-                            tier.refundPercentage > 0 ? "text-purple-400 bg-purple-500/10" : "text-red-400 bg-red-500/10"
+                            tier.refundPercentage > 0 ? "text-orange-400 bg-orange-500/10" : "text-red-400 bg-red-500/10"
                           )}>
                             {tier.refundPercentage}% refund
                           </span>
@@ -217,7 +217,7 @@ export function SmartRefunds() {
             </div>
 
             
-            <div className="bg-gradient-to-br from-purple-500/10 to-purple-500/10 rounded-2xl p-6 border border-purple-500/20">
+            <div className="bg-gradient-to-br from-orange-500/10 to-orange-500/10 rounded-2xl p-6 border border-orange-500/20">
               <h4 className="text-lg font-semibold text-white mb-4">
                 Why Our Refund Policy Works
               </h4>
@@ -229,7 +229,7 @@ export function SmartRefunds() {
                   "Protects both riders and drivers"
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-purple-500 flex items-center justify-center flex-shrink-0">
+                    <div className="w-5 h-5 rounded-full bg-orange-500 flex items-center justify-center flex-shrink-0">
                       <IconCheck className="w-3 h-3 text-white" />
                     </div>
                     <span className="text-neutral-300 text-sm">{benefit}</span>

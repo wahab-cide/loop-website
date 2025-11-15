@@ -72,7 +72,7 @@ export function SmartPricing() {
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="text-white">Smart Pricing for</span>{' '}
-            <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Student Budget</span>
+            <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">Student Budget</span>
           </h2>
           <p className="text-lg md:text-xl text-neutral-400 max-w-3xl mx-auto leading-relaxed">
             Choose the pricing model that works for you. From budget-friendly gas sharing to full rideshare service
@@ -100,7 +100,7 @@ export function SmartPricing() {
                     className={cn(
                       "relative p-6 rounded-xl border transition-all duration-300",
                       selectedScenario === index
-                        ? "border-purple-500/50 bg-gradient-to-b from-purple-500/10 to-transparent"
+                        ? "border-orange-500/50 bg-gradient-to-b from-orange-500/10 to-transparent"
                         : "border-gray-800 bg-black hover:border-gray-700"
                     )}
                   >
@@ -108,32 +108,32 @@ export function SmartPricing() {
                       <div className={cn(
                         "w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300",
                         selectedScenario === index 
-                          ? "bg-gradient-to-br from-purple-500/20 to-purple-600/20" 
+                          ? "bg-gradient-to-br from-orange-500/20 to-orange-600/20" 
                           : "bg-gray-900"
                       )}>
                         <scenario.icon 
                           className={cn(
                             "w-6 h-6 transition-colors duration-300",
-                            selectedScenario === index ? "text-purple-400" : "text-gray-500"
+                            selectedScenario === index ? "text-orange-400" : "text-gray-500"
                           )} 
                         />
                       </div>
                       <div className={cn(
                         "text-base font-semibold transition-colors duration-300",
-                        selectedScenario === index ? "text-purple-400" : "text-white"
+                        selectedScenario === index ? "text-orange-400" : "text-white"
                       )}>
                         {scenario.name}
                       </div>
                       <div className={cn(
                         "text-sm transition-colors duration-300",
-                        selectedScenario === index ? "text-purple-300" : "text-neutral-500"
+                        selectedScenario === index ? "text-orange-300" : "text-neutral-500"
                       )}>
                         {scenario.distance}
                       </div>
                       {selectedScenario === index && (
                         <motion.div
                           layoutId="scenarioIndicator"
-                          className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-purple-400 to-purple-600 rounded-b-xl"
+                          className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-b-xl"
                         />
                       )}
                     </div>
@@ -156,7 +156,7 @@ export function SmartPricing() {
               className={cn(
                 "h-full rounded-2xl border cursor-pointer transition-all duration-300 group relative overflow-hidden",
                 selectedModel === model.id
-                  ? "border-purple-500/50 bg-gradient-to-b from-purple-500/10 to-transparent scale-105"
+                  ? "border-orange-500/50 bg-gradient-to-b from-orange-500/10 to-transparent scale-105"
                   : "border-gray-800 bg-black hover:border-gray-700"
               )}
             >
@@ -165,12 +165,12 @@ export function SmartPricing() {
                 <div className="text-center mb-6">
                   <div className={cn(
                     "w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300",
-                    selectedModel === model.id ? "bg-gradient-to-br from-purple-500/20 to-purple-600/20" : "bg-gray-900"
+                    selectedModel === model.id ? "bg-gradient-to-br from-orange-500/20 to-orange-600/20" : "bg-gray-900"
                   )}>
                     <model.icon 
                       className={cn(
                         "w-10 h-10 transition-colors duration-300",
-                        selectedModel === model.id ? "text-purple-400" : "text-gray-500"
+                        selectedModel === model.id ? "text-orange-400" : "text-gray-500"
                       )} 
                       style={{ strokeWidth: 1.5 }}
                     />
@@ -197,8 +197,8 @@ export function SmartPricing() {
                 <div className="space-y-3 flex-1">
                   {model.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0">
-                        <IconCheck className="w-3 h-3 text-purple-400" />
+                      <div className="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center flex-shrink-0">
+                        <IconCheck className="w-3 h-3 text-orange-400" />
                       </div>
                       <span className="text-sm text-neutral-300">{feature}</span>
                     </div>
@@ -207,7 +207,7 @@ export function SmartPricing() {
 
                 
                 {selectedModel === model.id && (
-                  <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-purple-400 to-purple-600" />
+                  <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-orange-400 to-orange-600" />
                 )}
               </div>
             </motion.div>
@@ -230,9 +230,9 @@ export function SmartPricing() {
           ].map((benefit, index) => (
             <div
               key={index}
-              className="text-center p-6 rounded-xl bg-black border border-gray-800 hover:border-purple-500/30 transition-all duration-300 group"
+              className="text-center p-6 rounded-xl bg-black border border-gray-800 hover:border-orange-500/30 transition-all duration-300 group"
             >
-              <benefit.icon className="w-8 h-8 text-gray-600 group-hover:text-purple-400 transition-colors duration-300 mx-auto mb-3" />
+              <benefit.icon className="w-8 h-8 text-gray-400 group-hover:text-orange-400 transition-colors duration-300 mx-auto mb-3" />
               <div className="text-lg font-bold text-white mb-1">{benefit.label}</div>
               <div className="text-sm text-neutral-400">{benefit.desc}</div>
             </div>

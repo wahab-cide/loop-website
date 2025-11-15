@@ -33,9 +33,9 @@ const sustainabilityStats = [
 
 export function Sustainability() {
   return (
-    <section className="w-full bg-gradient-to-b from-purple-50 to-purple-100 py-20 md:py-32 overflow-hidden">
+    <section className="w-full py-20 md:py-28 lg:py-36 overflow-hidden" style={{ backgroundColor: '#1d1b15' }}>
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,59 +44,58 @@ export function Sustainability() {
           className="text-center mb-16 md:mb-20"
         >
           <h2 className={cn(
-            "text-4xl md:text-5xl lg:text-6xl font-bold mb-6",
-            "bg-gradient-to-r from-purple-600 via-purple-600 to-purple-700",
-            "bg-clip-text text-transparent"
+            "inline-block text-3xl md:text-6xl bg-[radial-gradient(61.17%_178.53%_at_38.83%_-13.54%,#3B3B3B_0%,#888787_12.61%,#FFFFFF_50%,#888787_80%,#3B3B3B_100%)]",
+            "bg-clip-text text-transparent mb-6"
           )}>
             Driving Campus Sustainability
           </h2>
-          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Every shared ride makes a meaningful impact on our environment and campus community. 
-            Join the movement towards greener transportation.
+          <p className="max-w-lg text-sm text-center mx-auto text-neutral-400 px-4">
+            Every shared ride makes a meaningful impact on our environment and campus community.
           </p>
         </motion.div>
 
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {sustainabilityStats.map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group"
-            >
-              <div className="bg-white rounded-2xl p-6 border border-purple-200 shadow-lg h-full">
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+
+        <div className="max-w-4xl mx-auto mb-20 md:mb-28">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 md:gap-y-16">
+            {sustainabilityStats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center md:text-left"
+              >
+                <div className="flex items-center gap-4 mb-3 justify-center md:justify-start">
+                  <stat.icon className="w-8 h-8 text-neutral-500" strokeWidth={1.5} />
+                  <div className="text-4xl md:text-5xl font-bold text-neutral-200">
                     {stat.number}
                   </div>
-                  <div className="text-purple-600 font-semibold text-lg mb-2">
-                    {stat.label}
-                  </div>
-                  <div className="text-gray-600 text-sm">
-                    {stat.description}
-                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+                <h3 className="text-base md:text-lg font-medium text-neutral-200 mb-2">
+                  {stat.label}
+                </h3>
+                <p className="text-sm text-neutral-400">
+                  {stat.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
-        
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-white rounded-3xl p-8 md:p-12 border border-purple-200 shadow-xl"
+          className="max-w-4xl mx-auto"
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">
+          <h3 className="text-2xl md:text-3xl font-medium text-neutral-200 text-center mb-12 md:mb-16">
             How Ride Sharing Helps Our Planet
           </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <div className="divide-y divide-neutral-800">
             <EcoFeature
               title="Reduce Carbon Footprint"
               description="Cut individual emissions by sharing rides with fellow students heading to the same destination"
@@ -124,21 +123,20 @@ interface EcoFeatureProps {
 function EcoFeature({ title, description }: EcoFeatureProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
       viewport={{ once: true }}
-      className="group text-left"
+      className="py-6 md:py-8"
     >
       <div className="space-y-2">
-        <h3 className="text-lg font-semibold text-gray-900">
+        <h4 className="text-base md:text-lg font-medium text-neutral-200">
           {title}
-        </h3>
-        <p className="text-gray-600 leading-relaxed">
+        </h4>
+        <p className="text-sm md:text-base text-neutral-400 leading-relaxed">
           {description}
         </p>
       </div>
     </motion.div>
   );
 }
-

@@ -1,5 +1,4 @@
 "use client";
-import { cn } from "@/lib/utils";
 import {
   IconCertificate,
   IconFingerprint,
@@ -9,9 +8,9 @@ import { motion } from "framer-motion";
 const verificationSteps = [
   {
     icon: IconCertificate,
-    title: "Government ID Verification",
-    description: "Stripe Identity verifies government-issued ID documents using advanced security technology",
-    features: ["Document authenticity check", "Real-time fraud detection", "Global database verification"]
+    title: "Campus Email Verification",
+    description: "Verify your identity with your official .edu email address to join the campus community",
+    features: ["Instant email verification", "Campus community access", "Student & staff validation"]
   },
   {
     icon: IconFingerprint,
@@ -24,7 +23,7 @@ const verificationSteps = [
 
 export function EnhancedSafety() {
   return (
-    <section className="w-full bg-gradient-to-b from-black via-purple-950/10 to-black py-16 md:py-24 lg:py-32 overflow-hidden">
+    <section className="w-full py-20 md:py-28 lg:py-36 overflow-hidden" style={{ backgroundColor: '#181611' }}>
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         <motion.div
@@ -34,11 +33,7 @@ export function EnhancedSafety() {
           viewport={{ once: true }}
           className="text-center mb-16 md:mb-20"
         >
-          <h2 className={cn(
-            "text-4xl md:text-5xl lg:text-6xl font-bold mb-6",
-            "bg-gradient-to-r from-purple-400 via-purple-300 to-purple-500",
-            "bg-clip-text text-transparent"
-          )}>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
             Safe & Secure
           </h2>
           <p className="text-lg md:text-xl text-neutral-400 max-w-3xl mx-auto leading-relaxed">
@@ -56,10 +51,10 @@ export function EnhancedSafety() {
             className="text-center mb-12"
           >
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Two-Step Verification Process
+              Student Verification Process
             </h3>
             <p className="text-neutral-400 max-w-2xl mx-auto">
-              Powered by Stripe Identity - the same technology trusted by Fortune 500 companies
+              Campus-only community verified through official .edu email addresses
             </p>
           </motion.div>
 
@@ -77,14 +72,14 @@ export function EnhancedSafety() {
                 <div className="relative h-full">
                   
                   {index < verificationSteps.length - 1 && (
-                    <div className="hidden md:block absolute top-16 left-full w-8 h-0.5 bg-gradient-to-r from-purple-500 to-purple-500 z-10">
-                      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-purple-500 rounded-full"></div>
+                    <div className="hidden md:block absolute top-16 left-full w-8 h-0.5 bg-gradient-to-r from-orange-500 to-orange-500 z-10">
+                      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-orange-500 rounded-full"></div>
                     </div>
                   )}
                   
-                  <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 border border-gray-700/50 hover:border-purple-500/30 transition-all duration-500 h-full group-hover:transform group-hover:scale-105">
+                  <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 border border-gray-700/50 hover:border-orange-500/30 transition-all duration-500 h-full group-hover:transform group-hover:scale-105">
                     
-                    <div className="w-16 h-16 mx-auto mb-6 rounded-xl bg-gradient-to-br from-purple-500 to-purple-500 flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                    <div className="w-16 h-16 mx-auto mb-6 rounded-xl bg-gradient-to-br from-orange-500 to-orange-500 flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
                       <step.icon className="w-8 h-8 text-white" />
                     </div>
                     
@@ -100,7 +95,7 @@ export function EnhancedSafety() {
                     <div className="space-y-2">
                       {step.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-2 text-sm">
-                          <div className="w-1.5 h-1.5 bg-purple-500 rounded-full flex-shrink-0"></div>
+                          <div className="w-1.5 h-1.5 bg-orange-500 rounded-full flex-shrink-0"></div>
                           <span className="text-neutral-300">{feature}</span>
                         </div>
                       ))}

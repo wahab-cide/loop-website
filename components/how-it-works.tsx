@@ -7,9 +7,9 @@ const steps = [
   {
     number: "01",
     title: "Sign Up & Verify",
-    description: "Create your account and complete our secure verification process with Stripe ID authentication.",
-    color: "from-purple-500 to-purple-500",
-    features: ["Stripe ID Verification", "Selfie Authentication"]
+    description: "Create your account and verify with your .edu email to join the campus community.",
+    color: "from-orange-500 to-orange-500",
+    features: [".edu Email Verification", "Student Community Access"]
   },
   {
     number: "02", 
@@ -22,14 +22,14 @@ const steps = [
     number: "03",
     title: "Connect & Travel",
     description: "Chat with your driver or riders, share costs automatically, and enjoy safe transportation.",
-    color: "from-purple-500 to-purple-500",
+    color: "from-orange-500 to-orange-500",
     features: ["In-app Messaging", "Auto Fare Split", "Real-time Tracking"]
   }
 ];
 
 export function HowItWorks() {
   return (
-    <section className="w-full bg-white py-16 md:py-24 lg:py-32 overflow-hidden">
+    <section className="w-full py-20 md:py-28 lg:py-36 overflow-hidden" style={{ backgroundColor: '#252319' }}>
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         <motion.div
@@ -41,12 +41,11 @@ export function HowItWorks() {
         >
           <h2 className={cn(
             "text-4xl md:text-5xl lg:text-6xl font-bold mb-6",
-            "bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700",
-            "bg-clip-text text-transparent"
+            "text-white"
           )}>
             How poolUp Works
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
             Getting started is simple.
           </p>
         </motion.div>
@@ -75,11 +74,11 @@ export function HowItWorks() {
                   <div className="h-px flex-1 bg-gradient-to-r from-primary/30 to-transparent"></div>
                 </div>
                 
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
+                <h3 className="text-3xl md:text-4xl font-bold text-white">
                   {step.title}
                 </h3>
                 
-                <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
+                <p className="text-lg text-gray-400 leading-relaxed max-w-lg">
                   {step.description}
                 </p>
 
@@ -96,7 +95,7 @@ export function HowItWorks() {
                       <div className="w-5 h-5 rounded-full bg-gradient-to-r from-primary to-primary-light flex items-center justify-center flex-shrink-0">
                         <IconCheck className="w-3 h-3 text-white" />
                       </div>
-                      <span className="text-gray-700 font-medium">{feature}</span>
+                      <span className="text-gray-300 font-medium">{feature}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -115,7 +114,7 @@ export function HowItWorks() {
         >
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-primary/10 to-primary-light/10 border border-primary/20 backdrop-blur-sm">
             <span className="text-primary font-semibold">Ready to start?</span>
-            <span className="text-gray-600">Download coming soon</span>
+            <span className="text-gray-400">Download coming soon</span>
           </div>
         </motion.div>
       </div>

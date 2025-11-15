@@ -4,21 +4,16 @@ import { IconMenu2, IconX } from "@tabler/icons-react";
 import {
   motion,
   AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
 } from "motion/react";
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Button } from "./button";
 import { Logo } from "./logo";
 import { useToast } from "./toast";
 
-interface NavbarProps {
-  navItems: {
-    name: string;
-    link: string;
-  }[];
-  visible: boolean;
+interface NavItem {
+  name: string;
+  link: string;
 }
 
 export const Navbar = () => {
@@ -41,27 +36,11 @@ export const Navbar = () => {
     },
   ];
 
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollY } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-  const [visible, setVisible] = useState<boolean>(false);
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > 100) {
-      setVisible(true);
-    } else {
-      setVisible(false);
-    }
-  });
-
   return (
     <>
-      
-      <motion.div ref={ref} className="w-full fixed top-2 inset-x-0 z-50 hidden lg:block">
-        <DesktopNav visible={visible} navItems={navItems} />
-      </motion.div>
+      <div className="w-full hidden lg:block">
+        <DesktopNav navItems={navItems} />
+      </div>
       
       
       <div className="lg:hidden">
@@ -71,147 +50,67 @@ export const Navbar = () => {
   );
 };
 
-const DesktopNav = ({ navItems, visible }: NavbarProps) => {
+const DesktopNav = ({ navItems }: { navItems: NavItem[] }) => {
   const { showToast } = useToast();
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <motion.div
-      onMouseLeave={() => setHoveredIndex(null)}
-      animate={{
-        backdropFilter: "blur(16px)",
-        background: visible ? "rgba(124, 58, 237, 0.95)" : "rgba(255, 255, 255, 0.9)",
-        width: visible ? "50%" : "90%",
-        height: visible ? "56px" : "72px",
-        y: visible ? 8 : 0,
-        borderColor: visible ? "rgba(124, 58, 237, 0.3)" : "rgba(229, 231, 235, 0.5)",
-      }}
-      initial={{
-        width: "90%",
-        height: "72px",
-        background: "rgba(255, 255, 255, 0.9)",
-        borderColor: "rgba(229, 231, 235, 0.5)",
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 400,
-        damping: 30,
-      }}
+    <div
       className={cn(
-        "hidden lg:flex flex-row self-center items-center justify-between py-3 mx-auto px-8 rounded-2xl relative z-[60] backdrop-saturate-[1.8] border shadow-lg"
+        "hidden lg:grid grid-cols-[auto_1fr_auto] items-center w-full px-8 py-4 mx-auto",
+        "backdrop-blur-lg border-b border-gray-800/50",
+        "fixed top-0 left-0 right-0 z-50"
       )}
+      style={{ backgroundColor: 'rgba(29, 27, 21, 0.8)' }}
     >
-      <Logo visible={visible} />
-      <motion.div
-        className="lg:flex flex-row flex-1 items-center justify-center space-x-2 text-base"
-        animate={{
-          scale: visible ? 0.9 : 1,
-          justifyContent: visible ? "flex-end" : "center",
-        }}
-      >
-        {navItems.map((navItem, idx) => (
-          <motion.div
+      {/* Logo */}
+      <Logo />
+
+      {/* Centered Nav Items */}
+      <div className="flex items-center justify-center gap-1">
+        {navItems.map((navItem: NavItem, idx: number) => (
+          <Link
             key={`nav-item-${idx}`}
-            onHoverStart={() => setHoveredIndex(idx)}
-            className="relative"
+            className={cn(
+              "px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors rounded-lg hover:bg-gray-800"
+            )}
+            href={navItem.link}
           >
-            <Link
-              className={cn(
-                "relative px-4 py-2 transition-colors font-medium text-base",
-                visible 
-                  ? "text-white hover:text-white/80" 
-                  : "text-gray-700 hover:text-primary"
-              )}
-              href={navItem.link}
-            >
-              <span className="relative z-10">{navItem.name}</span>
-              {hoveredIndex === idx && (
-                <motion.div
-                  layoutId="menu-hover"
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-white/10 to-white/20"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{
-                    opacity: 1,
-                    scale: 1.1,
-                    background:
-                      "radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 50%, transparent 100%)",
-                  }}
-                  exit={{
-                    opacity: 0,
-                    scale: 0.8,
-                    transition: {
-                      duration: 0.2,
-                    },
-                  }}
-                  transition={{
-                    type: "spring",
-                    bounce: 0.4,
-                    duration: 0.4,
-                  }}
-                />
-              )}
-            </Link>
-          </motion.div>
+            {navItem.name}
+          </Link>
         ))}
-      </motion.div>
-      
-      <div className="flex items-center gap-2">
-        <AnimatePresence mode="popLayout" initial={false}>
-          {!visible && (
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  type: "spring",
-                  stiffness: 400,
-                  damping: 25,
-                },
-              }}
-              exit={{
-                scale: 0.8,
-                opacity: 0,
-                transition: {
-                  duration: 0.2,
-                },
-              }}
-            >
-              <Button
-                as="button"
-                onClick={() => showToast("Coming Soon")}
-                variant="gradient"
-                className="hidden md:block rounded-xl"
-              >
-                Download App
-              </Button>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
-    </motion.div>
+
+      {/* Right CTAs */}
+      <div className="flex items-center gap-3">
+        <Button
+          as="button"
+          onClick={() => showToast("Coming Soon")}
+          variant="gradient"
+          className="px-5 py-2 text-sm rounded-lg"
+        >
+          Download App
+        </Button>
+      </div>
+    </div>
   );
 };
 
-const MobileNav = ({ navItems }: { navItems: NavbarProps['navItems'] }) => {
+const MobileNav = ({ navItems }: { navItems: NavItem[] }) => {
   const [open, setOpen] = useState(false);
   const { showToast } = useToast();
   return (
     <>
-      
-      <div className="lg:hidden absolute top-4 left-4 right-4 z-50">
-        <div className="flex justify-between items-center">
-          
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-lg border-b border-gray-800/50" style={{ backgroundColor: 'rgba(29, 27, 21, 0.8)' }}>
+        <div className="flex justify-between items-center px-4 py-3">
           <Logo />
-          
-          
+
           <button
             onClick={() => setOpen(!open)}
             className={cn(
-              "backdrop-blur-md rounded-full p-3 transition-all touch-manipulation shadow-lg",
-              open 
-                ? "bg-primary text-white border border-primary" 
-                : "bg-white/90 border border-gray-200 text-gray-700 hover:text-primary"
+              "p-2 transition-colors rounded-lg",
+              open
+                ? "bg-gray-800 text-white"
+                : "text-gray-300 hover:bg-gray-800"
             )}
             aria-label={open ? "Close menu" : "Open menu"}
           >
@@ -223,44 +122,43 @@ const MobileNav = ({ navItems }: { navItems: NavbarProps['navItems'] }) => {
           </button>
         </div>
 
-      
-        
         <AnimatePresence>
           {open && (
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: -10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: -10 }}
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
               transition={{
-                type: "spring",
-                stiffness: 400,
-                damping: 30,
-                duration: 0.2
+                duration: 0.2,
+                ease: "easeInOut"
               }}
-              className="absolute top-16 left-0 right-0 bg-white backdrop-blur-xl rounded-2xl border border-gray-200 shadow-2xl px-6 py-6 flex flex-col gap-2"
+              className="border-t border-gray-800/50 backdrop-blur-lg overflow-hidden"
+              style={{ backgroundColor: 'rgba(29, 27, 21, 0.95)' }}
             >
-              {navItems.map((navItem, idx) => (
-                <Link
-                  key={`mobile-link-${idx}`}
-                  href={navItem.link}
-                  onClick={() => setOpen(false)}
-                  className="text-gray-700 hover:text-primary hover:bg-primary/5 text-lg font-medium transition-all py-3 px-4 rounded-xl"
-                >
-                  {navItem.name}
-                </Link>
-              ))}
-              <div className="mt-4 pt-4 border-t border-gray-200">
-                <Button
-                  as="button"
-                  onClick={() => {
-                    setOpen(false);
-                    showToast("Coming Soon");
-                  }}
-                  variant="gradient"
-                  className="w-full rounded-xl"
-                >
-                  Download App
-                </Button>
+              <div className="px-4 py-4 flex flex-col gap-1">
+                {navItems.map((navItem: NavItem, idx: number) => (
+                  <Link
+                    key={`mobile-link-${idx}`}
+                    href={navItem.link}
+                    onClick={() => setOpen(false)}
+                    className="text-gray-300 hover:text-white hover:bg-gray-800 text-sm font-medium transition-all py-2 px-3 rounded-lg"
+                  >
+                    {navItem.name}
+                  </Link>
+                ))}
+                <div className="mt-3 pt-3 border-t border-gray-800">
+                  <Button
+                    as="button"
+                    onClick={() => {
+                      setOpen(false);
+                      showToast("Coming Soon");
+                    }}
+                    variant="gradient"
+                    className="w-full px-4 py-2 text-sm rounded-lg"
+                  >
+                    Download App
+                  </Button>
+                </div>
               </div>
             </motion.div>
           )}
