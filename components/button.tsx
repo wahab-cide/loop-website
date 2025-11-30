@@ -22,7 +22,7 @@ export const Button = ({
   const baseStyles = cn(
     "px-8 py-4 rounded-xl text-base font-bold relative font-jua tracking-wide",
     "cursor-pointer transition-all duration-300 transform hover:scale-105",
-    "inline-flex items-center justify-center shadow-lg hover:shadow-xl",
+    "inline-flex items-center justify-center",
     "text-white"
   );
 
@@ -30,7 +30,7 @@ export const Button = ({
     primary: "bg-primary hover:bg-primary-dark text-white shadow-primary/30",
     secondary: "bg-transparent border-2 border-primary/30 hover:bg-primary/5 hover:border-primary/50 text-primary backdrop-blur-sm",
     dark: "bg-gray-900 hover:bg-black text-white",
-    gradient: "bg-gradient-to-r from-primary to-primary-light hover:from-primary-dark hover:to-primary text-white shadow-primary/40",
+    gradient: "bg-gradient-to-r from-primary to-primary-light hover:from-primary-dark hover:to-primary text-white",
   };
 
   return (

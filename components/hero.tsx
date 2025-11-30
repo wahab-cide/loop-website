@@ -57,7 +57,7 @@ export function Hero() {
         transition={{ duration: 0.2, delay: 0.5 }}
         className="relative z-20 mx-auto mt-6 max-w-2xl px-4 text-center text-lg leading-8 text-gray-400 sm:text-xl"
       >
-Connect with students for affordable rides to events, and off-campus destinations.
+A social networking platform connecting verified students for campus activities, shared transportation, and college fleet coordination.
       </motion.p>
     </div>
   );
@@ -95,10 +95,10 @@ const DynamicWord = () => {
       <AnimatePresence mode="wait">
         <motion.span
           key={currentWordIndex}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -30 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
+          initial={{ opacity: 0, x: 20, filter: "blur(8px)" }}
+          animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+          exit={{ opacity: 0, x: -20, filter: "blur(8px)" }}
+          transition={{ duration: 0.25, ease: "easeInOut" }}
           className={cn(
             "absolute left-0 right-0 bg-clip-text text-transparent font-semibold",
             getWordColor(words[currentWordIndex])

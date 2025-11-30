@@ -10,19 +10,20 @@ import { StructuredData } from "./structured-data";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "poolUp - Community Rideshare & Carpool App | by Loop Platform, Inc.",
+  title: "poolUp - Student Social Network & Campus Coordination | by Loop Platform, Inc.",
   description:
-    "Join the poolUp community for safe, affordable rideshare. Connect with verified drivers in your area. Trusted transportation powered by Loop Platform, Inc.",
+    "A social networking platform connecting verified college students for campus activities, shared transportation, and fleet coordination. Join your campus community on poolUp.",
   keywords: [
-    "community rideshare",
-    "verified drivers",
-    "carpool app",
-    "ride sharing",
-    "trusted driver app",
-    "safe rideshare",
-    "affordable transportation",
-    "community rides",
-    "verified community"
+    "student social network",
+    "campus community",
+    "college students",
+    "student carpool",
+    "campus coordination",
+    "college fleet management",
+    "student connections",
+    "campus rideshare",
+    "verified students",
+    "college community app"
   ],
   authors: [{ name: "Loop Platform, Inc." }],
   creator: "Loop Platform, Inc.",
@@ -42,24 +43,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://looprides.dev",
-    title: "Loop Platform - Community Rideshare & Carpool App | Safe, Affordable Transportation",
+    title: "poolUp - Student Social Network & Campus Coordination Platform",
     description:
-      "Join the Loop Platform community for safe, affordable rideshare. Connect with verified drivers in your area. Trusted transportation for everyone.",
-    siteName: "Loop Platform",
+      "Connect with verified students at your college. Share rides, coordinate campus activities, and access fleet vehicles. A social networking platform for college communities.",
+    siteName: "poolUp",
     images: [
       {
         url: "https://looprides.dev/og-image.jpg",
         width: 1920,
         height: 1080,
-        alt: "Loop Platform Rideshare App Dashboard",
+        alt: "poolUp Student Social Network",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Loop Platform - Community Rideshare & Carpool App | Safe, Affordable Transportation",
+    title: "poolUp - Student Social Network & Campus Coordination Platform",
     description:
-      "Join the Loop Platform community for safe, affordable rideshare. Connect with verified drivers in your area.",
+      "Connect with verified students at your college. Share rides, coordinate activities, and access fleet vehicles.",
     images: ["https://looprides.dev/og-image.jpg"],
     creator: "@looprides",
   },
@@ -68,7 +69,10 @@ export const metadata: Metadata = {
     canonical: "https://looprides.dev",
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico' }
+    ],
     shortcut: '/favicon.png',
     apple: '/favicon.png',
   },

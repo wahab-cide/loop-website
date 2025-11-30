@@ -34,10 +34,10 @@ export function EnhancedSafety() {
           className="text-center mb-16 md:mb-20"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
-            Safe & Secure
+            Trusted Campus Community
           </h2>
           <p className="text-lg md:text-xl text-neutral-400 max-w-3xl mx-auto leading-relaxed">
-            Verified drivers and secure rides.
+            Connect with confidence. Every user is verified through your college's email and identity verification.
           </p>
         </motion.div>
 

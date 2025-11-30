@@ -23,7 +23,10 @@ export default function TermsOfService() {
             Loop Platform, Inc., a Delaware corporation, and its affiliates ("poolUp," or the "Company") operate the website located at looprides.dev, the "poolUp" mobile application available from the Apple App Store, Android Play Store, and other related websites, mobile applications, products and services including the poolUp Services (as defined below) (collectively, the "Platform").
           </Paragraph>
           <Paragraph>
-            Please read this Agreement carefully before using our Platform. By accessing, viewing or using the Platform, including by registering for an account or by using the Driver Services (as defined below), you agree to be bound by this Agreement, our Privacy Policy (as defined below), and to all other terms, conditions, policies and notices that appear on the Platform, including the additional Driver terms and conditions (applicable to Drivers) contained below (collectively, this "Agreement").
+            <Highlight>poolUp is a social networking platform designed exclusively for college students.</Highlight> The Platform enables students to create profiles, connect with other verified students at their college, communicate through messaging features, share information, and coordinate various activities including shared transportation arrangements. The Platform facilitates peer-to-peer connections and interactions between students, allowing them to post, discover, and respond to user-generated content.
+          </Paragraph>
+          <Paragraph>
+            Please read this Agreement carefully before using our Platform. By accessing, viewing or using the Platform, including by registering for an account or posting content on the Platform, you agree to be bound by this Agreement, our Privacy Policy (as defined below), and to all other terms, conditions, policies and notices that appear on the Platform, including the additional terms for users who post rideshare opportunities (collectively, this "Agreement").
           </Paragraph>
           <Paragraph>
             You can review the most current version of this Agreement at any time on the Platform, available at looprides.dev/terms. We reserve the right in our sole discretion to update, change or replace any part of this Agreement by posting updates and/or changes to this Agreement on our Platform.
@@ -38,39 +41,35 @@ export default function TermsOfService() {
         
         <div className="space-y-4 mt-6">
           <div>
-            <Strong>"Content"</Strong> means all information, text, graphics, functionality, works of authorship, logos, trademarks and other content available on or through the Platform and the poolUp Services, excluding Submitted Content.
+            <Strong>"Content"</Strong> means all information, text, graphics, functionality, works of authorship, logos, trademarks and other content available on or through the Platform and the poolUp Services, excluding User-Generated Content.
           </div>
-          
+
           <div>
-            <Strong>"Driver"</Strong> means a user who is accepted and completes Onboarding by the Company to provide Driver Services, which include primarily, though not exclusively, point to point Rides in a vehicle provided by the Driver and approved by the Company.
+            <Strong>"User-Generated Content"</Strong> means any content, information, posts, messages, or data submitted, posted, or shared by users on the Platform, including but not limited to ride posts, profile information, messages, and reviews.
           </div>
-          
+
           <div>
-            <Strong>"Driver Applicant"</Strong> means a user who begins an application to become a Driver.
+            <Strong>"Driver"</Strong> means a verified user who posts user-generated content about available rides they are personally taking and is willing to share seats with other students traveling similar routes. Drivers are independent third parties, not agents or employees of poolUp.
           </div>
-          
+
           <div>
-            <Strong>"Driver Services"</Strong> means Rides, and any other transportation-related services provided by any Driver that is facilitated by the Platform.
+            <Strong>"Driver Verification"</Strong> means our process of verifying a user's identity, driver's license, vehicle information, and background to ensure safety standards for the campus community before allowing them to post ride opportunities.
           </div>
-          
+
           <div>
-            <Strong>"poolUp Services"</Strong> means the Platform and the related proprietary system, mobile applications, websites, products, information, tools, software, interfaces, functionality, and services owned, operated or provided by the Company through the Platform.
+            <Strong>"Shared Ride" or "Ride"</Strong> refers to a voluntary carpooling arrangement between independent users where one user (Driver) shares available seats in their personal vehicle with other users (Riders) traveling a similar route, typically with cost-sharing for expenses like gas and tolls. All rides are arranged directly between users as independent parties.
           </div>
-          
+
           <div>
-            <Strong>"Onboarding"</Strong> means our process of accepting an application by a Driver Applicant to become a Driver, and preparing that new Driver to use our Platform to provide Driver Services.
+            <Strong>"Rider"</Strong> means a user who views ride posts on the Platform and connects with Drivers to arrange shared transportation. Riders are independent third parties who make their own arrangements with Drivers.
           </div>
-          
+
           <div>
-            <Strong>"Ride"</Strong> refers to the event of transporting a non-driving human (i.e., a Rider) in a motor vehicle provided by a Driver from the point of pick up to the point of drop off.
+            <Strong>"poolUp Services"</Strong> means the social networking Platform and related system, mobile applications, websites, tools, software, interfaces, messaging features, profile management, and community connection services owned, operated or provided by the Company.
           </div>
-          
+
           <div>
-            <Strong>"Rider"</Strong> means a non-driving human user who uses the Platform to discover, identify, request, order, purchase, schedule or participate in Rides provided by Drivers.
-          </div>
-          
-          <div>
-            <Strong>"User"</Strong> or "you" or "your" means any person who views, accesses, or uses the Platform in any way.
+            <Strong>"User"</Strong> or "you" or "your" means any person who views, accesses, or uses the Platform in any way, including those who create profiles, post content, or interact with other users.
           </div>
         </div>
       </Section>
@@ -78,23 +77,29 @@ export default function TermsOfService() {
       <Section title="3. THE SERVICES" id="services">
         <Subsection title="About the Services">
           <Paragraph>
-            poolUp provides, by way of the Platform, a marketplace for offering, posting, listing, requesting, searching for, discovering, inquiring about, marketing, scheduling, and arranging for Rides by and among Drivers and Riders.
+            <Highlight>poolUp is a social networking platform that enables college students to connect, communicate, and coordinate activities with other verified students at their college.</Highlight> The Platform provides tools for users to create profiles, share information, send messages, post content, and make connections within their campus community.
           </Paragraph>
           <Paragraph>
-            The Platform is a set of online and mobile tools that match Riders with Drivers to facilitate the delivery and servicing of Rides by Drivers.
+            One feature of the Platform allows users to post user-generated content about their travel plans and coordinate shared transportation arrangements (carpooling/ridesharing) with other students. Users may post information about trips they are taking, search for others traveling similar routes, and communicate to arrange cost-sharing for expenses such as gas and tolls.
           </Paragraph>
           <Paragraph>
-            <Highlight>The Company does not provide transportation services, and the Company is not a transportation carrier, common carrier, or public carrier.</Highlight> It is up to the Driver to decide whether or not to offer a Ride to a Rider contacted through the Platform.
+            <Highlight>The Company operates as an information service and social networking platform, not as a transportation provider.</Highlight> poolUp does not provide, arrange, or facilitate transportation services. The Company is not a transportation carrier, transportation network company (TNC), common carrier, or public carrier. All transportation arrangements are made directly between users as independent third parties.
+          </Paragraph>
+          <Paragraph>
+            poolUp functions as an interactive computer service and platform for user-generated content. The Company does not create, control, or endorse the content posted by users. Users are solely responsible for their own posts, arrangements, and interactions with other users.
           </Paragraph>
         </Subsection>
 
         <div className="bg-neutral-900 border border-neutral-800 rounded-lg p-6 my-8">
-          <p className="text-white font-bold text-lg mb-4">IMPORTANT SAFETY NOTICE</p>
+          <p className="text-white font-bold text-lg mb-4">IMPORTANT USER RESPONSIBILITY NOTICE</p>
           <p className="text-red-300 mb-4">
-            <Strong>AS A RIDER, YOU AGREE AND ACKNOWLEDGE THAT ANY RIDE OR DRIVER SERVICES THAT YOU ORDER, PURCHASE, PARTICIPATE IN OR RECEIVE IS AT YOUR OWN RISK AND SOLE RESPONSIBILITY.</Strong>
+            <Strong>YOU ACKNOWLEDGE THAT POOLUP IS A SOCIAL NETWORKING PLATFORM THAT ENABLES PEER-TO-PEER CONNECTIONS. ALL ARRANGEMENTS BETWEEN USERS, INCLUDING SHARED RIDES, ARE MADE DIRECTLY BETWEEN INDEPENDENT THIRD PARTIES. ANY SHARED TRANSPORTATION YOU ARRANGE OR PARTICIPATE IN THROUGH USER CONNECTIONS ON THE PLATFORM IS AT YOUR OWN RISK AND SOLE RESPONSIBILITY.</Strong>
+          </p>
+          <p className="text-red-300 mb-4">
+            <Strong>POOLUP DOES NOT PROVIDE, ARRANGE, OR FACILITATE TRANSPORTATION. WE ARE NOT RESPONSIBLE FOR THE ACTIONS, CONDUCT, OR SAFETY OF ANY USERS.</Strong>
           </p>
           <p className="text-red-300">
-            <Strong>WE DO NOT PROVIDE DRIVERS WITH INSURANCE COVERAGE. EACH DRIVER IS RESPONSIBLE FOR CARRYING AN ACTIVE INSURANCE POLICY WITH APPLICABLE RIDESHARE RIDERS, ADDENDUMS, AND COVERAGE AS REQUIRED BY THE LOCALITIES IN WHICH THEY OPERATE.</Strong>
+            <Strong>USERS WHO DRIVE ARE SOLELY RESPONSIBLE FOR CARRYING ADEQUATE INSURANCE COVERAGE FOR THEIR VEHICLE AND PASSENGERS, INCLUDING ANY REQUIREMENTS FOR PERSONAL VEHICLE SHARING OR CARPOOLING IN THEIR LOCALITY.</Strong>
           </p>
         </div>
       </Section>
@@ -108,117 +113,122 @@ export default function TermsOfService() {
         </Paragraph>
       </Section>
 
-      <Section title="5. FEES AND CHARGES" id="fees-charges">
-        <Subsection title="Fees Charged to Riders">
+      <Section title="5. PAYMENT ARRANGEMENTS" id="payment-arrangements">
+        <Subsection title="No Payment Processing by poolUp">
           <Paragraph>
-            As a Rider, you will be charged fees ("Fees") for Rides and Driver Services that you purchase through the Platform. Any Fees charged to you through your user account for Rides and Driver Services will be payable by you through the Platform.
+            <Highlight>poolUp does not process, facilitate, or handle any payments between Riders and Drivers.</Highlight> The Platform serves solely as a marketplace to connect Riders with Drivers for the purpose of arranging rides.
+          </Paragraph>
+          <Paragraph>
+            All payment arrangements, including the amount, method, and timing of payment for rides, are made directly between Riders and Drivers. poolUp is not a party to any payment transaction and has no control over or responsibility for such transactions.
           </Paragraph>
         </Subsection>
 
-        <Subsection title="Service Charges">
+        <Subsection title="No Platform Fees or Service Charges">
           <Paragraph>
-            For certain Driver types, the Company charges and collects a percentage of the total Fees charged to Riders (the "Service Charge") depending on the length of the applicable Ride provided and other factors.
+            poolUp does not charge Riders or Drivers any fees, service charges, or commissions for using the Platform to arrange rides. The Platform is provided as a free service to connect students for ridesharing.
           </Paragraph>
         </Subsection>
 
-        <Subsection title="Tips">
+        <Subsection title="Rider and Driver Payment Responsibility">
           <Paragraph>
-            Riders may, following a Ride, elect to pay an additional amount to the Driver as a tip for the Ride. Tips should be paid to Drivers using the Platform. No Service Charge or processing fees are deducted from any tips paid by Riders to Drivers.
+            As a Rider, you are solely responsible for arranging payment directly with your Driver for any ride you book through the Platform. Payment terms, amounts, and methods should be clearly discussed and agreed upon between you and the Driver before or after the ride.
+          </Paragraph>
+          <Paragraph>
+            As a Driver, you are solely responsible for collecting payment directly from Riders for rides you provide. poolUp does not guarantee payment or handle any disputes related to payment between Riders and Drivers.
           </Paragraph>
         </Subsection>
 
-        <Subsection title="Damage Fee">
+        <Subsection title="Damage and Additional Costs">
           <Paragraph>
-            If a Driver reports that you have materially damaged or soiled the Driver's vehicle, you agree to pay a "Damage Fee" of up to reasonable costs to bring the vehicle to its former condition.
+            If a Driver reports that you have materially damaged or soiled the Driver's vehicle, any costs or fees related to repairs or cleaning must be arranged and paid directly between you and the Driver. poolUp is not responsible for facilitating or enforcing such payments.
           </Paragraph>
         </Subsection>
       </Section>
 
-      <Section title="6. DRIVER PAYMENT AMOUNTS FOR RIDES AND DRIVER SERVICES" id="driver-payments">
+      <Section title="6. DRIVER COMPENSATION" id="driver-compensation">
         <Paragraph>
-          If you are a Driver, you will either receive an agreed-upon amount for a round trip or one way drive, or you will receive payment of a portion of the Fees charged to Riders for your provision of Rides and Driver Services to such Riders.
+          If you are a Driver, you and your Rider(s) will agree directly on the compensation amount and payment method for each ride. This may include cost-sharing for gas, tolls, and other trip expenses, or any other arrangement you mutually agree upon.
+        </Paragraph>
+        <Paragraph>
+          <Highlight>poolUp does not set prices, require specific payment amounts, or take any portion of payments made between Riders and Drivers.</Highlight> All financial arrangements are solely between you and your Rider(s).
         </Paragraph>
       </Section>
 
-      <Section title="7. ADDITIONAL DRIVER TERMS" id="driver-terms">
-        <Subsection title="Driver Representations, Warranties, and Agreements">
+      <Section title="7. TERMS FOR USERS POSTING RIDE OPPORTUNITIES" id="driver-terms">
+        <Subsection title="Requirements for Posting Rides">
           <Paragraph>
-            By offering and providing Rides and Driver Services as a Driver using the Platform, you represent, warrant, covenant and agree that, at all times during which you are a Driver:
+            If you choose to post user-generated content about available seats in your personal vehicle (shared rides/carpooling), you represent, warrant, and agree that:
           </Paragraph>
-          
+
           <div className="space-y-4 mt-6">
             <ListItem number="1">
               You possess a valid driver's license issued by one of the 50 states in the U.S.A. and are authorized and medically fit to operate a motor vehicle.
             </ListItem>
-            
+
             <ListItem number="2">
-              You own or have the legal right to operate the vehicle you use when providing Driver Services.
+              You own or have the legal right to operate the vehicle you use for shared rides.
             </ListItem>
-            
+
             <ListItem number="3">
-              You are covered by an active personal auto insurance policy covering your vehicle that contains the state minimum liability coverage and limits.
+              You maintain an active personal auto insurance policy covering your vehicle with at least your state's minimum required liability coverage.
             </ListItem>
-            
+
             <div className="bg-neutral-900 border border-neutral-800 rounded-lg p-4">
               <ListItem number="4">
-                <Strong>YOU ACKNOWLEDGE THAT YOUR PERSONAL AUTO POLICY COVERAGE MAY BE INVALID OR INSUFFICIENT WHILE YOU ARE PROVIDING SERVICES ON LOOP. IT IS YOUR RESPONSIBILITY TO UNDERSTAND YOUR OWN POLICIES LIMITATIONS AND RESTRICTIONS.</Strong>
+                <Strong>YOU ACKNOWLEDGE THAT YOUR PERSONAL AUTO INSURANCE POLICY MAY HAVE EXCLUSIONS OR LIMITATIONS WHEN SHARING RIDES WITH OTHERS, EVEN FOR CASUAL CARPOOLING. IT IS YOUR SOLE RESPONSIBILITY TO UNDERSTAND YOUR POLICY'S TERMS AND OBTAIN ANY NECESSARY COVERAGE FOR CARPOOLING OR RIDESHARING ACTIVITIES.</Strong>
               </ListItem>
             </div>
-            
+
             <ListItem number="5">
-              You will not engage in reckless behavior while driving, drive unsafely, or provide Driver Services while under the influence of alcohol or drugs.
+              You will operate your vehicle safely and legally, and will not drive under the influence of alcohol or drugs.
             </ListItem>
-            
+
             <ListItem number="6">
-              You will only provide and service Rides when you have had adequate sleep and are not excessively tired.
+              You will only drive when well-rested and not excessively fatigued.
             </ListItem>
-            
+
             <ListItem number="7">
-              You will only provide Rides using the vehicle that has been reported to and approved by the Company during your Driver Onboarding process.
+              You will only share rides using the vehicle information you provided during verification.
             </ListItem>
-            
+
             <ListItem number="8">
-              You will not operate as a public or common carrier or taxi service, accept street hails, or charge for Rides except through the Platform.
+              <Highlight>You will not operate as a taxi, livery service, transportation network company, or any form of commercial for-hire transportation service. You understand that shared rides arranged through poolUp are casual carpooling arrangements for cost-sharing among students, not commercial transportation services.</Highlight>
             </ListItem>
-            
+
             <ListItem number="9">
-              You may not accept payment from any user or Rider in cash or in any other form than payment that is processed through the Platform.
+              You will not harass, threaten, or endanger other users or carry unlawful weapons.
             </ListItem>
-            
+
             <ListItem number="10">
-              You will not stalk, threaten, or otherwise harass any person, or carry unlawful weapons.
+              You will not simultaneously provide commercial transportation services (such as Uber, Lyft, or other TNCs) during trips arranged through poolUp.
             </ListItem>
-            
+
             <ListItem number="11">
-              You will not provide any services for any other rideshare platform while providing Driver Services.
+              You will not attempt to defraud other users or the Company.
             </ListItem>
-            
+
             <ListItem number="12">
-              You will not attempt to defraud the Company or Riders on the Platform.
+              You will treat all passengers with respect and courtesy.
             </ListItem>
-            
+
             <ListItem number="13">
-              You will treat all passengers with respect and dignity.
+              You will not discriminate against any person based on race, religion, nationality, age, sex, gender, disability, or any other protected characteristic.
             </ListItem>
-            
+
             <ListItem number="14">
-              You will not discriminate against any passenger based on race, religion, nationality, age, sex, gender, or disability.
+              You will make reasonable accommodations for passengers with disabilities and service animals as required by law.
             </ListItem>
-            
+
             <ListItem number="15">
-              You will make reasonable accommodations for Riders and/or for service animals, as required by law.
+              You authorize poolUp to conduct background checks and verify your driving record to maintain community safety standards.
             </ListItem>
-            
+
             <ListItem number="16">
-              You agree that we may obtain information about you, including your criminal and driving records.
+              You are responsible for any tax obligations related to cost-sharing arrangements you make with other users.
             </ListItem>
-            
+
             <ListItem number="17">
-              You will pay all applicable federal, state, and local taxes based on your provision of Driver Services.
-            </ListItem>
-            
-            <ListItem number="18">
-              You understand that you are an independent contractor, not under our control or employ.
+              <Highlight>You understand that you are an independent user making personal carpooling arrangements with other students. You are not an agent, employee, or contractor of poolUp, and poolUp does not direct, control, or supervise your activities.</Highlight>
             </ListItem>
           </div>
         </Subsection>

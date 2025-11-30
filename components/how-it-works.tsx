@@ -6,24 +6,31 @@ import { motion } from "framer-motion";
 const steps = [
   {
     number: "01",
-    title: "Sign Up & Verify",
-    description: "Create your account and verify with your .edu email to join the campus community.",
+    title: "Join Your Campus Community",
+    description: "Create your profile and verify with your .edu email to connect with verified students at your college.",
     color: "from-orange-500 to-orange-500",
-    features: [".edu Email Verification", "Student Community Access"]
+    features: [".edu Email Verification", "Student Community Access", "Profile & Connections"]
   },
   {
-    number: "02", 
-    title: "Find or Post Rides",
-    description: "Browse available rides in your area or post your own trip for others to join.",
-    color: "from-blue-500 to-cyan-500", 
+    number: "02",
+    title: "Share or Find Rides",
+    description: "Post your travel plans to share rides with students going your way, or browse available options.",
+    color: "from-blue-500 to-cyan-500",
     features: ["15km Radius Search", "Smart Matching", "Flexible Scheduling"]
   },
   {
     number: "03",
-    title: "Connect & Travel",
-    description: "Chat with your driver or riders, share costs automatically, and enjoy safe transportation.",
+    title: "Connect & Coordinate",
+    description: "Message other students, form travel groups, and arrange cost-sharing for gas and tolls.",
     color: "from-orange-500 to-orange-500",
-    features: ["In-app Messaging", "Auto Fare Split", "Real-time Tracking"]
+    features: ["In-app Messaging", "Group Coordination", "Cost Sharing"]
+  },
+  {
+    number: "04",
+    title: "Access College Fleet",
+    description: "Create pool groups and request vehicles from your college's fleet for group trips.",
+    color: "from-blue-500 to-cyan-500",
+    features: ["Pool Group Formation", "Fleet Vehicle Requests", "Admin Approval System"]
   }
 ];
 
