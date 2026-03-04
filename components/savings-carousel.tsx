@@ -38,14 +38,14 @@ export function SavingsCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="py-12 px-6 overflow-hidden" style={{ backgroundColor: '#0f0e0b' }}>
+    <section className="py-12 px-6 overflow-hidden" style={{ backgroundColor: '#000000' }}>
       <div className="max-w-7xl mx-auto">
         
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, amount: 0.3 }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -63,7 +63,7 @@ export function SavingsCarousel() {
               key={activeIndex}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="relative w-full h-full"
             >
               
@@ -131,7 +131,7 @@ export function SavingsCarousel() {
                 key={index}
                 onClick={() => setActiveIndex(index)}
                 className={cn(
-                  "h-2 rounded-full transition-all duration-300",
+                  "h-2 rounded-full transition-all duration-700",
                   activeIndex === index 
                     ? "bg-orange-500 w-8" 
                     : "bg-gray-600 w-2 hover:bg-gray-500"
@@ -147,10 +147,10 @@ export function SavingsCarousel() {
             {tripScenarios.map((scenario, index) => (
               <motion.div
                 key={scenario.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                initial={{ y: 60 }}
+                whileInView={{ y: 0 }}
+                transition={{ duration: 1.6, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                viewport={{ once: true, amount: 0.2 }}
                 onClick={() => setActiveIndex(index)}
                 className={cn(
                   "relative h-[600px] rounded-3xl overflow-hidden cursor-pointer transition-all duration-300 group",
@@ -164,7 +164,8 @@ export function SavingsCarousel() {
                   src={scenario.image}
                   alt={scenario.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  priority
+                  className="object-cover group-hover:scale-105 transition-transform duration-1000"
                   quality={95}
                 />
                 
@@ -205,8 +206,8 @@ export function SavingsCarousel() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
+          transition={{ duration: 1.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, amount: 0.4 }}
           className="text-center mt-16"
         >
           <h3 className="text-2xl font-semibold mb-4">

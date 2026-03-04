@@ -35,9 +35,9 @@ export default function RiderPage() {
 
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#1d1b15' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#000000' }}>
 
-      <section className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden px-4 pt-20 pb-12 md:px-8 md:pt-24 md:pb-16" style={{ backgroundColor: '#1d1b15' }}>
+      <section className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden px-4 pt-20 pb-12 md:px-8 md:pt-24 md:pb-16" style={{ backgroundColor: '#000000' }}>
         <div className="text-balance relative z-20 mx-auto mb-4 mt-4 max-w-4xl text-center text-4xl font-semibold tracking-tight text-white md:text-7xl">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ export default function RiderPage() {
 
 
 
-      <section className="py-20 px-6" style={{ backgroundColor: '#252319' }}>
+      <section className="py-20 px-6" style={{ backgroundColor: '#0A0A0A' }}>
         <div className="max-w-6xl mx-auto">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -96,7 +96,7 @@ export default function RiderPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="rounded-2xl p-8 border border-gray-800 shadow-md"
-                style={{ backgroundColor: '#181611' }}
+                style={{ backgroundColor: '#111111' }}
               >
                 <h3 className="text-2xl font-semibold mb-3 text-white">{benefit.title}</h3>
                 <p className="text-gray-400">{benefit.description}</p>
@@ -109,7 +109,7 @@ export default function RiderPage() {
 
 
 
-      <section className="py-20 px-6" style={{ backgroundColor: '#1d1b15' }}>
+      <section className="py-20 px-6" style={{ backgroundColor: '#000000' }}>
         <div className="max-w-6xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -207,7 +207,7 @@ export default function RiderPage() {
       <RideInfo />
 
 
-      <section className="py-20 px-6" style={{ backgroundColor: '#252319' }}>
+      <section className="py-20 px-6" style={{ backgroundColor: '#0A0A0A' }}>
         <div className="max-w-6xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -256,7 +256,7 @@ export default function RiderPage() {
         </div>
       </section>
 
-      <section className="py-20 px-6" style={{ backgroundColor: '#181611' }}>
+      <section className="py-20 px-6" style={{ backgroundColor: '#111111' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

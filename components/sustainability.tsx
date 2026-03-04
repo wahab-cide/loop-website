@@ -33,14 +33,14 @@ const sustainabilityStats = [
 
 export function Sustainability() {
   return (
-    <section className="w-full py-20 md:py-28 lg:py-36 overflow-hidden" style={{ backgroundColor: '#1d1b15' }}>
+    <section className="w-full py-20 md:py-28 lg:py-36 overflow-hidden" style={{ backgroundColor: '#000000' }}>
       <div className="max-w-7xl mx-auto px-4 md:px-8">
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, amount: 0.3 }}
           className="text-center mb-16 md:mb-20"
         >
           <h2 className={cn(
@@ -62,8 +62,8 @@ export function Sustainability() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                transition={{ duration: 1.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                viewport={{ once: true, amount: 0.3 }}
                 className="text-center md:text-left"
               >
                 <div className="flex items-center gap-4 mb-3 justify-center md:justify-start">
@@ -85,10 +85,10 @@ export function Sustainability() {
 
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, amount: 0.2 }}
           className="max-w-4xl mx-auto"
         >
           <h3 className="text-2xl md:text-3xl font-medium text-neutral-200 text-center mb-12 md:mb-16">
@@ -123,10 +123,10 @@ interface EcoFeatureProps {
 function EcoFeature({ title, description }: EcoFeatureProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-      viewport={{ once: true }}
+      transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+      viewport={{ once: true, amount: 0.4 }}
       className="py-6 md:py-8"
     >
       <div className="space-y-2">

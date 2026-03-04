@@ -60,7 +60,7 @@ const DesktopNav = ({ navItems }: { navItems: NavItem[] }) => {
         "backdrop-blur-lg border-b border-gray-800/50",
         "fixed top-0 left-0 right-0 z-50"
       )}
-      style={{ backgroundColor: 'rgba(29, 27, 21, 0.8)' }}
+      style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)' }}
     >
       {/* Logo */}
       <Logo />
@@ -100,7 +100,7 @@ const MobileNav = ({ navItems }: { navItems: NavItem[] }) => {
   const { showToast } = useToast();
   return (
     <>
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-lg border-b border-gray-800/50" style={{ backgroundColor: 'rgba(29, 27, 21, 0.8)' }}>
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-lg border-b border-gray-800/50" style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)' }}>
         <div className="flex justify-between items-center px-4 py-3">
           <Logo />
 
@@ -133,7 +133,7 @@ const MobileNav = ({ navItems }: { navItems: NavItem[] }) => {
                 ease: "easeInOut"
               }}
               className="border-t border-gray-800/50 backdrop-blur-lg overflow-hidden"
-              style={{ backgroundColor: 'rgba(29, 27, 21, 0.95)' }}
+              style={{ backgroundColor: 'rgba(0, 0, 0, 0.95)' }}
             >
               <div className="px-4 py-4 flex flex-col gap-1">
                 {navItems.map((navItem: NavItem, idx: number) => (

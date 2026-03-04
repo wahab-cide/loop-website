@@ -94,7 +94,7 @@ const FAQItem = ({
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 className="overflow-hidden text-sm md:text-base text-neutral-400 mt-2"
               >
                 <p>{answer}</p>
@@ -111,7 +111,7 @@ const FAQItem = ({
             }}
             initial={{ scale: 0 }}
             exit={{ scale: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
             <IconArrowRight className="absolute inset-0 h-5 w-5 md:h-6 md:w-6 transform text-white-500" />
           </motion.div>

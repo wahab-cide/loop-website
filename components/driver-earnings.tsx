@@ -38,7 +38,7 @@ export function DriverEarnings() {
   const [selectedPlan, setSelectedPlan] = useState(1);
 
   return (
-    <section className="w-full bg-gray-950 py-16 md:py-24 lg:py-32 overflow-hidden">
+    <section className="w-full bg-black py-16 md:py-24 lg:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         <motion.div
@@ -50,7 +50,7 @@ export function DriverEarnings() {
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="text-white">Earn More as a</span>{' '}
-            <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">Driver</span>
+            <span className="text-orange-500">Driver</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
             Turn your daily commute into extra income. Join verified drivers earning up to $400+ per week.
@@ -83,7 +83,7 @@ export function DriverEarnings() {
                       "p-4 rounded-xl border transition-all duration-300 text-center",
                       selectedPlan === index
                         ? "border-orange-500/50 bg-orange-500/10"
-                        : "border-gray-700 bg-gray-900 hover:border-gray-400"
+                        : "border-gray-700 bg-[#111111] hover:border-gray-400"
                     )}
                   >
                     <div className="text-2xl font-bold text-white">{plan.rides}</div>
@@ -98,11 +98,11 @@ export function DriverEarnings() {
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                className="bg-gradient-to-br from-orange-500/5 to-transparent rounded-2xl p-8 border border-orange-500/20 backdrop-blur-sm"
+                className="bg-[#111111] rounded-2xl p-8 border border-orange-500/20"
               >
                 <div className="grid grid-cols-2 gap-6">
                   <div>
-                    <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+                    <div className="text-3xl md:text-4xl font-black text-orange-500">
                       ${earningsData[selectedPlan].earnings}
                     </div>
                     <div className="text-gray-400">per week</div>
@@ -154,7 +154,7 @@ export function DriverEarnings() {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <div className="h-full p-6 rounded-xl bg-gray-900 border border-gray-800 hover:border-orange-500/30 transition-all duration-300">
+                  <div className="h-full p-6 rounded-xl bg-[#111111] border border-white/[0.06] hover:border-orange-500/30 transition-all duration-300">
                     <div className="mb-4">
                       <benefit.icon className="w-8 h-8 text-orange-500" />
                     </div>
@@ -179,7 +179,7 @@ export function DriverEarnings() {
           viewport={{ once: true }}
           className="text-center mt-16 md:mt-20"
         >
-          <div className="inline-flex flex-col items-center gap-4 px-8 py-6 rounded-2xl bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-500/20 backdrop-blur-sm">
+          <div className="inline-flex flex-col items-center gap-4 px-8 py-6 rounded-2xl bg-[#111111] border border-orange-500/20">
             <div className="text-xl font-semibold text-orange-400">
               Ready to start earning?
             </div>

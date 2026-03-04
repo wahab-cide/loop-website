@@ -88,7 +88,7 @@ Safe, reliable rideshare for everyone.
         </Card>
         <Card className="flex flex-col relative justify-between lg:col-span-3">
           <CardSkeletonBody>
-            <div className="relative flex h-[300px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-blue-950/20 to-orange-950/20">
+            <div className="relative flex h-[300px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-[#0A0A0A]">
               <GhanaUniversitiesMap />
             </div>
           </CardSkeletonBody>
@@ -165,7 +165,7 @@ const CardTitle = ({
   return (
     <h3
       className={cn(
-        "inline-block text-xl md:text-4xl bg-[radial-gradient(61.17%_178.53%_at_38.83%_-13.54%,#3B82F6_0%,#888787_12.61%,#FFFFFF_50%,#888787_80%,#FB923C_100%)]  bg-clip-text text-transparent",
+        "inline-block text-xl md:text-4xl text-white",
         className
       )}
     >
@@ -203,7 +203,7 @@ const Card = ({
     <motion.div
       whileHover="animate"
       className={cn(
-        "group relative isolate flex flex-col rounded-2xl bg-gradient-to-br from-neutral-900 via-blue-950/10 to-orange-950/10 shadow-[0_1px_1px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.05),0_2px_3px_rgba(0,0,0,0.04)] border border-blue-500/10 hover:border-orange-500/20 overflow-hidden transition-all duration-300",
+        "group relative isolate flex flex-col rounded-2xl bg-[#111111] border border-white/[0.06] hover:border-white/[0.12] overflow-hidden transition-all duration-300",
         className
       )}
     >
@@ -305,7 +305,7 @@ export const Highlight = ({
   return (
     <span
       className={cn(
-        "font-bold bg-gradient-to-r from-orange-100 to-orange-100 bg-blue-700/[0.2] text-blue-500 px-1 py-0.5 rounded",
+        "font-bold bg-orange-500/10 text-orange-400 px-1 py-0.5 rounded",
         className
       )}
     >
@@ -474,7 +474,7 @@ const IconLogo = ({ className }: { className?: string }) => {
 
 const GhanaUniversitiesMap = () => {
   return (
-    <div className="relative w-full h-full overflow-hidden rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div className="relative w-full h-full overflow-hidden rounded-lg bg-[#111111]">
       <div className="absolute top-4 right-4 bg-yellow-500/90 text-black text-xs font-bold px-3 py-1.5 rounded-full shadow-lg backdrop-blur-sm border border-yellow-400">
         Coming Soon
       </div>

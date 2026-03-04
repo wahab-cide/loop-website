@@ -23,14 +23,14 @@ const verificationSteps = [
 
 export function EnhancedSafety() {
   return (
-    <section className="w-full py-20 md:py-28 lg:py-36 overflow-hidden" style={{ backgroundColor: '#181611' }}>
+    <section className="w-full py-20 md:py-28 lg:py-36 overflow-hidden" style={{ backgroundColor: '#0A0A0A' }}>
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, amount: 0.3 }}
           className="text-center mb-16 md:mb-20"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
@@ -44,10 +44,10 @@ export function EnhancedSafety() {
         
         <div className="mb-20 md:mb-32">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, amount: 0.3 }}
             className="text-center mb-12"
           >
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
@@ -63,23 +63,23 @@ export function EnhancedSafety() {
             {verificationSteps.map((step, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 70 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
+                transition={{ duration: 1.8, delay: index * 0.18, ease: [0.16, 1, 0.3, 1] }}
+                viewport={{ once: true, amount: 0.2 }}
                 className="group"
               >
                 <div className="relative h-full">
                   
                   {index < verificationSteps.length - 1 && (
-                    <div className="hidden md:block absolute top-16 left-full w-8 h-0.5 bg-gradient-to-r from-orange-500 to-orange-500 z-10">
+                    <div className="hidden md:block absolute top-16 left-full w-8 h-0.5 bg-orange-500 z-10">
                       <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-orange-500 rounded-full"></div>
                     </div>
                   )}
                   
-                  <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 border border-gray-700/50 hover:border-orange-500/30 transition-all duration-500 h-full group-hover:transform group-hover:scale-105">
+                  <div className="bg-[#111111] rounded-2xl p-8 border border-white/[0.06] hover:border-orange-500/30 transition-all duration-700 h-full group-hover:transform group-hover:scale-105">
                     
-                    <div className="w-16 h-16 mx-auto mb-6 rounded-xl bg-gradient-to-br from-orange-500 to-orange-500 flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                    <div className="w-16 h-16 mx-auto mb-6 rounded-xl bg-orange-500 flex items-center justify-center group-hover:rotate-12 transition-transform duration-700">
                       <step.icon className="w-8 h-8 text-white" />
                     </div>
                     

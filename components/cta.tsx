@@ -66,7 +66,7 @@ export default function CTA() {
   }, [controls, inView]);
 
   return (
-    <div className="w-full max-w-7xl mx-auto min-h-[80vh] md:min-h-[100dvh] flex items-center justify-center px-4 sm:px-6 lg:px-8 relative" style={{ backgroundColor: '#0f0e0b' }}>
+    <div className="w-full max-w-7xl mx-auto min-h-[80vh] md:min-h-[100dvh] flex items-center justify-center px-4 sm:px-6 lg:px-8 relative" style={{ backgroundColor: '#000000' }}>
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 20 }}
@@ -77,7 +77,7 @@ export default function CTA() {
           <h2
             className={cn(
               "inline-block text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold",
-              "bg-gradient-to-b from-[#3B3B3B] via-[#FFFFFF] to-[#3B3B3B]",
+              "bg-white/20",
               "bg-clip-text text-transparent",
               "px-4 md:px-8"
             )}

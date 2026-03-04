@@ -39,9 +39,9 @@ export default function DriverPage() {
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#1d1b15' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#000000' }}>
 
-      <section className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden px-4 pt-20 pb-12 md:px-8 md:pt-24 md:pb-16" style={{ backgroundColor: '#1d1b15' }}>
+      <section className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden px-4 pt-20 pb-12 md:px-8 md:pt-24 md:pb-16" style={{ backgroundColor: '#000000' }}>
         <div className="text-balance relative z-20 mx-auto mb-4 mt-4 max-w-4xl text-center text-4xl font-semibold tracking-tight text-white md:text-7xl">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -65,7 +65,7 @@ export default function DriverPage() {
 
 
 
-      <section className="w-full py-16 md:py-24 lg:py-32 overflow-hidden" style={{ backgroundColor: '#252319' }}>
+      <section className="w-full py-16 md:py-24 lg:py-32 overflow-hidden" style={{ backgroundColor: '#0A0A0A' }}>
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 xl:gap-32 items-center">
             
@@ -126,7 +126,7 @@ export default function DriverPage() {
                 </div>
               </div>
 
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-gradient-to-r from-blue-600/20 to-orange-600/20 rounded-full blur-3xl opacity-50" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] hidden" />
             </motion.div>
           </div>
         </div>
@@ -136,7 +136,7 @@ export default function DriverPage() {
       <TestimonialCarousel />
 
       
-      <section className="py-20 px-6" style={{ backgroundColor: '#252319' }}>
+      <section className="py-20 px-6" style={{ backgroundColor: '#0A0A0A' }}>
         <div className="max-w-6xl mx-auto">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -157,7 +157,7 @@ export default function DriverPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="rounded-2xl p-8 border border-gray-800 backdrop-blur-sm"
-                style={{ backgroundColor: '#181611' }}
+                style={{ backgroundColor: '#111111' }}
               >
                 <h3 className="text-2xl font-semibold mb-3 text-white">{benefit.title}</h3>
                 <p className="text-gray-400">{benefit.description}</p>
@@ -169,7 +169,7 @@ export default function DriverPage() {
 
 
 
-      <section className="py-20 px-6" style={{ backgroundColor: '#1d1b15' }}>
+      <section className="py-20 px-6" style={{ backgroundColor: '#000000' }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -221,7 +221,7 @@ export default function DriverPage() {
       </section>
 
       
-      <section id="earnings" className="py-20 px-6" style={{ backgroundColor: '#252319' }}>
+      <section id="earnings" className="py-20 px-6" style={{ backgroundColor: '#0A0A0A' }}>
         <div className="max-w-6xl mx-auto">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -242,7 +242,7 @@ export default function DriverPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="rounded-xl p-6 border border-gray-800 shadow-md"
-                style={{ backgroundColor: '#181611' }}
+                style={{ backgroundColor: '#111111' }}
               >
                 <div className="text-sm text-gray-400 mb-2">{item.frequency}</div>
                 <h3 className="text-xl font-semibold mb-2 text-white">{item.route}</h3>
@@ -273,7 +273,7 @@ export default function DriverPage() {
 
       <CampusLaunchCTA />
 
-      <section className="py-20 px-6" style={{ backgroundColor: '#0f0e0b' }}>
+      <section className="py-20 px-6" style={{ backgroundColor: '#000000' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

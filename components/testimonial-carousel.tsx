@@ -7,7 +7,7 @@ const driverTestimonials = [
   {
     quote: "If three riders chip in $25 each, my trip home will be free—and we'll blast music the whole way.",
     name: "Chris",
-    title: "Dartmouth Engineering Senior",
+    title: "Engineering Senior",
   },
   {
     quote: "I'm a senior with off-campus rent, parking fees, and a dog. poolUp will cover my gas without adding a single mile I wasn't already driving.",
@@ -95,9 +95,9 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
   };
 
   return (
-    <section className="py-20 px-6 relative overflow-hidden" style={{ backgroundColor: '#0f0e0b' }}>
+    <section className="py-20 px-6 relative overflow-hidden" style={{ backgroundColor: '#000000' }}>
       
-      <div className="absolute inset-0 bg-gradient-to-b from-orange-950/10 via-transparent to-orange-950/10" />
+      <div className="absolute inset-0 bg-transparent" />
       
       <div className="max-w-5xl mx-auto relative">
         
@@ -160,7 +160,7 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
             <button
               onClick={handlePrev}
               className="p-2 rounded-full hover:bg-gray-800 transition-colors group"
-              style={{ backgroundColor: '#181611' }}
+              style={{ backgroundColor: '#111111' }}
               aria-label="Previous testimonial"
             >
               <svg
@@ -198,7 +198,7 @@ export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProp
             <button
               onClick={handleNext}
               className="p-2 rounded-full hover:bg-gray-800 transition-colors group"
-              style={{ backgroundColor: '#181611' }}
+              style={{ backgroundColor: '#111111' }}
               aria-label="Next testimonial"
             >
               <svg

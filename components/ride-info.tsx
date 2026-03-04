@@ -19,7 +19,7 @@ export function RideInfo() {
     <section
       ref={sectionRef}
       className="w-full py-16 md:py-24 lg:py-32 overflow-hidden"
-      style={{ backgroundColor: '#252319' }}
+      style={{ backgroundColor: '#0A0A0A' }}
     >
       <motion.div 
         className="max-w-full mx-auto px-6 md:px-12 lg:px-16"
@@ -80,7 +80,7 @@ export function RideInfo() {
               </div>
             </div>
 
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-gradient-to-r from-blue-600/20 to-orange-600/20 rounded-full blur-3xl opacity-50" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] hidden" />
           </motion.div>
         </div>
       </motion.div>

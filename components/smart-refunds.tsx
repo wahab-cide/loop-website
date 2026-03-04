@@ -11,25 +11,25 @@ const refundTiers = [
     fee: 0,
     title: "Free Cancellation",
     description: "Full refund, no questions asked",
-    color: "from-orange-500 to-orange-500",
+    color: "bg-orange-500",
     icon: IconCheck
   },
   {
-    timeRange: "2-24 hours", 
+    timeRange: "2-24 hours",
     refundPercentage: 80,
     fee: 20,
     title: "Standard Cancellation",
     description: "Most of your money back",
-    color: "from-blue-500 to-cyan-500",
+    color: "bg-blue-500",
     icon: IconClock
   },
   {
     timeRange: "30min-2 hours",
-    refundPercentage: 50, 
+    refundPercentage: 50,
     fee: 50,
     title: "Late Cancellation",
     description: "Partial refund available",
-    color: "from-yellow-500 to-orange-500",
+    color: "bg-yellow-500",
     icon: IconRefresh
   },
   {
@@ -38,7 +38,7 @@ const refundTiers = [
     fee: 100,
     title: "No Refund",
     description: "Too close to departure",
-    color: "from-red-500 to-pink-500",
+    color: "bg-red-500",
     icon: IconShield
   }
 ];
@@ -59,7 +59,7 @@ export function SmartRefunds() {
         >
           <h2 className={cn(
             "text-4xl md:text-5xl lg:text-6xl font-bold mb-6",
-            "bg-gradient-to-r from-orange-400 via-orange-300 to-orange-500",
+            "bg-orange-500",
             "bg-clip-text text-transparent"
           )}>
             Smart Refund Policy
@@ -99,7 +99,7 @@ export function SmartRefunds() {
                         "px-4 py-2 rounded-lg border-2 transition-all duration-300 font-semibold",
                         selectedAmount === amount
                           ? "border-orange-500 bg-orange-500/10 text-orange-400"
-                          : "border-gray-700 bg-gray-800/50 text-neutral-400 hover:border-gray-600"
+                          : "border-gray-700 bg-[#111111] text-neutral-400 hover:border-gray-600"
                       )}
                     >
                       ${amount}
@@ -114,7 +114,7 @@ export function SmartRefunds() {
                 initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 border border-gray-700/50"
+                className="bg-[#111111] rounded-2xl p-6 border border-gray-700/50"
               >
                 <div className="space-y-4">
                   {refundTiers.map((tier, index) => {
@@ -122,10 +122,10 @@ export function SmartRefunds() {
                     const feeAmount = selectedAmount - refundAmount;
                     
                     return (
-                      <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-gray-800/50">
+                      <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-[#1a1a1a]">
                         <div className="flex items-center gap-3">
                           <div className={cn(
-                            "w-8 h-8 rounded-full bg-gradient-to-r flex items-center justify-center",
+                            "w-8 h-8 rounded-full flex items-center justify-center",
                             tier.color
                           )}>
                             <tier.icon className="w-4 h-4 text-white" />
@@ -183,9 +183,9 @@ export function SmartRefunds() {
                     viewport={{ once: true }}
                     className="group"
                   >
-                    <div className="flex items-start gap-4 p-6 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-orange-500/30 transition-all duration-300">
+                    <div className="flex items-start gap-4 p-6 rounded-xl bg-[#111111] border border-white/[0.06] hover:border-orange-500/30 transition-all duration-300">
                       <div className={cn(
-                        "w-12 h-12 rounded-lg bg-gradient-to-br flex items-center justify-center flex-shrink-0",
+                        "w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0",
                         tier.color,
                         "group-hover:scale-110 transition-transform duration-300"
                       )}>
@@ -217,7 +217,7 @@ export function SmartRefunds() {
             </div>
 
             
-            <div className="bg-gradient-to-br from-orange-500/10 to-orange-500/10 rounded-2xl p-6 border border-orange-500/20">
+            <div className="bg-orange-500/10 rounded-2xl p-6 border border-orange-500/20">
               <h4 className="text-lg font-semibold text-white mb-4">
                 Why Our Refund Policy Works
               </h4>

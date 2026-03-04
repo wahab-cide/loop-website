@@ -30,7 +30,7 @@ export const Button = ({
     primary: "bg-primary hover:bg-primary-dark text-white shadow-primary/30",
     secondary: "bg-transparent border-2 border-primary/30 hover:bg-primary/5 hover:border-primary/50 text-primary backdrop-blur-sm",
     dark: "bg-gray-900 hover:bg-black text-white",
-    gradient: "bg-gradient-to-r from-primary to-primary-light hover:from-primary-dark hover:to-primary text-white",
+    gradient: "bg-orange-500 hover:bg-orange-600 text-white",
   };
 
   return (

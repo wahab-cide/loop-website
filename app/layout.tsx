@@ -6,6 +6,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ToastProvider } from "@/components/toast";
 import { StructuredData } from "./structured-data";
+import { SmoothScrollProvider } from "@/components/smooth-scroll-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -87,11 +88,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn("antialiased bg-black overflow-x-hidden", inter.className)}>
         <StructuredData />
-        <ToastProvider>
-          <Navbar />
-          {children}
-          <Footer />
-        </ToastProvider>
+        <SmoothScrollProvider>
+          <ToastProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </ToastProvider>
+        </SmoothScrollProvider>
       </body>
     </html>
   );

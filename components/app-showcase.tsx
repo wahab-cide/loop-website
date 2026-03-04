@@ -10,28 +10,28 @@ const appScreens = [
     title: "Discover Rides",
     description: "Browse available rides in your area with our personalized feed",
     image: "/loop-app-screens/home_feed.PNG",
-    color: "from-blue-500 to-cyan-500"
+    color: "bg-blue-500"
   },
   {
     id: "book",
     title: "Book Instantly",
     description: "Quick and easy booking process with upfront pricing",
     image: "/loop-app-screens/book-ride.PNG", 
-    color: "from-orange-500 to-orange-500"
+    color: "bg-orange-500"
   },
   {
     id: "track",
     title: "Track Your Ride",
     description: "Real-time tracking and communication with your driver",
     image: "/loop-app-screens/track_ride.PNG",
-    color: "from-orange-500 to-pink-500"
+    color: "bg-orange-500"
   },
   {
     id: "manage",
     title: "Manage Bookings",
     description: "View and manage all your past and upcoming rides",
     image: "/loop-app-screens/manage_bookings.PNG",
-    color: "from-orange-500 to-red-500"
+    color: "bg-red-500"
   }
 ];
 
@@ -39,7 +39,7 @@ export function AppShowcase() {
   const [activeScreen, setActiveScreen] = useState(0);
 
   return (
-    <section className="w-full py-16 md:py-24 lg:py-32 overflow-hidden" style={{ backgroundColor: '#0f0e0b' }}>
+    <section className="w-full py-16 md:py-24 lg:py-32 overflow-hidden" style={{ backgroundColor: '#000000' }}>
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         <motion.div
@@ -73,7 +73,7 @@ export function AppShowcase() {
             
             <div className={cn(
               "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full blur-3xl opacity-30 transition-colors duration-500",
-              `bg-gradient-to-r ${appScreens[activeScreen].color}`
+              appScreens[activeScreen].color
             )} />
             
             
@@ -144,7 +144,7 @@ export function AppShowcase() {
                       "relative flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300",
                       "shadow-lg backdrop-blur-sm border",
                       activeScreen === index
-                        ? "bg-gradient-to-br from-orange-400 to-orange-500 text-black border-orange-300"
+                        ? "bg-orange-500 text-black border-orange-400"
                         : "bg-neutral-900 text-neutral-400 border-neutral-700 group-hover:border-neutral-600 group-hover:text-white"
                     )}>
                       <span className="relative z-10">{index + 1}</span>
@@ -220,7 +220,7 @@ export function AppShowcase() {
                       "relative flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-300",
                       "shadow-xl backdrop-blur-sm border",
                       activeScreen === index
-                        ? "bg-gradient-to-br from-blue-400 to-cyan-500 text-black border-blue-300 scale-110"
+                        ? "bg-blue-500 text-black border-blue-400 scale-110"
                         : "bg-neutral-900 text-neutral-400 border-neutral-700 group-hover:border-neutral-600 group-hover:text-white group-hover:scale-105"
                     )}>
                       <span className="relative z-10">{index + 1}</span>
@@ -272,7 +272,7 @@ export function AppShowcase() {
             
             <div className={cn(
               "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full blur-3xl opacity-30 transition-colors duration-500",
-              `bg-gradient-to-r ${appScreens[activeScreen].color}`
+              appScreens[activeScreen].color
             )} />
             
             

@@ -4,7 +4,7 @@ import { IconMail } from "@tabler/icons-react";
 
 export function CampusLaunchCTA() {
   return (
-    <section className="py-20 md:py-28 px-4 md:px-8 overflow-hidden" style={{ backgroundColor: '#252319' }}>
+    <section className="py-20 md:py-28 px-4 md:px-8 overflow-hidden" style={{ backgroundColor: '#0A0A0A' }}>
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -24,7 +24,7 @@ export function CampusLaunchCTA() {
             viewport={{ once: true }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-primary-light text-white font-bold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all duration-300"
           >
             <IconMail className="w-5 h-5" />
             Reach Out to Us

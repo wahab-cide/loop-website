@@ -413,7 +413,7 @@ export function RoadAnimation({ className = "" }: CarAnimationProps) {
 
   return (
     <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/5 via-transparent to-gray-800/5" />
+      <div className="absolute inset-0 bg-transparent" />
       
       <svg
         width="100%"

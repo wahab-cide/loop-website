@@ -26,7 +26,7 @@ export default {
   		},
   		fontFamily: {
   			'jua': ['Jua', 'sans-serif'],
-  			'sans': ['Jua', 'Arial', 'Helvetica', 'sans-serif']
+  			'sans': ['-apple-system', 'BlinkMacSystemFont', 'Inter', 'Roboto', 'Helvetica', 'Arial', 'sans-serif']
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
