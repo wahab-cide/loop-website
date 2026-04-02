@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import Balancer from "react-wrap-balancer";
+import { CollegeLogosStrip } from "./college-logos-strip";
 
 export function Hero() {
   const parentRef = useRef<HTMLDivElement>(
@@ -59,6 +60,10 @@ export function Hero() {
       >
         Verified peer rides for college students — affordable, trusted, and built for your campus.
       </motion.p>
+
+      <div className="relative z-20 w-full max-w-5xl mx-auto">
+        <CollegeLogosStrip />
+      </div>
     </div>
   );
 }
@@ -70,7 +75,7 @@ const DynamicWord = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentWordIndex((prev) => (prev + 1) % words.length);
-    }, 3800);
+    }, 2400);
 
     return () => clearInterval(interval);
   }, [words.length]);
@@ -84,7 +89,7 @@ const DynamicWord = () => {
       case "Convenient":
         return "text-orange-400";
       case "Safe":
-        return "text-white";
+        return "text-violet-400";
       default:
         return "text-blue-400";
     }
@@ -95,10 +100,10 @@ const DynamicWord = () => {
       <AnimatePresence mode="wait">
         <motion.span
           key={currentWordIndex}
-          initial={{ opacity: 0, y: 12, filter: "blur(12px)" }}
+          initial={{ opacity: 0, y: 8, filter: "blur(6px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          exit={{ opacity: 0, y: -12, filter: "blur(12px)" }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          exit={{ opacity: 0, y: -8, filter: "blur(6px)" }}
+          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
           className={cn(
             "absolute left-0 right-0 font-semibold",
             getWordColor(words[currentWordIndex])

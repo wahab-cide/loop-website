@@ -1,315 +1,169 @@
 "use client";
-import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const appScreens = [
+const SCREENS = [
   {
-    id: "discover",
-    title: "Discover Rides",
-    description: "Browse available rides in your area with our personalized feed",
-    image: "/loop-app-screens/home_feed.PNG",
-    color: "bg-blue-500"
+    id: "feed",
+    src: "/app_screens/IMG_1950.jpg",
+    label: "Discover Rides",
+    desc: "Browse verified peer rides from your campus",
   },
   {
-    id: "book",
-    title: "Book Instantly",
-    description: "Quick and easy booking process with upfront pricing",
-    image: "/loop-app-screens/book-ride.PNG", 
-    color: "bg-orange-500"
+    id: "post",
+    src: "/app_screens/IMG_1946.jpg",
+    label: "Post a Ride",
+    desc: "Share your journey and earn money on your route",
   },
   {
-    id: "track",
-    title: "Track Your Ride",
-    description: "Real-time tracking and communication with your driver",
-    image: "/loop-app-screens/track_ride.PNG",
-    color: "bg-orange-500"
+    id: "request",
+    src: "/app_screens/IMG_1951.jpg",
+    label: "Request a Ride",
+    desc: "Find a ride that fits your schedule and budget",
   },
   {
-    id: "manage",
-    title: "Manage Bookings",
-    description: "View and manage all your past and upcoming rides",
-    image: "/loop-app-screens/manage_bookings.PNG",
-    color: "bg-red-500"
-  }
+    id: "posts",
+    src: "/app_screens/IMG_1947.jpg",
+    label: "Manage Your Rides",
+    desc: "Track all your rides, bookings, and requests in one place",
+  },
+  {
+    id: "profile",
+    src: "/app_screens/IMG_1952.jpg",
+    label: "Your Profile",
+    desc: "Campus shuttles, settings, and everything you need",
+  },
+  {
+    id: "home",
+    src: "/app_screens/IMG_2172.PNG",
+    label: "Home Feed",
+    desc: "Available rides, shuttles, and drivers — all in one place",
+  },
 ];
 
 export function AppShowcase() {
-  const [activeScreen, setActiveScreen] = useState(0);
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const t = setInterval(() => setActive((p) => (p + 1) % SCREENS.length), 3500);
+    return () => clearInterval(t);
+  }, []);
 
   return (
-    <section className="w-full py-16 md:py-24 lg:py-32 overflow-hidden" style={{ backgroundColor: '#000000' }}>
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        
+    <section className="w-full py-16 md:py-24 overflow-hidden" style={{ backgroundColor: "#000000" }}>
+      <div className="max-w-4xl mx-auto px-4 md:px-8 flex flex-col items-center">
+
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16 md:mb-20"
+          className="text-center mb-12"
         >
-          <h2 className={cn(
-            "text-4xl md:text-5xl lg:text-6xl font-bold mb-6",
-            "text-white"
-          )}>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
             See poolUp in Action
           </h2>
-          <p className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto leading-relaxed">
-            Experience the app that's transforming how students and communities share rides
+          <p className="text-neutral-400 text-lg max-w-md mx-auto">
+            Built for college students, from first ride to campus shuttle.
           </p>
         </motion.div>
 
-        
-        <div className="block lg:hidden">
-          
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="relative flex justify-center mb-12"
-          >
-            
-            <div className={cn(
-              "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full blur-3xl opacity-30 transition-colors duration-500",
-              appScreens[activeScreen].color
-            )} />
-            
-            
-            <div className="relative z-10">
-              
-              <div className="relative bg-gradient-to-b from-gray-800 via-gray-900 to-black p-[3px] rounded-[45px] shadow-2xl">
-                
-                <div className="bg-black rounded-[42px] p-2 relative">
-                  
-                  <div className="relative bg-black rounded-[34px] overflow-hidden">
-                    
-                    <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-7 bg-black rounded-full z-20" />
-                    
-                    
-                    <div className="relative w-[280px] h-[600px] rounded-[34px] overflow-hidden">
-                      <Image
-                        key={activeScreen}
-                        src={appScreens[activeScreen].image}
-                        alt={appScreens[activeScreen].title}
-                        width={280}
-                        height={600}
-                        className="object-cover object-top w-full h-full"
-                        priority
-                        quality={100}
-                      />
-                    </div>
+        {/* Phone frame */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          viewport={{ once: true }}
+          className="relative flex justify-center"
+        >
+          {/* Cyan glow */}
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full blur-3xl pointer-events-none"
+            style={{ backgroundColor: "rgba(0,229,255,0.1)" }}
+          />
+
+          {/* iPhone shell */}
+          <div className="relative z-10">
+            <div className="relative p-[2.5px] rounded-[46px] shadow-2xl" style={{ background: "linear-gradient(180deg, #555 0%, #222 50%, #111 100%)" }}>
+              <div className="bg-black rounded-[44px] p-[6px] relative">
+                <div className="relative bg-black rounded-[39px] overflow-hidden">
+                  {/* Dynamic island */}
+                  <div
+                    className="absolute top-3 left-1/2 -translate-x-1/2 z-30 rounded-full"
+                    style={{ width: 90, height: 26, backgroundColor: "#000", boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.07)" }}
+                  />
+
+                  {/* Screen */}
+                  <div className="relative overflow-hidden" style={{ width: 280, height: 610, borderRadius: 39, backgroundColor: "#080808" }}>
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={active}
+                        initial={{ opacity: 0, y: 14 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -14 }}
+                        transition={{ duration: 0.38, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        style={{ position: "absolute", top: 34, left: 6, right: 6, bottom: 6, borderRadius: 6, overflow: "hidden" }}
+                      >
+                        <Image
+                          src={SCREENS[active].src}
+                          alt={SCREENS[active].label}
+                          fill
+                          style={{ objectFit: "cover", objectPosition: "top" }}
+                          priority={active === 0}
+                          sizes="268px"
+                        />
+                      </motion.div>
+                    </AnimatePresence>
                   </div>
-                  
-                  
-                  <div className="absolute -left-[3px] top-32 w-[3px] h-12 bg-gradient-to-b from-gray-700 to-gray-900 rounded-l-lg" />
-                  <div className="absolute -left-[3px] top-52 w-[3px] h-20 bg-gradient-to-b from-gray-700 to-gray-900 rounded-l-lg" />
-                  <div className="absolute -left-[3px] top-80 w-[3px] h-20 bg-gradient-to-b from-gray-700 to-gray-900 rounded-l-lg" />
-                  <div className="absolute -right-[3px] top-44 w-[3px] h-16 bg-gradient-to-b from-gray-700 to-gray-900 rounded-r-lg" />
                 </div>
+
+                {/* Side buttons */}
+                <div className="absolute -left-[3px] top-28 w-[3px] h-10 rounded-l-full" style={{ background: "linear-gradient(180deg,#555,#222)" }} />
+                <div className="absolute -left-[3px] top-44 w-[3px] h-16 rounded-l-full" style={{ background: "linear-gradient(180deg,#555,#222)" }} />
+                <div className="absolute -left-[3px] top-64 w-[3px] h-16 rounded-l-full" style={{ background: "linear-gradient(180deg,#555,#222)" }} />
+                <div className="absolute -right-[3px] top-40 w-[3px] h-14 rounded-r-full" style={{ background: "linear-gradient(180deg,#555,#222)" }} />
               </div>
             </div>
-          </motion.div>
+          </div>
+        </motion.div>
 
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            {appScreens.map((screen, index) => (
-              <motion.div
-                key={screen.id}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                
-                {index < appScreens.length - 1 && (
-                  <div className="absolute left-6 top-16 w-0.5 h-6 bg-gradient-to-b from-neutral-600 to-neutral-800" />
-                )}
-                
-                <button
-                  className="w-full text-left group"
-                  onClick={() => setActiveScreen(index)}
-                >
-                  <div className="flex items-start space-x-4">
-                    
-                    <div className={cn(
-                      "relative flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300",
-                      "shadow-lg backdrop-blur-sm border",
-                      activeScreen === index
-                        ? "bg-orange-500 text-black border-orange-400"
-                        : "bg-neutral-900 text-neutral-400 border-neutral-700 group-hover:border-neutral-600 group-hover:text-white"
-                    )}>
-                      <span className="relative z-10">{index + 1}</span>
-                      
-                      
-                      {activeScreen === index && (
-                        <motion.div
-                          initial={{ scale: 1, opacity: 0 }}
-                          animate={{ scale: 1.2, opacity: [0, 0.6, 0] }}
-                          transition={{ duration: 2, repeat: Infinity }}
-                          className="absolute inset-0 rounded-full border-2 border-orange-400"
-                        />
-                      )}
-                    </div>
-                    
-                    
-                    <div className="flex-1 pt-1">
-                      <h3 className={cn(
-                        "text-lg font-semibold transition-colors duration-300 mb-1",
-                        activeScreen === index 
-                          ? "text-orange-400" 
-                          : "text-white group-hover:text-orange-300"
-                      )}>
-                        {screen.title}
-                      </h3>
-                      <p className={cn(
-                        "text-sm leading-relaxed transition-colors duration-300",
-                        activeScreen === index
-                          ? "text-neutral-300"
-                          : "text-neutral-400 group-hover:text-neutral-300"
-                      )}>
-                        {screen.description}
-                      </p>
-                    </div>
-                  </div>
-                </button>
-              </motion.div>
+        {/* Label + dots */}
+        <div className="mt-8 flex flex-col items-center gap-4">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.3 }}
+              className="text-center"
+            >
+              <div className="text-base font-bold text-white">{SCREENS[active].label}</div>
+              <div className="text-sm text-neutral-400 mt-1">{SCREENS[active].desc}</div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Dots */}
+          <div className="flex gap-2 mt-1">
+            {SCREENS.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                style={{
+                  width: i === active ? 24 : 6,
+                  height: 6,
+                  borderRadius: 3,
+                  backgroundColor: i === active ? "#00E5FF" : "rgba(255,255,255,0.2)",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: 0,
+                  transition: "all 0.3s ease",
+                }}
+              />
             ))}
-          </motion.div>
-        </div>
-
-        
-        <div className="hidden lg:grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
-            {appScreens.map((screen, index) => (
-              <motion.div
-                key={screen.id}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                
-                {index < appScreens.length - 1 && (
-                  <div className="absolute left-7 top-20 w-0.5 h-8 bg-gradient-to-b from-neutral-600 to-neutral-800" />
-                )}
-                
-                <button
-                  className="w-full text-left group transition-all duration-300 hover:translate-x-2"
-                  onClick={() => setActiveScreen(index)}
-                >
-                  <div className="flex items-start space-x-6">
-                    
-                    <div className={cn(
-                      "relative flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-300",
-                      "shadow-xl backdrop-blur-sm border",
-                      activeScreen === index
-                        ? "bg-blue-500 text-black border-blue-400 scale-110"
-                        : "bg-neutral-900 text-neutral-400 border-neutral-700 group-hover:border-neutral-600 group-hover:text-white group-hover:scale-105"
-                    )}>
-                      <span className="relative z-10">{index + 1}</span>
-                      
-                      
-                      {activeScreen === index && (
-                        <motion.div
-                          initial={{ scale: 1, opacity: 0 }}
-                          animate={{ scale: 1.3, opacity: [0, 0.8, 0] }}
-                          transition={{ duration: 2, repeat: Infinity }}
-                          className="absolute inset-0 rounded-full border-2 border-orange-400"
-                        />
-                      )}
-                    </div>
-                    
-                    
-                    <div className="flex-1 pt-2">
-                      <h3 className={cn(
-                        "text-2xl font-bold transition-colors duration-300 mb-3",
-                        activeScreen === index 
-                          ? "text-orange-400" 
-                          : "text-white group-hover:text-orange-300"
-                      )}>
-                        {screen.title}
-                      </h3>
-                      <p className={cn(
-                        "text-base leading-relaxed transition-colors duration-300",
-                        activeScreen === index
-                          ? "text-neutral-300"
-                          : "text-neutral-400 group-hover:text-neutral-300"
-                      )}>
-                        {screen.description}
-                      </p>
-                    </div>
-                  </div>
-                </button>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="relative flex justify-center"
-          >
-            
-            <div className={cn(
-              "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full blur-3xl opacity-30 transition-colors duration-500",
-              appScreens[activeScreen].color
-            )} />
-            
-            
-            <div className="relative z-10">
-              
-              <div className="relative bg-gradient-to-b from-gray-800 via-gray-900 to-black p-[3px] rounded-[45px] shadow-2xl">
-                
-                <div className="bg-black rounded-[42px] p-2 relative">
-                  
-                  <div className="relative bg-black rounded-[34px] overflow-hidden">
-                    
-                    <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-7 bg-black rounded-full z-20" />
-                    
-                    
-                    <div className="relative w-[300px] h-[650px] rounded-[34px] overflow-hidden">
-                      <Image
-                        key={activeScreen}
-                        src={appScreens[activeScreen].image}
-                        alt={appScreens[activeScreen].title}
-                        width={300}
-                        height={650}
-                        className="object-cover object-top w-full h-full"
-                        priority
-                        quality={100}
-                      />
-                    </div>
-                  </div>
-                  
-                  
-                  <div className="absolute -left-[3px] top-32 w-[3px] h-12 bg-gradient-to-b from-gray-700 to-gray-900 rounded-l-lg" />
-                  <div className="absolute -left-[3px] top-52 w-[3px] h-20 bg-gradient-to-b from-gray-700 to-gray-900 rounded-l-lg" />
-                  <div className="absolute -left-[3px] top-80 w-[3px] h-20 bg-gradient-to-b from-gray-700 to-gray-900 rounded-l-lg" />
-                  <div className="absolute -right-[3px] top-44 w-[3px] h-16 bg-gradient-to-b from-gray-700 to-gray-900 rounded-r-lg" />
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          </div>
         </div>
 
       </div>

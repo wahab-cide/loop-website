@@ -24,7 +24,8 @@ export function CampusLaunchCTA() {
             viewport={{ once: true }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-3 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-all duration-300"
+            className="inline-flex items-center gap-3 px-8 py-4 font-bold rounded-xl transition-all duration-300"
+            style={{ backgroundColor: "#00E5FF", color: "#000000" }}
           >
             <IconMail className="w-5 h-5" />
             Reach Out to Us

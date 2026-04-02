@@ -26,8 +26,8 @@ body {
 @layer base {
   :root {
     --radius: 0.5rem;
-    --primary: #F97316;
-    --primary-dark: #EA580C;
-    --primary-light: #FB923C;
+    --primary: #00E5FF;
+    --primary-dark: #00B8CC;
+    --primary-light: #40EEFF;
   }
 }

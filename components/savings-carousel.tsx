@@ -154,8 +154,8 @@ export function SavingsCarousel() {
                 onClick={() => setActiveIndex(index)}
                 className={cn(
                   "relative h-[600px] rounded-3xl overflow-hidden cursor-pointer transition-all duration-300 group",
-                  activeIndex === index 
-                    ? "ring-2 ring-orange-500 scale-105 shadow-2xl shadow-orange-500/20" 
+                  activeIndex === index
+                    ? "scale-105 shadow-2xl"
                     : "hover:scale-102 hover:shadow-xl"
                 )}
               >

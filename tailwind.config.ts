@@ -13,16 +13,24 @@ export default {
   			background: 'var(--background)',
   			foreground: 'var(--foreground)',
   			primary: {
-  				DEFAULT: '#F97316',
-  				dark: '#EA580C',
-  				light: '#FB923C'
+  				DEFAULT: '#00E5FF',
+  				dark: '#00B8CC',
+  				light: '#40EEFF'
   			},
   			poolup: {
-  				orange: '#F97316',
-  				'orange-dark': '#EA580C',
-  				'orange-light': '#FB923C',
-  				'orange-lighter': '#FDBA74'
-  			}
+  				cyan: '#00E5FF',
+  				'cyan-dark': '#00B8CC',
+  				'cyan-light': '#40EEFF',
+  				'cyan-lighter': '#80F5FF'
+  			},
+  			// Override orange → cyan so all orange-* classes become cyan
+  			orange: {
+  				300: '#67F3FF',
+  				400: '#00E5FF',
+  				500: '#00E5FF',
+  				600: '#00B8CC',
+  				950: '#001820',
+  			},
   		},
   		fontFamily: {
   			'jua': ['Jua', 'sans-serif'],

@@ -22,7 +22,7 @@ export const Logo = ({ visible = false }: { visible?: boolean }) => {
       <LogoIcon />
 
       <span className={cn(
-        "font-bold font-jua text-lg transition-colors",
+        "font-bold text-lg transition-colors",
         visible ? "text-white" : "text-white"
       )}>poolUp</span>
     </Link>

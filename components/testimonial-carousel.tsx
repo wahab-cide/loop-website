@@ -1,11 +1,10 @@
 "use client";
-import { IconQuote } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const driverTestimonials = [
   {
-    quote: "If three riders chip in $25 each, my trip home will be free—and we'll blast music the whole way.",
+    quote: "If three riders chip in $25 each, my trip home will be free — and we'll blast music the whole way.",
     name: "Chris",
     title: "Engineering Senior",
   },
@@ -15,17 +14,17 @@ const driverTestimonials = [
     title: "Senior Economics Major",
   },
   {
-    quote: "I've driven the same route to NYC for years. With poolUp, it'll turn into a mini social. I'll probably meet other students—and maybe another comic or two.",
+    quote: "I've driven the same route to NYC for years. With poolUp, it'll turn into a mini social. I'll probably meet other students — and maybe another comic or two.",
     name: "Jules",
     title: "Junior",
   },
   {
-    quote: "I might be nervous at first, but seeing mutual friends and rider ratings will give me full control. I'll definitely check the app before every long weekend.",
+    quote: "Seeing mutual friends and rider ratings before accepting gives me full control. I'll definitely check the app before every long weekend.",
     name: "Sam",
     title: "Sophomore",
   },
   {
-    quote: "I won't drive every weekend, but when I do, I'll post. It'll be passive income. I can easily make $160 in a month just by adding riders to trips I'm already taking.",
+    quote: "I won't drive every weekend, but when I do, I'll post. I can easily make $160 in a month just by adding riders to trips I'm already taking.",
     name: "Carlisle",
     title: "Pre-med Senior",
   },
@@ -33,7 +32,7 @@ const driverTestimonials = [
 
 const riderTestimonials = [
   {
-    quote: "I'll happily split $40 for a ride home with classmates and a real conversation. It'll beat a lonely bus ride—and make going home feel like part of the break.",
+    quote: "I'll happily split $40 for a ride home with classmates and a real conversation. It'll beat a lonely bus ride — and make going home feel like part of the break.",
     name: "Angie",
     title: "Sophomore",
   },
@@ -43,7 +42,7 @@ const riderTestimonials = [
     title: "Junior",
   },
   {
-    quote: "The driver will probably have mutuals with me—or even be in one of my classes. It'll feel natural.",
+    quote: "The driver will probably have mutuals with me — or even be in one of my classes. It'll feel natural.",
     name: "Maya",
     title: "Freshman",
   },
@@ -61,173 +60,159 @@ interface TestimonialCarouselProps {
 export function TestimonialCarousel({ type = "driver" }: TestimonialCarouselProps) {
   const testimonials = type === "driver" ? driverTestimonials : riderTestimonials;
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   useEffect(() => {
     if (!isAutoPlaying) return;
-
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 5000); 
-
+      setDirection(1);
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
     return () => clearInterval(interval);
   }, [isAutoPlaying, testimonials.length]);
 
-  const handleDotClick = (index: number) => {
-    setCurrentIndex(index);
-    setIsAutoPlaying(false);
-    
-    setTimeout(() => setIsAutoPlaying(true), 10000);
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  const go = (next: number) => {
+    setDirection(next > currentIndex ? 1 : -1);
+    setCurrentIndex(next);
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 10000);
   };
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-    );
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 10000);
+  const prev = () => go(currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1);
+  const next = () => go((currentIndex + 1) % testimonials.length);
+
+  const variants = {
+    enter: (d: number) => ({ opacity: 0, x: d * 40 }),
+    center: { opacity: 1, x: 0 },
+    exit: (d: number) => ({ opacity: 0, x: d * -40 }),
   };
 
   return (
-    <section className="py-20 px-6 relative overflow-hidden" style={{ backgroundColor: '#000000' }}>
-      
-      <div className="absolute inset-0 bg-transparent" />
-      
-      <div className="max-w-5xl mx-auto relative">
-        
+    <section className="py-24 md:py-32 overflow-hidden" style={{ backgroundColor: "#0A0A0A" }}>
+      <div className="max-w-6xl mx-auto px-6 md:px-8">
+
+        {/* Header row: label left, arrows right */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="flex items-end justify-between mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            What {type === "driver" ? "Drivers" : "Riders"} Are Saying
-          </h2>
-          <p className="text-gray-400 text-lg">
-            Real stories from students looking forward to {type === "driver" ? "driving" : "riding"} with Loop Platform
-          </p>
+          <div>
+            <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#00E5FF" }}>
+              What students say
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+              From our users.
+            </h2>
+          </div>
+
+          {/* Arrow buttons */}
+          <div className="flex gap-3 mb-1">
+            <button
+              onClick={prev}
+              aria-label="Previous"
+              className="w-11 h-11 rounded-full flex items-center justify-center transition-colors"
+              style={{
+                border: "1px solid rgba(255,255,255,0.1)",
+                backgroundColor: "rgba(255,255,255,0.04)",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.08)")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.04)")}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            <button
+              onClick={next}
+              aria-label="Next"
+              className="w-11 h-11 rounded-full flex items-center justify-center transition-colors"
+              style={{
+                border: "1px solid rgba(255,255,255,0.1)",
+                backgroundColor: "rgba(255,255,255,0.04)",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.08)")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.04)")}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
         </motion.div>
 
-        
-        <div className="relative min-h-[320px] md:min-h-[280px]">
-          <AnimatePresence mode="wait">
+        {/* Quote area */}
+        <div className="relative min-h-[200px] md:min-h-[160px]">
+          {/* Decorative large quote mark */}
+          <div
+            className="absolute -top-6 -left-2 text-[160px] font-bold leading-none select-none pointer-events-none"
+            style={{ color: "rgba(255,255,255,0.035)", fontFamily: "Georgia, serif" }}
+          >
+            "
+          </div>
+
+          <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={currentIndex}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-              className="text-center px-4 md:px-12"
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
             >
-              
-              <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 rounded-full bg-orange-950/30 flex items-center justify-center">
-                  <IconQuote className="w-8 h-8 text-orange-500" />
-                </div>
-              </div>
-
-              
-              <blockquote className="text-xl md:text-2xl lg:text-3xl font-light italic mb-8 text-white leading-relaxed">
+              <blockquote
+                className="text-2xl md:text-3xl lg:text-4xl font-medium text-white leading-snug mb-10 max-w-4xl"
+                style={{ letterSpacing: "-0.01em" }}
+              >
                 "{testimonials[currentIndex].quote}"
               </blockquote>
 
-              
-              <div className="space-y-1">
-                <p className="text-orange-400 font-semibold text-lg">
-                  — {testimonials[currentIndex].name}
-                </p>
-                <p className="text-gray-500 text-sm">
+              <div className="flex items-center gap-3">
+                <div className="w-6 h-px" style={{ backgroundColor: "#00E5FF" }} />
+                <span className="font-semibold text-white">{testimonials[currentIndex].name}</span>
+                <span style={{ color: "rgba(255,255,255,0.2)" }}>·</span>
+                <span className="text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>
                   {testimonials[currentIndex].title}
-                </p>
+                </span>
               </div>
             </motion.div>
           </AnimatePresence>
         </div>
 
-        
-        <div className="mt-12">
-          
-          <div className="flex items-center justify-center gap-8 mb-3">
-            
+        {/* Progress lines */}
+        <div className="flex gap-2 mt-14">
+          {testimonials.map((_, i) => (
             <button
-              onClick={handlePrev}
-              className="p-2 rounded-full hover:bg-gray-800 transition-colors group"
-              style={{ backgroundColor: '#111111' }}
-              aria-label="Previous testimonial"
+              key={i}
+              onClick={() => go(i)}
+              aria-label={`Go to testimonial ${i + 1}`}
+              className="relative h-[3px] rounded-full overflow-hidden transition-all duration-300"
+              style={{
+                width: i === currentIndex ? 40 : 16,
+                backgroundColor: "rgba(255,255,255,0.12)",
+              }}
             >
-              <svg
-                className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
+              {i === currentIndex && isAutoPlaying && (
+                <motion.div
+                  className="absolute inset-y-0 left-0 rounded-full"
+                  style={{ backgroundColor: "#00E5FF" }}
+                  initial={{ width: "0%" }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 5, ease: "linear" }}
+                  key={`fill-${currentIndex}`}
                 />
-              </svg>
+              )}
+              {i === currentIndex && !isAutoPlaying && (
+                <div className="absolute inset-0 rounded-full" style={{ backgroundColor: "#00E5FF" }} />
+              )}
             </button>
-
-            
-            <div className="flex gap-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleDotClick(index)}
-                  className={`transition-all duration-300 ${
-                    index === currentIndex
-                      ? "w-8 h-2 bg-orange-500"
-                      : "w-2 h-2 bg-gray-700 hover:bg-gray-600"
-                  } rounded-full`}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
-              ))}
-            </div>
-
-            
-            <button
-              onClick={handleNext}
-              className="p-2 rounded-full hover:bg-gray-800 transition-colors group"
-              style={{ backgroundColor: '#111111' }}
-              aria-label="Next testimonial"
-            >
-              <svg
-                className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
-          </div>
-
-          
-          {isAutoPlaying && (
-            <motion.div
-              className="h-[2px] bg-orange-500/30"
-              initial={{ width: "0%" }}
-              animate={{ width: "100%" }}
-              transition={{ duration: 5, ease: "linear" }}
-              key={`progress-${currentIndex}`}
-            />
-          )}
+          ))}
         </div>
+
       </div>
     </section>
   );
