@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     siteName: "poolUp",
     images: [
       {
-        url: "https://looprides.dev/og-image.jpg",
-        width: 1920,
-        height: 1080,
+        url: "https://looprides.dev/og-image.png",
+        width: 1200,
+        height: 630,
         alt: "poolUp Student Social Network",
       },
     ],
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "poolUp - Student Social Network & Campus Coordination Platform",
     description:
       "Connect with verified students at your college. Share rides, coordinate activities, and access fleet vehicles.",
-    images: ["https://looprides.dev/og-image.jpg"],
+    images: ["https://looprides.dev/og-image.png"],
     creator: "@looprides",
   },
   metadataBase: new URL("https://looprides.dev"),
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
       { url: '/favicon.ico' }
     ],
     shortcut: '/favicon.png',
-    apple: '/favicon.png',
+    apple: '/apple-touch-icon.png',
   },
 };
 
