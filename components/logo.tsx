@@ -15,9 +15,18 @@ export const LogoIcon = ({ className }: { className?: string }) => (
     focusable="false"
     className={cn("w-8 h-8", className)}
   >
-    <path d="M23,43 L23,60 A27,27 0 0 0 77,60 L77,43 A7,7 0 0 0 63,43 L63,60 A13,13 0 0 1 37,60 L37,43 A7,7 0 0 0 23,43 Z" />
-    <circle cx="30" cy="20" r="7.5" />
-    <circle cx="70" cy="20" r="7.5" />
+    {/* The circuit is a stroke, not a silhouette — it has to carry the round
+        caps the counters sit on, so it takes currentColor on `stroke` while the
+        counters take it on `fill`. */}
+    <path
+      d="M28,30 V52 A22,22 0 0 0 72,52 V30"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="14"
+      strokeLinecap="round"
+    />
+    <circle cx="28" cy="30" r="11" />
+    <circle cx="72" cy="30" r="11" />
   </svg>
 );
 

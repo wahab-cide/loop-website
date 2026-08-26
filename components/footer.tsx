@@ -48,7 +48,23 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="flex justify-end">
+          <div className="flex flex-wrap justify-end gap-x-16 gap-y-10">
+            {/* Campus staff need a way in that does not depend on being sent a
+                link, so the portal is discoverable from the public site. */}
+            <div className="flex flex-col space-y-4">
+              <p className="text-white font-semibold">For campuses</p>
+              <ul className="space-y-3">
+                <li>
+                  <a
+                    href="https://app.looprides.dev"
+                    className="hover:text-white transition-colors"
+                  >
+                    Fleet portal sign in
+                  </a>
+                </li>
+              </ul>
+            </div>
+
             <div className="flex flex-col space-y-4">
               <p className="text-white font-semibold">Legal</p>
               <ul className="space-y-3">
