@@ -8,6 +8,7 @@ import {
   Strong,
   Highlight
 } from "@/components/legal-layout";
+import { CONTACT_EMAIL } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Terms of Service | poolUp - Student Rideshare App",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function TermsOfService() {
   return (
-    <LegalLayout title="Terms of Service" lastUpdated="July 2025">
+    <LegalLayout title="Terms of Service" lastUpdated="September 2026">
       <Section title="1. OVERVIEW" id="overview">
         <Subsection title="About the Company">
           <Paragraph>
@@ -53,7 +54,7 @@ export default function TermsOfService() {
           </div>
 
           <div>
-            <Strong>"Driver Verification"</Strong> means our process of verifying a user's identity, driver's license, vehicle information, and background to ensure safety standards for the campus community before allowing them to post ride opportunities.
+            <Strong>"Driver Verification"</Strong> means our process of confirming a user's .edu email address and collecting the vehicle information they provide before allowing them to post ride opportunities. <Strong>It does not include criminal background checks, driving record checks, or verification of a driver's licence or insurance.</Strong> Users represent that they hold these as set out in Section 7, and are responsible for the accuracy of that representation.
           </div>
 
           <div>
@@ -145,12 +146,18 @@ export default function TermsOfService() {
         </Subsection>
       </Section>
 
-      <Section title="6. DRIVER COMPENSATION" id="driver-compensation">
+      <Section title="6. COST SHARING" id="cost-sharing">
         <Paragraph>
-          If you are a Driver, you and your Rider(s) will agree directly on the compensation amount and payment method for each ride. This may include cost-sharing for gas, tolls, and other trip expenses, or any other arrangement you mutually agree upon.
+          Contributions arranged through the Platform are cost sharing, not payment for a transportation service. A trip's cost is calculated as its distance at the IRS standard mileage rate, which is inclusive of fuel, maintenance, depreciation and insurance. That cost is shared among every occupant of the vehicle, <Strong>including the Driver</Strong>.
         </Paragraph>
         <Paragraph>
-          <Highlight>poolUp does not set prices, require specific payment amounts, or take any portion of payments made between Riders and Drivers.</Highlight> All financial arrangements are solely between you and your Rider(s).
+          <Highlight>The Platform caps what any Rider may contribute at one half of the trip's cost, and reduces each contribution further as more Riders join.</Highlight> A Driver therefore always bears a share of every trip they post, and can never recover more than that trip cost them. Nothing is charged for a Driver's time, and the Platform has no surge or demand-based pricing of any kind.
+        </Paragraph>
+        <Paragraph>
+          A Driver may accept less than the calculated share but never more. Contributions are settled directly between Riders and Drivers; <Highlight>poolUp takes no commission, fee or portion of any contribution.</Highlight>
+        </Paragraph>
+        <Paragraph>
+          By posting a ride, a Driver confirms they were already making that journey. The Platform is for sharing trips you are taking anyway, and is not to be used to make journeys on request.
         </Paragraph>
       </Section>
 
@@ -220,7 +227,7 @@ export default function TermsOfService() {
             </ListItem>
 
             <ListItem number="15">
-              You authorize poolUp to conduct background checks and verify your driving record to maintain community safety standards.
+              You authorize poolUp to conduct background checks and verify your driving record, should we introduce them, to maintain community safety standards. We do not currently perform these checks.
             </ListItem>
 
             <ListItem number="16">
@@ -291,7 +298,7 @@ export default function TermsOfService() {
             <Strong>Loop Platform, Inc.</Strong>
           </p>
           <p className="text-neutral-300 mb-2">
-            Email: <a href="mailto:developer.loop.acc@icloud.com" className="text-blue-400 hover:text-blue-300">developer.loop.acc@icloud.com</a>
+            <a href={`mailto:${CONTACT_EMAIL}`} className="text-blue-400 hover:text-blue-300">Email us</a>
           </p>
           <p className="text-neutral-300">
             Website: <a href="https://looprides.dev" className="text-blue-400 hover:text-blue-300">looprides.dev</a>

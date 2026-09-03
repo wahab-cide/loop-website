@@ -8,6 +8,7 @@ import {
   BulletItem,
   Strong
 } from "@/components/legal-layout";
+import { CONTACT_EMAIL } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | poolUp - Student Rideshare App",
@@ -240,7 +241,7 @@ export default function PrivacyPolicy() {
             <Strong>Loop Platform, Inc.</Strong>
           </p>
           <p className="text-neutral-300 mb-2">
-            Email: <a href="mailto:developer.loop.acc@icloud.com" className="text-blue-400 hover:text-blue-300">developer.loop.acc@icloud.com</a>
+            <a href={`mailto:${CONTACT_EMAIL}`} className="text-blue-400 hover:text-blue-300">Email us</a>
           </p>
           <p className="text-neutral-300">
             Website: <a href="https://looprides.dev" className="text-blue-400 hover:text-blue-300">looprides.dev</a>

@@ -55,26 +55,26 @@ export function StructuredData() {
       },
       {
         "@type": "Question",
-        "name": "How much does poolUp cost compared to other rideshare apps?",
+        "name": "How much does a ride on poolUp cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "poolUp is designed to be more affordable than traditional rideshare services. We don't use surge pricing and focus on connecting community members for cost-effective transportation with intelligent fare splitting."
+          "text": "There is no fare. A trip costs what it costs to drive \u2014 its mileage at the IRS standard rate \u2014 and that is divided across everyone in the car, the driver included. So a rider pays a share of a journey, never a price for a service. No surge pricing, and poolUp takes no commission."
         }
       },
       {
         "@type": "Question",
-        "name": "Can I split the cost of a ride with friends?",
+        "name": "What happens if more people join my ride?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! poolUp has built-in fare splitting features that make it easy to share ride costs. When multiple passengers book the same ride, costs are automatically divided and everyone saves money."
+          "text": "Everyone pays less, including the driver. The trip's cost is fixed by its distance, so each rider who joins divides that same figure further, and it recalculates automatically for people who already booked. Nobody is charged more for booking first, and the driver never collects more than the trip cost them."
         }
       },
       {
         "@type": "Question",
-        "name": "How do I become a poolUp driver?",
+        "name": "How do I offer rides on poolUp?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Download the app, verify with your .edu email address, submit your driver's license and insurance, complete our verification process, and you're ready to start earning money helping your campus community get around safely."
+          "text": "Download the app, verify with your .edu email address, add your vehicle details, and post a trip you were already making. You confirm the journey was happening anyway, and set the most you'll accept per seat \u2014 poolUp caps that at half the trip's cost so a rider never covers more than their share."
         }
       }
     ]
