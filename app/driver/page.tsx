@@ -19,7 +19,7 @@ const benefits = [
     icon: IconCash,
     num: "01",
     title: "Offset Your Costs",
-    body: "Turn trips you're already making into income. Cover gas, tolls, and parking — or pocket the difference.",
+    body: "Riders chip in toward trips you're already making. You always pay a share too — this brings your cost down, it doesn't turn a profit.",
   },
   {
     icon: IconUsers,
@@ -31,7 +31,7 @@ const benefits = [
     icon: IconCalendar,
     num: "03",
     title: "Post in 30 Seconds",
-    body: "Set your route, price, and seats. poolUp handles the rest. No commitments, no minimums.",
+    body: "Set your route, your seats, and the most you'll accept per seat. poolUp splits the rest. No commitments, no minimums.",
   },
   {
     icon: IconShield,
@@ -66,10 +66,14 @@ const steps = [
   },
 ];
 
-const earnings = [
-  { route: "Weekend trips home",  riders: "Shared with 3", earning: "$48", freq: "2× per month", note: "Gas & tolls almost fully covered" },
-  { route: "Airport drop-offs",   riders: "Shared with 2", earning: "$35", freq: "Monthly",       note: "Trip pays for itself" },
-  { route: "Grocery & errands",   riders: "Shared with 1", earning: "$12", freq: "Weekly",        note: "Adds up to $48/month" },
+// Every figure below is the cost-share model run forwards: distance x the IRS
+// mileage rate, divided by the people in the car including the driver. The
+// "you pay" column is not a caveat — it is the point, and it is why none of
+// these trips can be described as earnings.
+const sharedTrips = [
+  { route: "Weekend trips home", trip: "80 miles · $56 to drive", riders: "Shared with 3", recovered: "$42", freq: "2× per month", note: "You still pay $14" },
+  { route: "Airport drop-offs",  trip: "45 miles · $31.50 to drive", riders: "Shared with 2", recovered: "$21", freq: "Monthly", note: "You still pay $10.50" },
+  { route: "Grocery & errands",  trip: "20 miles · $14 to drive", riders: "Shared with 1", recovered: "$7", freq: "Weekly", note: "You still pay $7" },
 ];
 
 export default function DriverPage() {
@@ -347,7 +351,7 @@ export default function DriverPage() {
 
       <TestimonialCarousel />
 
-      {/* ── EARNINGS ─────────────────────────────────────────────────────── */}
+      {/* ── COST RECOVERY ─────────────────────────────────────────────────────── */}
       <section className="py-24 md:py-32" style={{ backgroundColor: "#000000" }}>
         <div className="max-w-6xl mx-auto px-6 md:px-8">
           <motion.div
@@ -367,12 +371,12 @@ export default function DriverPage() {
               Savings that actually add up.
             </h2>
             <p className="max-w-md mx-auto" style={{ color: "rgba(255,255,255,0.4)" }}>
-              How much drivers save on transportation costs by sharing seats they already have
+              What riders chip in toward trips you were making anyway. You cover the rest.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-4">
-            {earnings.map((item, i) => (
+            {sharedTrips.map((item, i) => (
               <motion.div
                 key={item.route}
                 initial={{ opacity: 0, y: 20 }}
@@ -392,11 +396,14 @@ export default function DriverPage() {
                   {item.freq}
                 </div>
                 <div className="text-4xl font-bold mb-1" style={{ color: "#00E5FF" }}>
-                  {item.earning}
+                  {item.recovered}
                 </div>
                 <div className="text-white font-semibold mb-1">{item.route}</div>
-                <div className="text-sm mb-5" style={{ color: "rgba(255,255,255,0.32)" }}>
+                <div className="text-sm" style={{ color: "rgba(255,255,255,0.32)" }}>
                   {item.riders}
+                </div>
+                <div className="text-xs mb-5 mt-1" style={{ color: "rgba(255,255,255,0.24)" }}>
+                  {item.trip}
                 </div>
                 <div
                   className="text-xs font-medium px-3 py-1.5 rounded-full inline-block"
@@ -420,11 +427,11 @@ export default function DriverPage() {
             className="text-center mt-10 text-sm"
             style={{ color: "rgba(255,255,255,0.3)" }}
           >
-            Average monthly savings:{" "}
+            Typically{" "}
             <span style={{ color: "rgba(255,255,255,0.6)", fontWeight: 600 }}>
-              $120–$200
+              $100–$150
             </span>{" "}
-            on transportation costs, driving 3–5 shared trips per month
+            back per month on 3–5 shared trips. Never more than a trip cost you.
           </motion.p>
         </div>
       </section>
