@@ -11,19 +11,19 @@ const FAQs = [
       "All users verify with their official .edu email address, ensuring a campus-only community of verified students and staff. We provide in-app emergency features, real-time trip tracking, and 24/7 support monitoring all rides.",
   },
   {
-    question: "How much does poolUp cost compared to other rideshare apps?",
+    question: "How much does a ride on poolUp cost?",
     answer:
-      "poolUp is designed to be more affordable than traditional rideshare services. We don't use surge pricing and focus on connecting community members for cost-effective transportation with intelligent fare splitting.",
+      "There is no fare. A trip costs what it costs to drive — its mileage at the IRS standard rate — and that is divided across everyone in the car, the driver included. So a rider pays a share of a journey, never a price for a service. No surge pricing, and poolUp takes no commission.",
   },
   {
-    question: "Can I split the cost of a ride with friends?",
+    question: "What happens if more people join my ride?",
     answer:
-      "Yes! poolUp has built-in fare splitting features that make it easy to share ride costs. When multiple passengers book the same ride, costs are automatically divided and everyone saves money.",
+      "Everyone pays less, including you. The trip's cost is fixed by its distance, so each rider who joins divides that same figure further — and it recalculates automatically for people who already booked. Nobody is charged more for booking first, and the driver never collects more than the trip cost.",
   },
   {
-    question: "How do I become a poolUp driver?",
+    question: "How do I offer rides on poolUp?",
     answer:
-      "Download the app, verify with your .edu email address, submit your driver's license and insurance, complete our verification process, and you're ready to start earning money helping your campus community get around safely.",
+      "Download the app, verify with your .edu email address, add your vehicle details, and post a trip you were already making. You confirm the journey was happening anyway, and set the most you'll accept per seat — poolUp caps that at half the trip's cost so a rider never covers more than their share.",
   },
 ];
 export function FrequentlyAskedQuestions() {

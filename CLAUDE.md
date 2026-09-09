@@ -126,9 +126,9 @@ Variants:
 - Dark background (`#0f0e0b`)
 
 ### Campus Launch CTA (`components/campus-launch-cta.tsx`)
-- Email link to `ac44@williams.edu`
-- Subject line: "Launch poolUp on My Campus"
-- Appears on driver page only
+- Pilot intake: campus, role, and what they are trying to solve
+- Composes a structured `mailto` to `CONTACT_EMAIL` (no backend on this site)
+- Appears on the homepage and the driver page
 
 ## Common Patterns
 
@@ -222,7 +222,7 @@ import Image from "next/image";
 ## Development Notes
 
 - All download buttons show "Coming Soon" toast (app not yet released)
-- Email CTAs link to `ac44@williams.edu`
+- Contact address lives in `lib/contact.ts` — never hardcode it
 - No authentication system on website
 - Website is marketing-focused, not a web app
 - Maintain consistent color scheme across all pages

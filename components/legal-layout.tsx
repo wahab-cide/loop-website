@@ -1,5 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
+import { CONTACT_EMAIL } from "@/lib/contact";
 
 interface LegalLayoutProps {
   title: string;
@@ -39,12 +40,12 @@ export function LegalLayout({
         
         <div className="mt-16 pt-8 border-t border-neutral-800 text-center">
           <p className="text-neutral-400 text-sm">
-            Have questions about this document? Contact us at{" "}
-            <a 
-              href="mailto:developer.loop.acc@icloud.com" 
+            Have questions about this document?{" "}
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
               className="text-neutral-400 hover:text-white transition-colors underline"
             >
-              developer.loop.acc@icloud.com
+              Email us
             </a>
           </p>
         </div>

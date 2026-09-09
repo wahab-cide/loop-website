@@ -17,7 +17,7 @@ import {
  * replaced had — those were still showing the pre-rebrand UI.
  *
  * Order is deliberate: the thing a rider is nervous about (getting into a
- * stranger's car), then the thing nobody else does (the price falling as seats
+ * stranger's car), then the thing nobody else does (each share falling as seats
  * fill), then the reveal that the app has a second side you can post from.
  */
 
@@ -28,17 +28,17 @@ const SLIDES = [
     eyebrow: "Before you book",
     title: "You can see who you're getting in the car with",
     body:
-      "The driver, their rating, every stop and the exact price per seat — all on one screen, before you commit to anything.",
+      "The driver, their rating, every stop and the exact share per seat — all on one screen, before you commit to anything.",
     note: "Verified with a .edu address. No strangers from outside your campus.",
   },
   {
     id: "shared-pricing",
     Frame: SharedPricingFrame,
     eyebrow: "While you wait",
-    title: "The seat gets cheaper as it fills",
+    title: "Every seat gets cheaper as the car fills",
     body:
-      "Every rider who joins drops the price for everyone already on board. Nobody has to negotiate and nobody gets charged more for booking first.",
-    note: "$32 alone · $24 with two · $19.20 with three · $16 in a full car.",
+      "The trip costs what it costs. Every rider who joins divides that further, so everyone already on board pays less — including the driver.",
+    note: "A 60-mile trip costs $42 to drive. $21 alone · $14 with two · $10.50 with three · $8.40 in a full car.",
   },
   {
     id: "post-ride",
@@ -47,7 +47,7 @@ const SLIDES = [
     title: "Every rider is also a driver",
     body:
       "Already making the drive home, or to the airport? Post it in under a minute and split what the trip was going to cost you anyway.",
-    note: "Four seats at $16 pays the driver $64 — twice one seat at $32.",
+    note: "You pay a share too. On that $42 trip, four riders brings your own cost down to $8.40.",
   },
 ];
 

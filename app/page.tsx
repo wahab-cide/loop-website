@@ -1,4 +1,5 @@
 import { AppShowcase } from "@/components/app-showcase";
+import { CampusLaunchCTA } from "@/components/campus-launch-cta";
 import { EnhancedSafety } from "@/components/enhanced-safety";
 import { FrequentlyAskedQuestions } from "@/components/faq";
 import { Hero } from "@/components/hero";
@@ -19,6 +20,7 @@ export default function Home() {
         <EnhancedSafety />
       </div>
       <Sustainability />
+      <CampusLaunchCTA />
       <FrequentlyAskedQuestions />
     </div>
   );

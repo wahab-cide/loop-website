@@ -81,7 +81,7 @@ export function RideDetailsFrame() {
                   <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                     <span style={{ fontSize: "14px", color: "#9CA3AF" }}>Price per seat</span>
                     <span style={{ fontSize: "24px", fontWeight: "700", color: "#00E5FF" }}>$24</span>
-                    <span style={{ background: "rgba(0,229,255,0.12)", color: "#00E5FF", fontSize: "12px", fontWeight: "500", borderRadius: "999px", padding: "4px 9px", marginTop: "4px" }}>Fare Splitting Available</span>
+                    <span style={{ background: "rgba(0,229,255,0.12)", color: "#00E5FF", fontSize: "12px", fontWeight: "500", borderRadius: "999px", padding: "4px 9px", marginTop: "4px" }}>Cost shared across the car</span>
                   </div>
                   <div style={{ display: "flex", flexDirection: "column", gap: "4px", alignItems: "flex-end" }}>
                     <span style={{ fontSize: "14px", color: "#9CA3AF" }}>Seats available</span>

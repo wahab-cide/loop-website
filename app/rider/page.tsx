@@ -70,7 +70,7 @@ const steps = [
   {
     n: "1",
     title: "Browse",
-    body: "See every driver heading your way — route, price, rating, and mutual connections.",
+    body: "See every driver heading your way — route, share per seat, rating, and mutual connections.",
   },
   {
     n: "2",
@@ -206,7 +206,7 @@ export default function RiderPage() {
                 </div>
               ))}
               <p className="mt-6 text-xs" style={{ color: "rgba(255,255,255,0.2)" }}>
-                Solo fare estimates for typical campus trips vs. splitting with poolUp
+                What a solo rideshare fare costs, against your share of the same trip on poolUp
               </p>
             </motion.div>
           </div>
@@ -399,7 +399,7 @@ export default function RiderPage() {
             Your next ride is<br />waiting.
           </h2>
           <p className="text-lg mb-10" style={{ color: "rgba(255,255,255,0.6)" }}>
-            Find a driver. Book your seat. Pay less than you ever have.
+            Find a driver already going your way. Book a seat. Pay a share, not a fare.
           </p>
           <motion.button
             onClick={() => showToast("Coming Soon")}
